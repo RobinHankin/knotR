@@ -1,0 +1,524 @@
+% -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
+\documentclass[nojss]{jss}
+\usepackage{dsfont}
+\usepackage{bbm}
+\usepackage{amsfonts}
+\usepackage{wasysym}
+\usepackage{amssymb}
+
+%\title{Knot Theory in \R}
+%\subtitle{The \pkg{knot} package}
+%\author{Robin K. S. Hankin}
+%\maketitle
+
+
+\author{Robin K. S. Hankin\\Auckland University of Technology}
+\title{Knot theory in \proglang{R}}
+%\VignetteIndexEntry{A vignette for the knot package}
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{Robin K. S. Hankin}
+\Plaintitle{Pleasing knot projections in R}
+\Shorttitle{Pleasing knot projections in \proglang{R}}
+
+%% an abstract and keywords
+\Abstract{
+In this short article I introduce the \pkg{knot} package, which
+creates two dimensional knot diagrams optimized for visual appearance.
+
+The \pkg{knot} package is a systematic R-centric suite of software for
+the creation of production-quality artwork of knot diagrams.
+
+}
+
+\Keywords{Knot theory, \proglang{R}}
+\Plainkeywords{Knot theory, R}
+
+%% publication information
+%% NOTE: This needs to filled out ONLY IF THE PAPER WAS ACCEPTED.
+%% If it was not (yet) accepted, leave them commented.
+%% \Volume{13}
+%% \Issue{9}
+%% \Month{September}
+%% \Year{2004}
+%% \Submitdate{2004-09-29}
+%% \Acceptdate{2004-09-29}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+\Address{
+  Robin K. S. Hankin\\
+  Auckland University of Technology\\
+  New Zealand
+}
+%% It is also possible to add a telephone and fax number
+%% before the e-mail in the following format:
+%% Telephone: +43/1/31336-5053
+%% Fax: +43/1/31336-734
+
+%% for those who use Sweave please include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<setup,echo=FALSE,print=FALSE>>=
+ignore <- require(knotR)
+@ 
+
+
+\SweaveOpts{}
+\begin{document}
+
+
+\section{Introduction}
+
+A \emph{mathematical knot} is a smooth, unoriented embedding of a
+circle~$\mathbb{S}^1$ into~$\mathbb{R}^3$~\citep{manturov2004}.  Two
+knots are said to be equivalent if one can be continuously deformed in
+to the other; if so, there is a
+homeomorphism~$h\colon\mathbb{R}^3\longrightarrow\mathbb{R}^3$ which
+takes one embedded circle to the other.
+
+It is common to present a knot using diagrams such as
+Figure~\ref{knot_table}, in which a two-dimensional projection of the
+knot is given with broken lines indicating where one strand passes
+over another.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{1280px-Knot_table.png}
+  \caption{A table of prime knots up \label{knot_table} to seven
+    crossings, labels following~\citet{alexander1926}.  Image taken
+    from~\citet{wikipedia_knot_theory}.}
+\end{figure}
+
+Consider Figure~\ref{knot_table} from an \ae sthetic perspective; the
+diagrams are representative of those available under a free license.
+However, these diagrams are not suitable for high-quality artwork such
+as posters: they are not vectorized.  Many of the underlying knots
+possess a line of symmetry (at least, the diagrams do if the breaks
+are ignored), which is not present in the visual representation.
+Also, several of the strands cross at acute angles.  The diagram for
+knot~$7_3$, for example, contains ugly kinks and abrupt changes of
+curvature.
+
+Such considerations suggest that knot diagrams might be produced by
+minimization of some objective function that quantifies the visual
+inelegance of a knot diagram.  The precise nature of such an objective
+function is, of course, a subjective choice but one might require the
+following desiderata:
+
+\begin{itemize}
+\item Curvature to be as uniform as possible
+\item Strands to cross at right angles
+\item Crossing points to be separate from one another
+\item Any symmetry present in the knot should be enforced exactly, and
+  be visually apparent
+\end{itemize}
+
+Knot diagrams may be created using vectorized graphics software such
+as inkscape~\citep{kirsanov2009}: one specifies a sequence of control
+points, then interpolates between these points to create a knot diagram
+with the appropriate topology.  One way of smoothly interpolating
+between specified points is Bezier curves~\citep{olsen2014}.  A Bezier
+curve is a visually pleasing polynomial path that can be used to
+specify the path of a knot projection.
+
+The package presented here allows one to specify a knot in terms of
+its Bezier control points within inkscape, import the object into R,
+and then to use numerical optimization techniques to improve the
+visual appearance of the knot.
+
+\section{The package in use}
+
+In this section, I give workflows for creating two simple knots:
+firstly~$7_6$, followed by the figure-of-eight knot~$4_1$ which
+requires imposition of symmetry constraints.
+
+The first step is to create a closed curve in inkscape that shows the
+rough outline of the knot~(Figure~\ref{screenshot_inkscape_7_6} shows
+a screenshot of \code{7_6_first_draft.svg}, supplied with the
+package).  Note that this file contains only the knot {\em path}; the
+over and under information is to be added later.
+
+Here, knot paths are required to have Bezier handles that are
+symmetrically placed with regard to nodes.  Although radius of
+curvature is not necessarily matched at either side of a node, visual
+continuity of the strand is ensured.  In the diagram, strand crossing
+points are far from nodes, as this ensures visual continuity of
+strands at crossing points, especially the understrand.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=10cm]{screenshot_inkscape_7_6.png}
+\caption{Screenshot of inkscape\label{screenshot_inkscape_7_6} setup
+  for knot~$7_6$.  Nodes are shown as squares, handles as small
+  circles, symmetrically placed on either side of nodes}
+\end{figure}
+
+The knot shown in Figure~\ref{screenshot_inkscape_7_6} is clearly
+suboptimal: even though the nodes are connected by Bezier curves which
+are individually smooth, the path as a whole is ugly and unattractive
+as its path has unsightly regions where the radius of curvature
+changes abruptly.
+
+Although it is possible in principle to improve the visual appearance
+of the knot path by hand in inkscape, this is a surprisingly difficult
+and frustrating task.  In order to remedy the flaws of the diagram
+using an automated system, we first read the \code{.svg} file into R
+using the \code{reader()} function:
+
+<<use_reader_k76>>=
+k76 <- reader(system.file("7_6_first_draft.svg",package="knotR"))
+head(k76)
+@ 
+
+Object~\code{k76} is stored as an object of class \code{inkscape}: a
+two-column matrix with rows corresponding to the node and handle
+positions of the inkscape path.  This representation has a certain
+amount of redundancy as knot paths have handles which are
+symmetrically placed with respect to nodes; also, the first node is
+the same as the last for the loop is closed.  The package can coerce
+inkscape objects to other forms, specifically \code{minobj} objects,
+which contain no redundancy (the position of each node, as well as one
+of the handles, is stored); or \code{controlpoints} objects, which
+allow for easy construction of Bezier interpolation between nodes.
+
+\begin{figure}[htbp]
+  \begin{center}
+<<7_6_rough,fig=TRUE>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+k76_rough <- reader(system.file("7_6_first_draft.svg",package="knotR"))
+knotplot2(k76_rough, seg=TRUE)
+@
+\caption{The \emph{path} of \label{7_6_rough} knot~$7_6$, showing
+  Bezier control points.  Coloured circles have a radius proportional
+  to the curvature (that is, the reciprocal of the radius of
+  curvature) along the strand}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[!tbp]
+  \centering
+<<fig=TRUE,print=FALSE,echo=FALSE,height=4>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+
+knotplot2(k7_6,text=TRUE,lwd=1,circ=0,rainbow=TRUE)
+@ 
+\caption{Knot~$7_6$ with strands numbered \label{k76_strands} to guide
+creation of over and under information} \end{figure}
+
+To beautify it we need to specify a function of the path that
+quantifies its displeasingness, and then minimize this objective
+function using numerical methods.
+
+Two examples of desiderata for such an objective function might be to
+keep the strands crossing at right angles, and the overall bending
+energy.  These are evaluated in the package by functions
+\code{total_crossing_angles()} and~\code{total_bending_energy()}
+respectively:
+
+<<k76_desiderata>>=
+b <- as.controlpoints(k76_rough)
+total_crossing_angles(b)
+total_bending_energy(b)
+@ 
+
+The knots supplied in the package minimize a weighted sum of these and
+other badnesses\footnote{Function \code{badness()} includes various
+``housekeeping'' badnesses which are used to make sure that the
+minimum found by \code{nlm()} is topologically identical to the
+starting configuration.  Function
+\code{non\_crossing\_strand\_close\_approach\_badness()}, for example,
+makes non-crossing strands ``repel'' one another so as not to
+introduce spurious intersections.}, as evaluated by function
+\code{badness()}:
+
+<<k76_rough_badness>>=
+badness(k76_rough)
+@ 
+
+This function may be minimized by numerical optimization:
+
+\begin{Schunk}
+\begin{Sinput}
+> o <- nlm(badness, as.knotvec(k76_rough))
+> k7_6 <- as.minobj(o$estimate)
+> badness(k7_6)
+\end{Sinput}
+\begin{Soutput}
+  [1] 3.550152
+\end{Soutput}
+\end{Schunk}
+
+(the above takes about an hour of CPU time: it is optimizing function
+of~64 real variables, and the objective function takes a few seconds
+to evaluate).  However, the result is much nicer (Figure~\ref{7_6}).
+
+\begin{figure}[!tbp]
+  \centering
+<<k76_knotplot2,fig=TRUE,print=FALSE,echo=FALSE>>=
+knotplot2(k7_6)
+@ 
+\caption{Knot $7_6$, post-optimization\label{7_6}}
+\end{figure}
+   
+To specify the senses of the knot's\ %---------------------------------'
+crossings, we create an overunder object which is a two-column matrix:
+
+<<k76_overunder>>=
+ou76 <- matrix(c(
+    12,01,
+    02,11,
+    07,03,
+    04,15,
+    16,06,
+    14,08,
+    10,13
+    ),byrow=TRUE,ncol=2)
+@ 
+
+With reference to Figure~\ref{k76_strands}, each row of \code{ou76}
+corresponds to a crossing; the first element gives the overstrand and
+the second the understrand; thus strand~12 passes over strand~1,
+strand~2 passes over strand~11, and so on. The result is shown in
+figure~\ref{76_overunder}.
+  
+\begin{figure}[!tbp]
+  \centering
+<<fig=TRUE,print=FALSE,echo=FALSE>>=
+knotplot(k7_6,ou76)
+@ 
+\caption{Knot $7_6$, post-optimization with breaks indicating
+  \label{76_overunder}  underpassing strands}
+\end{figure}
+
+
+\subsection{Symmetry}
+
+Many of the knots in Figure~\ref{knot_table} have an axis of symmetry,
+or possess rotational symmetry.  The package has the ability to impose
+symmetry relations on knots, and to optimize the resulting symmetrical
+knot.  Minimizing the badness is not entirely straightforward on
+account of the induced redundancy, which is characterized using a
+symmetry object specific to the knot under consideration.  However,
+symmetry constraints do reduce the dimensionality of the optimization
+problem.
+
+I will consider the figure-of-eight knot~$4_1$ as an example.  Using
+Figure~\ref{four_figure_8_knots}, top left, as reference, the
+appropriate symmetry object is defined as follows:
+
+<<setup_figure_eight_symmetry_object>>=
+fig8 <- reader(system.file("4_1_first_draft.svg",package="knotR"))
+Mver8 <- matrix(c(
+    02,03,
+    09,07,
+    05,11,
+    10,06
+    ),ncol=2,byrow=TRUE)
+
+sym8 <- symmetry_object(fig8, Mver=Mver8, xver=8)
+@ 
+
+(Matrix \code{Mver8} specifies that nodes~2 and~3 are symmetric, as
+are nodes~9 and~7, and so on; \code{xver=8} forces node~8 to be on the
+axis of symmetry).  The results are shown in
+Figure~\ref{four_figure_8_knots}.
+
+\begin{figure}[!tbp]
+  \centering
+<<four_figure_eight_knots,fig=TRUE,print=FALSE,echo=FALSE>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+plot(NULL,xlim=c(-600,2200),ylim=c(-600,2200),asp=1,axes=FALSE)
+
+offx <- 1400
+offy <- 1500
+
+overunder_fig8 <- 
+  matrix(c(
+      05,10,
+      08,13,
+      01,06,
+      11,02
+      ),ncol=2,byrow=TRUE)
+
+jj <- sweep(as.inkscape(fig8),2,c(0,offy),"+")
+knotplot2(jj,setup=FALSE,node=TRUE,lwd=3,circ=0) # top left
+
+fig8_symmetrized <- symmetrize(fig8,sym8)
+jj <- sweep(as.inkscape(fig8_symmetrized),2,c(offx,offy),"+")
+knotplot2(jj,setup=FALSE,node=FALSE,width=TRUE)  # top right
+
+jj <- sweep(as.inkscape(k4_1),2,c(0,0),"+")
+knotplot2(jj,setup=FALSE,node=FALSE,width=TRUE)  # lower left
+
+jj <- sweep(as.inkscape(k4_1),2,c(offx,0),"+")
+knotplot(jj,overunder_fig8,setup=FALSE,gap=50)  # lower right
+
+@ 
+\caption{Figure eight knots drawn using different plotting methods.
+  top left, knot path with node numbers shown in order to facilitate
+    \label{four_figure_8_knots} definition of the symmetry object; top
+    right, result of symmetrizing the rough path; lower left, the
+    optimized knot with imposed vertical symmetry, with curvature
+    plotted; lower right, knot plotted with overstrand and understrand
+    indicated using line breaks}
+\end{figure}
+
+  
+\subsection{Rotational symmetry}
+
+Consider knot~$5_1$. This knot has fivefold rotational symmetry, in
+addition to a vertical line of symmetry.  The package includes
+functionality to impose appropriate symmetry constraints. Using
+Figure~\ref{k5_1_twoknots} as reference, we have:
+
+\begin{figure}[htbp]
+  \begin{center}
+<<k5_1,fig=TRUE>>=
+knotplot2(k5_1,node=TRUE,width=FALSE)
+@
+\caption{Knot $5_1$ \label{k5_1_twoknots} shown with node numbers}
+  \end{center}
+\end{figure}
+
+<<setup_symmetry_k5_1>>=
+sym51 <- symmetry_object(k5_1,
+                         Mver = cbind(11,13),
+                         xver = c(2,12),
+                         Mrot = rbind(
+                             c(12,04,16,08,20),
+                             c(13,05,17,09,01),
+                             c(11,03,15,07,19),
+                             c(02,14,06,18,10)
+                         ))
+@ 
+
+Thus, using the same notation as before, nodes~11 and~13 are
+symmetrical about the vertical axis, nodes~2 and~12 are on the
+vertical axis.  The \code{Mrot} argument specifies sets of nodes that
+map to themselves under rotation.  The top line of \code{Mrot}
+indicates that nodes 12,4,16, 8, and~20 are concyclic.  An example of
+a rotationally symmetric knot is given in Figure~\ref{orn20}.
+
+\section{Conclusions and further work}
+
+The \pkg{knot} package allows the user to create rough diagrams of
+knots using the inkscape suite of software, and subsequently polish up
+such diagrams in terms of a customizable objective function using
+numerical optimization techniques.  Further work might include
+functionality to deal with links.
+
+
+\clearpage
+\section{Gallery}
+
+There now follows a selection of pleasing knot diagrams taken from
+datasets provided with the package.
+
+\begin{figure}[htbp]
+  \begin{center}
+<<perko_A_and_B,fig=TRUE,width=5,height=3.2>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+plot(NULL,xlim=c(-700,2200),ylim=c(-1800,200),asp=1,box=FALSE)
+
+jjA <- as.inkscape(perko_A)*1.7
+jjB <- as.inkscape(perko_B)*1.7
+
+oA <- perko_A$overunder
+oB <- perko_B$overunder
+
+knotplot(jjA,ou=oA,setup=FALSE,gap=50,lwd=4)
+jjB <- sweep(as.inkscape(jjB),2,c(1500,-600),"+")
+knotplot(jjB,ou=oB,setup=FALSE,gap=50,lwd=4)
+@ 
+\caption{Two representations of knot~$10_{125}$, known as the 
+\label{perko_AB}  Perko Pair}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+<<ornamental,fig=TRUE>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+knotplot(ornamental20,gap=20)
+@ 
+\caption{An ornamental knot exhibiting fivefold
+  rotational \label{orn20} symmetry; note the absence of mirror symmetry}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+<<10123,fig=TRUE>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+knotplot(k10_123,gap=20)
+@ 
+\caption{Knot $10_{123}$, exhibiting fivefold symmetry}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+<<alleightcrossingknots,echo=FALSE,fig=TRUE,width=5,height=10>>=
+par(oma=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
+par(plt=c(0, 1, 0, 1))
+par(pty='m')
+
+a <-
+    list(k8_1, k8_2, k8_3,
+         k8_4, k8_5, k8_6,
+         k8_7, k8_8, k8_9,
+         k8_10, k8_11, k8_12,
+         k8_13, k8_14, k8_15,
+         k8_16, k8_17, k8_18,
+         k8_19, k8_20, k8_21)
+
+b <- lapply(a,overunder)
+
+plot(1:10,xlim=c(0,6000),ylim=c(0,12000),asp=1,type='n',axes=F,xlab='',ylab='')
+
+xs <- 1600
+ys <- 1600
+
+for(i in 1:3){
+    for(j in 1:7){
+        n <- (i-1)*7 + j
+        xoff <- i*xs
+        yoff <- j*ys
+        k <- as.inkscape(a[[n]])
+        k[,2] <- k[,2] - mean(k[,2])
+        k <- sweep(k,2,c(xoff,yoff),"+")
+        knotplot(k,b[[n]],setup=FALSE,lwd=2,gap=30)
+    }
+}
+@ 
+\caption{All prime eight-crossing knots, following \label{all8} Rolfsen}
+  \end{center}
+\end{figure}
+
+
+\bibliography{knot}
+
+\end{document}
+ 

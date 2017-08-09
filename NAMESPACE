@@ -1,0 +1,11 @@
+exportPattern("^[[:alpha:]]+")
+
+importFrom("graphics", "par", "plot", "points", "segments", "text")
+importFrom("stats", "constrOptim", "integrate", "runif", "uniroot", "nlm","var","optim")
+
+importFrom("utils", "head", "tail")
+
+
+
+S3method("head", "inkscape")
+S3method("tail", "inkscape")

@@ -1,0 +1,124 @@
+consider knot 7_3.  There are several types of restriction:
+
+1.  Nodes on the centreline.  These must have x=0.  These nodes have
+horizontal handles.
+
+2.  Nodes and handles that are symmetrically placed WRT their mirror
+images.
+
+So for k7_3 we have one node on the centreline:
+
+
+x[37]=0
+y[36]=y[37]
+
+
+Now some mirror images:
+
+nodes:
+x[13] = -x[19]
+y[13] = +y[19]
+
+handles:
+x[18] = -x[14]
+y[18] = +y[14]
+
+x[20] = -x[12]
+y[20] = +y[12]
+
+
+The numbers we can deal with are 13,19 in $node, and 18,12 in
+$handle_A.  Note that strand 6 goes *up* and strand 7 goes *down*.
+
+
+So in these terms the relations are:
+
+nodes:
+x[13] = -x[19]
+y[13] = +y[19]
+
+handles:
+x[18]-x[19] = x[12]-x[13]  # handle minus node = handle minus node (y component)
+y[18]-y[19] = y[13]-y[12]  # handle minus node = handle minus node (x component)
+
+
+Note the swapping of 12 and 13 on the RHS.
+
+
+So this would be
+
+jj <- as.minobj(k)
+
+
+
+
+nodes:
+jj$node[4,1] = -jj$node[6,1]   # x[13] = -x[19]
+jj$node[4,2] = +jj$node[6,2]   # x[13] = -x[19]
+
+
+handles:
+
+jj$handle_A[6,1] - jj$node[6,1] == +(jj$handle_A[4,1] - jj$node[4,1])   # x[18]-x[19] = x[12]-x[13]
+jj$handle_A[6,2] - jj$node[6,2] == -(jj$handle_A[4,2] - jj$node[4,2])   # y[18]-y[19] = y[13]-y[12]
+
+
+So there is a relationship between row 6 and row 4.  These have 2*4=8
+numbers but we now have 4 restrictions giving 4 numbers.  This would
+be the x and y coords of the left hand node and the left hand handle.
+
+I am going fix row 4 and calculate row 6 in terms of it. So we need the following:
+
+jj$node[6,1]
+jj$node[6,2]
+jj$handle_A[6,1]
+jj$handle_A[6,2]
+
+
+and we get
+
+jj$node[6,1] =  jj$node[4,1]
+jj$node[6,2] = -jj$node[6,1]
+
+jj$handle_A[6,1] =  jj$node[6,1] + (jj$handle_A[4,1] - jj$node[4,1])
+                 = -jj$node[4,1] + (jj$handle_A[4,1] - jj$node[4,1])
+
+jj$handle_A[6,2] =  jj$node[6,2] - (jj$handle_A[4,2] - jj$node[4,2])
+                 = +jj$node[4,2] - (jj$handle_A[4,2] - jj$node[4,2])
+
+
+
+row 6 of the handles and the nodes is now expressed in terms of row 4.
+
+
+
+There are other pairs too.  The total list would be
+
+18-19-20 | 12-13-14     [6,4]
+39-40-41 | 33-34-35     [13,11]
+21-22-23 | 9-10-11      [7,3]
+6-7-8    | 24-25-26     [2,8]
+27-28-29 | 3-4-5        [9,1]
+2-42-43  | 30-31-32     [14,10]
+
+
+We need two functions, one to symmetrize an existing minobj, and one
+to create a symmetric minobj object from a vector.
+
+M <- matrix(c(6,4,13,11,7,3,2,8,9,1,14,10),byrow=TRUE,ncol=2)
+M <- matrix(c(6,4),byrow=TRUE,ncol=2)
+
+make_symmetric_7_3 <- function(X,M){
+stopifnot(inherits(X,"minobj"))
+for(i in seq_len(nrow(M))){
+  a <- M[i,1]
+  b <- M[i,2]
+
+  X$node[a,1] <-  +X$node[b,1]
+  X$node[a,2] <-  -X$node[b,2]
+
+#  X$handle_A[a,1] <- -X$node[b,1] + (X$handle_A[b,1] - X$node[b,1])
+#  X$handle_A[a,2] <- +X$node[b,2] - (X$handle_A[b,2] - X$node[b,2])
+}
+return(X)
+}

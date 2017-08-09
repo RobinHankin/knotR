@@ -1,0 +1,11 @@
+Package: knotR
+Type: Package
+Title: Knot Diagrams using Bezier Curves
+Version: 1.0-3
+Date: 2017-08-10
+Author: Robin K. S. Hankin
+Depends: R (>= 2.10)
+Maintainer: Robin K. S. Hankin <hankin.robin@gmail.com>
+LazyData: TRUE
+Description: Makes visually pleasing diagrams of knot projections using optimized Bezier curves.
+License: GPL-2
