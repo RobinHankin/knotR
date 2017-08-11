@@ -14,7 +14,6 @@ overunder(x)
 overunder(x) <- value
 mirror(x)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{A knot object}
   \item{value}{A two-column integer matrix with rows corresponding to
