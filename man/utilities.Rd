@@ -88,7 +88,7 @@ make_knotvec_from_minobj(x)
   into the inkscape diagram.  For example, one might take a
   \code{minobj} object whose knot diagram is left-right mirror symmetric
   (eg \code{k6_2}) and alter one of the handle positions.  Then the
-  resulting inkscape object will by asymmetric.  There is an example
+  resulting inkscape object will be asymmetric.  There is an example
   using \code{k6_2} below.
 
   An object of class \code{controlpoints} is a list of matrices of size
