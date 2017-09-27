@@ -91,7 +91,7 @@ reefknot=FALSE,center_crossing=FALSE)
     the embedded symmetry object.
     \item Functions \code{force_nodes_mirror_images_LR()} and
     \code{force_nodes_mirror_images_UD()} symmetrize a knot about a  vertical
-    (horizontal) axis by taking ordered pairs  of nodes, specified by
+    (horizontal) axis by taking ordered pairs of nodes, specified by
     matrix \code{Mver} (\code{Mhor}) and forcing the second node to be
     symmetrically placed with respect to the first
     \item  Functions \code{force_nodes_exactly_horizontal()} and
