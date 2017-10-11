@@ -11,7 +11,6 @@ Head and tail methods for inkscape objects
 \method{head}{inkscape}(x, ...)
 \method{tail}{inkscape}(x, ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{Primary argument, an inkscape object}
   \item{\dots}{Further arguments, passed to \code{head()} or \code{tail()}}
