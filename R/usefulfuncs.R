@@ -291,7 +291,7 @@
     b <- as.controlpoints(b)
     badness <- function(P){
         jj <- bezier_curvature(P,n=100)
-        jmm <- c(min(jj),max(jj))
+        jmm <- c(min(jj,na.rm=TRUE),max(jj,na.rm=TRUE))
         
         if(prod(jmm)>=0){ # either always +ve or always -ve
             return(0)
