@@ -96,9 +96,7 @@ representations:
   rightward curvature  over the whole knot.
 
   \item Function \code{metrics()} gives all these.
-
   }
-
 
 }
 \value{
