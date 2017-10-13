@@ -4,47 +4,47 @@ a <- reader(filename)
 #knotplot2(a,node=TRUE)
 
 Mver <- matrix(c(
-    35,01,
-    23,13,
-    22,14,
-    12,24,
-    11,25,
-    34,02,
-    26,10,
-    21,15,
-    27,09,
-    33,03,
-    28,08,
-    20,16,
-    32,04,
-    29,07,
-    30,06,
-    31,05,
-    19,17
+    37,1,
+    23,15,
+    24,14,
+    36,2,
+    13,25,
+    12,26,
+    35,3,
+    22,16,
+    27,11,
+    28,10,
+    34,4,
+    29,9,
+    21,17,
+    30,8,
+    32,6,
+    31,7,
+    20,18
 ),ncol=2,byrow=TRUE)
 
 
-sym828 <- symmetry_object(a,Mver=Mver,xver=c(18,36))
+sym828 <- symmetry_object(a,Mver=Mver,xver=c(19,38))
 a <- symmetrize(a,sym828)
 #knotplot2(a,node=TRUE)
-
 
 #knotplot2(a,text=TRUE,lwd=1,circ=FALSE,rainbow=TRUE)
 
 
+
 ou828 <- matrix(c(  # nonalternating!
-    02,14,
-    10,03,
-    04,33,
-    32,05,
-    06,17,
-    16,09,
-    26,11,
-    31,20,
-    21,28,
-    35,23,
-    13,24,
-    27,34
+    2,15,#
+    11,4,#
+    5,34,#
+    33,6,#
+    7,18,#
+    17,10,#
+    27,12,#
+    14,25,#
+    32,21,#
+    22,29,#
+    37,24,#
+    28,35
 ),ncol=2,byrow=TRUE)
 
 #knotplot(a,ou828,gap=10)
