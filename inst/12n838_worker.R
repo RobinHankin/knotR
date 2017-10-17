@@ -54,8 +54,8 @@ jj <-
             symobj = sym828,
             ou   = ou828,
             prob = 0,
-            iterlim=1000, print.level=2,
-##          control=list(trace=100,maxit=100000), useNLM=FALSE
+            ##            iterlim=1000, print.level=2,
+            control=list(trace=100,maxit=100000), useNLM=FALSE
             )
 
 
