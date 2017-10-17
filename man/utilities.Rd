@@ -112,7 +112,7 @@ make_knotvec_from_minobj(x)
 \seealso{\code{\link{knotplot}},\code{\link{symmetrize}},\code{\link{bezier}}}
 \examples{
 
- a <- as.minobj(k)
+ a <- as.minobj(k6_3)
  plot(a$node,asp=1,pch=16)
  segments(x0=a[[1]][,1],y0=a[[1]][,2],x1=a[[2]][,1],y1=a[[2]][,2],
  main="handle direction follows the string path")
