@@ -101,6 +101,8 @@
 \alias{k11n22}
 \alias{k12n_0242}
 \alias{k12n_0411}
+\alias{k12a1202}
+\alias{k12n838}
 \alias{celtic3}
 \alias{k_infinity}
 \alias{fourloops}
@@ -157,7 +159,10 @@
   Bryant 2016.  The notation specifies the sense (\sQuote{p} for plus
   and \sQuote{m} for minus) of the twists.
 
-  Knot \code{T20} is a \dQuote{remarkable 20-crossing tangle}; see references
+  Knot \code{T20} is a \dQuote{remarkable 20-crossing tangle}; see
+  references
+
+  Knots \code{k12a1202} and \code{k12n838} are named following Lamm.
 
 }
 \references{
