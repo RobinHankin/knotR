@@ -29,7 +29,7 @@ jj <- knotoptim(filename,
                 symobj  = sym920,
                 ou      = ou920,
                 prob    = 0,
-                iterlim= 10, print.level=2
+                iterlim = 10, print.level=2
 #               control=list(trace=100,maxit=100000), useNLM=FALSE
                 )
 
