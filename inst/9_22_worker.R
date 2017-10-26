@@ -12,7 +12,7 @@ sym922 <-
     symmetry_object(
         x    = a,
         Mver = NULL,
-        xver = 11
+        xver = 12
     )
 
 
@@ -37,7 +37,7 @@ jj <- knotoptim(filename,
                 symobj = sym922,
                 ou   = ou922,
                 prob=0,
-                iterlim=9000,print.level=2
+                iterlim=1000,print.level=2
 #                control=list(trace=100,maxit=1000), useNLM=FALSE
 
                 )
