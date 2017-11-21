@@ -28,6 +28,9 @@ knotoptim(svg, weights=1, symobj=NULL,
 \details{
 Function \code{knotoptim()} is a generic optimization routine that
 starts from an svg file and minimizes the knot's badness.
+
+The \code{weights} argument is documented more fully at
+\code{badness.Rd}.
 }
 \value{Returns a knot object}
 \author{
