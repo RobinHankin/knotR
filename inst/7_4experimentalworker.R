@@ -15,7 +15,6 @@ ou  <-  matrix( c(1,11,9,2,4,8,11,4,4,14,13,6,7,11),byrow=TRUE,ncol=2)
 jj <-
     knotoptim("~/packages/rhankin/packages/trunk/knot/inst/7_4_experimental.svg",
             Mver = Mver, xver = xver, Mhor=Mhor, ou=ou,
-              weights=c(1,1,1,1,1,1,1,1),
             iterlim=100,print.level=2,prob=0.4)
 knotplot(jj,ever=T)
 stop()
@@ -63,7 +62,7 @@ knotplot2(k74, ou74)
 # now optimize; first define an objective function:
 
 `objective_function` <- function(m){
-    badness(make_minobj_from_minsymvec(m, sym74),weights=c(1,0.1,1,1,1,1,1,1))
+    badness(make_minobj_from_minsymvec(m, sym74))
 }
 
 o <- nlm(objective_function,mii,iterlim=100,print.level=2)

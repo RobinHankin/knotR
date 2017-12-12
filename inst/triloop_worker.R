@@ -49,7 +49,6 @@ Mvertri <-
 
 
 jj <- knotoptim(filename,
-                weights = c(1,0.01,rep(1,7)),
                 Mrot = Mrottri,
                 Mver = Mvertri,
                 xver = 10,

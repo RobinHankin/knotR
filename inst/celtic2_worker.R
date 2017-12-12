@@ -64,7 +64,7 @@ knotoptim("celtic2.svg",
           Mver=Mver,Mhor=Mhor,xhor=xhor, ou=ou,
                     celtic=TRUE, mcdonalds=TRUE,
           print.level=2,iterlim=1000,
-#          weights = c(1,0.01,1,1,1,1,1,1),
+          weights = c(1,0.1,1,1,1,1,1,1),
           prob=0)
 
 

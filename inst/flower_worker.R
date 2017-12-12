@@ -59,7 +59,6 @@ knotplot(as,ouflower,gap=10)
 
 jj <- knotoptim(filename,
                 symobj = symflower,
-                weights = c(1,0.1,1,1,1,1,1,1,1),
                 ou   = ouflower,
                 prob=0,
                 iterlim=1000, print.level=2

@@ -367,7 +367,7 @@
   if(missing(cpb)){  cpb <- crossing_points(b) }
   weights <- weights * 
     c(pot = 100,
-      ang = 1,
+      ang = 0.1,
       ben = 6,
       len = 0.000001,
       mid = 100,
