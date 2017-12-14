@@ -54,5 +54,4 @@ jj <- knotoptim(filename,
                 )
 
 
-write_svg(jj,filename)
-stop() 
+write_svg(jj,filename,safe=FALSE)
