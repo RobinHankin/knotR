@@ -29,7 +29,6 @@ ou930 <-
  ),byrow=TRUE,ncol=2)
 #knotplot(a,ou930)
 
-
 jj <- knotoptim(filename,
                 symobj = sym930,
                 ou   = ou930,
@@ -37,7 +36,6 @@ jj <- knotoptim(filename,
                 iterlim=1000,print.level=2
 #                control=list(trace=100,maxit=10000), useNLM=FALSE
                 )
-
 
 write_svg(jj,filename,safe=FALSE)
 dput(jj,file=sub('.svg','.S',filename))
