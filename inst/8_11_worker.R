@@ -27,7 +27,7 @@ jj <-
             symobj = sym811,
             ou   = ou811,
             prob = 0,
-            iterlim=3000,print.level=2,hessian=FALSE
+            iterlim = 1000,print.level=2,hessian=FALSE
 #            control=list(trace=100,maxit=1000), # these arguments for optim()
 #            useNLM=FALSE
             )

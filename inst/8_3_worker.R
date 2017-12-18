@@ -40,8 +40,8 @@ jj <-
   knotoptim(filename,
             symobj = sym83,
             ou   = ou83,
-            prob= 0,
-            iterlim=2000,print.level=2,hessian=FALSE
+            prob = 0,
+            iterlim=1000,print.level=2,hessian=FALSE
 #                control=list(trace=100,maxit=1000), # these arguments for optim()
 #                useNLM=FALSE
 )
