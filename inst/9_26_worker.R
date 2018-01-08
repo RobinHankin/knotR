@@ -27,6 +27,6 @@ jj <- knotoptim(filename,
                 )
 
 write_svg(jj,filename,safe=FALSE)
-save(jj,file=sub('.svg','.S',filename))
+dput(jj,file=sub('.svg','.S',filename))
 
 
