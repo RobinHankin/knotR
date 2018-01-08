@@ -54,8 +54,7 @@ jj <- knotoptim(filename,
                 ou   = ou_perko_A,
                 prob = 0,
 #                iterlim=1000, print.level=0
-                control=list(trace=100,maxit=10000), # these arguments for optim()
-                useNLM=FALSE
+                control=list(trace=100,maxit=10000), useNLM=FALSE
 
                 )
 
