@@ -53,9 +53,8 @@ jj <- knotoptim(filename,
                 symobj = sym_perko_A,
                 ou   = ou_perko_A,
                 prob = 0,
-#                iterlim=1000, print.level=0
-                control=list(trace=100,maxit=10000), useNLM=FALSE
-
+                iterlim=300, print.level=2
+#                control=list(trace=100,maxit=337), useNLM=FALSE
                 )
 
 write_svg(jj,filename,safe=FALSE)
