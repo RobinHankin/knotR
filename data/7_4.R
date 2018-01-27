@@ -1,19 +1,20 @@
 `k7_4` <-
-structure(list(minsymvec = structure(c(-30.6513203741519, -2.89449485689007, 
--260.969139899752, -192.546153733108, 358.956412420385, 117.625624209467, 
-10.8620216439829, 184.658437445523, 462.844430697091, -105.984462420352, 
--244.479398563143, -92.230635862095, -271.453224101218, -104.462616273794, 
-260.926724919297, 82.9155876661365, 289.98578862427, 448.971368044177
+structure(list(minsymvec = structure(c(-18.4837713098574, 0.0391730625492323, 
+-253.629778456576, -216.79814387903, 402.051518957619, 106.270694514574, 
+4.991025476024, 188.908915307168, 444.695123843816, -104.913215751526, 
+-240.691436192265, -93.3637423104262, -266.628201199231, -131.065200710991, 
+286.489719768126, 76.7705117460031, 279.074827298923, 451.158121456183
 ), .Names = c("handle_A8", "handle_A14", "handle_A15", "handle_A16", 
 "handle_A26", "handle_A27", "handle_A32", "handle_A33", "handle_A34", 
 "node8", "node9", "node14", "node15", "node16", "node26", "node32", 
 "node33", "node34"), class = "minsymvec"), overunderobj = structure(c(1, 
-11, 4, 14, 6, 17, 9, 13, 2, 10, 5, 18, 8, 15), .Dim = c(7L, 2L
+5, 13, 6, 11, 18, 2, 17, 4, 8, 10, 9, 14, 15), .Dim = c(2L, 7L
 )), symobj = structure(list(Mver = structure(c(16, 15, 8, 14, 
 9, 4, 10, 3, 2, 7, 6, 17, 5, 18, 13, 1, 12, 11), .Dim = c(9L, 
 2L)), xver = NULL, Mhor = structure(c(6, 7, 5, 17, 16, 8, 14, 
 15, 12, 11, 13, 1, 2, 10, 4, 3), .Dim = c(8L, 2L)), xhor = c(9, 
-18), Mrot = NULL, mcdonalds = TRUE, celtic = TRUE, reefknot = FALSE, 
+18), Mrot = NULL, exact_h = NULL, exact_v = NULL, mcdonalds = TRUE, 
+    celtic = TRUE, reefknot = FALSE, center_crossing = FALSE, 
     indep = structure(c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
     FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, 
     TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
@@ -36,5 +37,6 @@ structure(list(minsymvec = structure(c(-30.6513203741519, -2.89449485689007,
     "node21", "node22", "node23", "node24", "node25", "node26", 
     "node27", "node28", "node29", "node30", "node31", "node32", 
     "node33", "node34", "node35", "node36"))), .Names = c("Mver", 
-"xver", "Mhor", "xhor", "Mrot", "mcdonalds", "celtic", "reefknot", 
-"indep"))), .Names = c("minsymvec", "overunderobj", "symobj"), class = "knot")
+"xver", "Mhor", "xhor", "Mrot", "exact_h", "exact_v", "mcdonalds", 
+"celtic", "reefknot", "center_crossing", "indep"))), .Names = c("minsymvec", 
+"overunderobj", "symobj"), class = "knot")
