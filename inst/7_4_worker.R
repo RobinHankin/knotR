@@ -41,7 +41,7 @@ ou74 <- matrix(c(
     6, 18,
     17, 8,
     9, 15
-), nrow=2,byrow=TRUE)
+), ncol=2,byrow=TRUE)
 
 
 jj <- knotoptim(filename,
