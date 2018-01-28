@@ -8,7 +8,7 @@ structure(list(minsymvec = structure(c(-18.4837713098574, 0.0391730625492323,
 "handle_A26", "handle_A27", "handle_A32", "handle_A33", "handle_A34", 
 "node8", "node9", "node14", "node15", "node16", "node26", "node32", 
 "node33", "node34"), class = "minsymvec"), overunderobj = structure(c(1, 
-5, 13, 6, 11, 18, 2, 17, 4, 8, 10, 9, 14, 15), .Dim = c(2L, 7L
+11, 4, 14, 6, 17, 9, 13, 2, 10, 5, 18, 8, 15), .Dim = c(7L, 2L
 )), symobj = structure(list(Mver = structure(c(16, 15, 8, 14, 
 9, 4, 10, 3, 2, 7, 6, 17, 5, 18, 13, 1, 12, 11), .Dim = c(9L, 
 2L)), xver = NULL, Mhor = structure(c(6, 7, 5, 17, 16, 8, 14, 
