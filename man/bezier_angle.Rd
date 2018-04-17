@@ -31,7 +31,20 @@ bezier_intersect(P1,P2, type='pos', ...)
   because sometimes, strands which intersect are perturbed by the
   optimization routine so that they are disjoint.
 
-  
+  In function \code{bezier_intersect()}, argument \code{type} may take
+  the following values:
+
+  \describe{
+    \item{pos}{Position of intersection point}
+    \item{cons}{Boolean, indicating whether the strands abut; the
+    \sQuote{intersection} point is the end of one curve and the
+    beginning of the other}
+    \item{bool}{Boolean, indicating whether or not the strands actually intersect}
+    \item{para}{Bezier parameter \eqn{t} for the intersection point;
+    actually return two parameters, one for each curve}
+    \item{opt}{Details of the optimization output}
+    \item{all}{Everything}
+  }
   
 }
 \note{
