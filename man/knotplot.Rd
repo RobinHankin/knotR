@@ -29,9 +29,13 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
   }
 }
 \details{
+
   Function \code{knotplot()} is useful for production-quality plotting
-  of knots with crossings indicated; \code{knotplot2()} is more useful
-  for development.
+  of knots with crossings indicated by the understrand having a gap;
+  function \code{knotplot2()} is more useful for development.
+
+  Function \code{knotplot()} works by setting a suitable length of the
+  understrand to \code{NA} which results in it not being plotted.
 
   For \code{knotplot()}:
   \itemize{
