@@ -110,7 +110,7 @@
 
     b <- as.controlpoints(a)
 
-  xy <- matrix(0,0,2)
+    xy <- matrix(0,0,2)
     for(i in seq_along(b)){  # loop over all Bezier segments
       tee <- seq(from=0, to=1, len=n)  # start with no NAs
       overs <- ou[ou[,2]==i,1]  # strands that pass *over* strand i  (NB: might be empty!)
@@ -127,7 +127,6 @@
     points(xy,type='l',lwd=lwd, lend=1, ljoin=1, ...)
     return(invisible(xy))
 }
-
 
 `bezier_angle` <- function(P1,P2){  # returns \cos^2\theta, where
                                     # \theta is the angle of
