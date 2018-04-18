@@ -83,7 +83,6 @@
 #      points(jj,pch=16,col='gray',cex=3)
 #      text(jj,as.character(seq_len(nrow(jj))),col='blue',cex=2)
         }
-
 }
 
 `getstringpoints` <- function(b,give_strand=FALSE,n=100){
@@ -96,8 +95,7 @@
     do.call("rbind",sapply(seq_along(b),f,simplify=FALSE))
 }
 
-
-`knotplot` <- function(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...){
+`knotplot_old` <- function(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...){
     if(inherits(x,'knot')){
       ou <- x$overunderobj
       x <- as.minobj(x)
@@ -126,6 +124,39 @@
     } # 'i' loop closes
     points(xy,type='l',lwd=lwd, lend=1, ljoin=1, ...)
     return(invisible(xy))
+}
+
+`knotplot` <- function(x, ou, gapwidth=1, n=100, lwd=8, setup=TRUE, ...){
+    if(inherits(x,'knot')){
+      ou <- x$overunderobj
+      x <- as.minobj(x)
+    }
+    stopifnot(is.sensible(ou,x))
+    a <- as.inkscape(x)
+    if(setup){
+      plot(a,type='n',asp=1, axes=FALSE, xlab='', ylab='', ...)
+    }
+
+    b <- as.controlpoints(a)
+
+    xy_thin  <- matrix(0,0,2)
+    xy_thick <- matrix(0,0,2)
+    for(i in seq_along(b)){  # loop over all Bezier segments
+      tee <- seq(from=0, to=1, len=n)  
+      overs <- ou[ou[,2]==i,1]  # strands that pass *over* strand i  (NB: might be empty!)
+      for(j in overs){  # loop over strands j that pass over strand i; i is under, j is over
+        jj <- bezier_intersect(b[[i]],b[[j]],'para') # jj: c(ess,tee)
+        crosspoint <- jj[2]  # crosspoint parameter for the OVERstrand
+        xy_thick <- rbind(xy_thick,bezier(b[[j]],tee=seq(from=crosspoint-0.15,to=crosspoint+0.15, length=n)),NA)
+      }
+      xy_thin <- rbind(xy_thin, bezier(b[[i]],tee=tee))
+    } # 'i' loop closes
+
+    points(xy_thin, type='l',lwd=lwd,              lend=1, ljoin=1,              ...)
+    points(xy_thick,type='l',lwd=lwd*(1+gapwidth), lend=1, ljoin=1, col="white", ...)
+    points(xy_thick,type='l',lwd=lwd,              lend=1, ljoin=1,              ...)
+
+    return(invisible(xy_thin))
 }
 
 `bezier_angle` <- function(P1,P2){  # returns \cos^2\theta, where

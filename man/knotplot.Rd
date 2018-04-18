@@ -1,5 +1,6 @@
 \name{knotplot}
 \alias{knotplot}
+\alias{knotplot_old}
 \alias{knotplot2}
 \title{
 Plotting of knots
@@ -8,7 +9,8 @@ Plotting of knots
 Routines to plot projections of knots with a wide range of user-settable options
 }
 \usage{
-knotplot(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...)
+knotplot(x, ou, gapwidth=1, n=100, lwd=8, setup=TRUE, ...)
+knotplot_old(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...)
 knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
                 node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000,
                 lwd=8, setup=TRUE,...)
@@ -18,7 +20,7 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
     object and a \code{minobj} object}
   \item{rainbow,seg,text,cross,ink,node,all,width,circ}{Variables
     controlling sundry \code{knotplot()} features; see details}
-  \item{ou,gap}{Variables controlling sundry \code{knotplot2()}
+  \item{ou,gap,gapwidth}{Variables controlling sundry \code{knotplot()}
     features; see details}
   \item{n}{Number of points on each Bezier curve}
   \item{lwd}{Width of line to use}
@@ -32,7 +34,9 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
 
   Function \code{knotplot()} is useful for production-quality plotting
   of knots with crossings indicated by the understrand having a gap;
-  function \code{knotplot2()} is more useful for development.
+  function \code{knotplot2()} is more useful for development.  Function
+  \code{knotplot_old()} is included for backward compatibility and is
+  possibly more robust than \code{knotplot()}.
 
   Function \code{knotplot()} works by setting a suitable length of the
   understrand to \code{NA} which results in it not being plotted.
@@ -43,9 +47,8 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
     of the crossing.  Each row corresponds to a crossing; the first entry
     is the segment number of the overstrand, and the second is the
     understrand
-    \item \code{gap}; the width of the gap
-    \item \code{arclength} Gap width measured by arc length or Euclidean
-    distance
+    \item \code{gapwidth}; the width of the gap, measured in units of
+    width of the string
   }
   
   For \code{knotplot2()}:
@@ -59,7 +62,11 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
     \item \code{ink}; label the nodes with their inkscape numbering
     \item \code{width}; show the bending strain energy
   }
-  
+
+  The \code{gap} argument of \code{knotplot_old()} is a the same as the
+  \code{gapwidth} argument of \code{knotplot()} but \code{gap} is
+  measured in the same units as the \code{plot()}.
+
 
 }
 \author{
