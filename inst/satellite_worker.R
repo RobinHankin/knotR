@@ -26,14 +26,12 @@ ousat <-
         ),byrow=TRUE,ncol=2)
 symsat <- symmetry_object(x=a, xver=19)
 
-
 jj <- knotoptim(filename,
                 symobj = symsat,
                 ou   = ousat,
                 prob = 0,
 #           iterlim=1000,print.level=2,         # these arguments for nlm()
-                control=list(trace=9000,maxit=10000), # these arguments for optim()
-                useNLM=FALSE
+                control=list(trace=9000,maxit=10000), useNLM=FALSE
                 )
 
 write_svg(jj,filename,safe=FALSE)
