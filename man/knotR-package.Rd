@@ -39,16 +39,16 @@ to avoid confusion.
 
 An \code{.svg} file may be imported into R using the package's
 \code{reader()} function, which creates an \code{inkscape} object.  This
-represents the path of the knot: it does not include over and under
+represents the \emph{path} of the knot: it does not include over and under
 information.  The package assumes that inkscape uses absolute
 coordinates (as opposed to relative coordinates); see \code{reader.Rd}
 for more information.
 
-A path may be specified using one of three file formats which have
-different uses: \code{inkscape}, \code{minobj}, \code{controlpoints},
-and \code{knotvec}.  Objects may be converted from one form to another
-by using functions such as \code{make_minobj_from_ink()}, documented at
-\code{?utilities}.
+The package provides four classes of objects that specify a knot's path:
+\code{inkscape}, \code{minobj}, \code{controlpoints}, and
+\code{knotvec}.  These four classes have different uses, and objects may
+be converted from one form to another by using functions such as
+\code{as.minobj()}, documented at \code{as.Rd} and \code{utilities.Rd}.
 
 A knot requires information on which strands pass over or under which
 other strands; full documentation at \code{?overunder}.
