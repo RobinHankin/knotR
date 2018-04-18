@@ -532,6 +532,7 @@
 }
 
 `overunder<-` <- function(x,value){
+  stopifnot(is.sensible(value,x))
   x$overunderobj <- value
   return(x)
 }
