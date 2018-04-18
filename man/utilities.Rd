@@ -109,7 +109,7 @@ make_knotvec_from_minobj(x)
 \author{
   Robin K. S. Hankin
 }
-\seealso{\code{\link{knotplot}},\code{\link{symmetrize}},\code{\link{bezier}}}
+\seealso{\code{\link{as}},\code{\link{symmetrize}}}
 \examples{
 
  a <- as.minobj(k6_3)
