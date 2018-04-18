@@ -13,15 +13,17 @@ knotplot(x, ou, gapwidth=1, n=100, lwd=8, setup=TRUE, ...)
 knotplot_old(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...)
 knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
                 node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000,
-                lwd=8, setup=TRUE,...)
+                lwd=8, setup=TRUE, ...)
 }
 \arguments{
   \item{x}{Description of a knot, coerced to a \code{controlpoints}
     object and a \code{minobj} object}
   \item{rainbow,seg,text,cross,ink,node,all,width,circ}{Variables
-    controlling sundry \code{knotplot()} features; see details}
-  \item{ou,gap,gapwidth}{Variables controlling sundry \code{knotplot()}
-    features; see details}
+    controlling sundry \code{knotplot2()} features; see details}
+  \item{ou}{An overunder object, useful if overunder information not
+    included in argument \code{x}}
+  \item{gap,gapwidth}{Variables controlling visual representation of
+    strand crossings; see details}
   \item{n}{Number of points on each Bezier curve}
   \item{lwd}{Width of line to use}
   \item{setup}{Boolean, with default \code{TRUE} meaning to set up a new
