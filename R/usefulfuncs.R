@@ -507,9 +507,9 @@
          symobj=symobj)
   }
 
-`is.sensible` <- function(overunderobj,knot){
+`is.sensible` <- function(overunderobj,x){
 
-    jj1 <- crossing_points(knot,TRUE)
+    jj1 <- crossing_points(x,TRUE)
     jj1 <- jj1[jj1[,9]==1,1:2,drop=FALSE]
     if(length(jj1)==0){  # unknot
       return(length(overunderobj)==0)
@@ -526,7 +526,7 @@
         return(FALSE)
     }
 }
-
+ 
 `overunder` <- function(x){
   x$overunderobj
 }

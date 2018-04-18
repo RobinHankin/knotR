@@ -14,13 +14,12 @@ Functionality for specifying overstrands and understrands
 overunder(x)
 overunder(x) <- value
 mirror(x)
-is.sensible(overunderobj,knot)
+is.sensible(overunderobj,x)
 }
 \arguments{
-  \item{x,knot}{A knot object}
-  \item{value,overunderobj}{A two-column integer matrix with rows
-    corresponding to crossings.  In each row, the first entry identifies
-    the overstrand, and the second entry specifies the understrand}
+  \item{x}{A knot object}
+  \item{value,overunderobj}{A two-column integer matrix specifying the
+    senses of the crossings in a knot}
 }
 \details{
   Function \code{overunder()} returns a two-column integer matrix with
