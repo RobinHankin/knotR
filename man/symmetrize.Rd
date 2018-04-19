@@ -98,8 +98,6 @@ reefknot=FALSE,center_crossing=FALSE)
     \code{force_nodes_exactly_vertical()} force nodes to be exactly
     horizontal or exactly vertical respectively.  Nodes so forced do not
     need to be on an axis of symmetry; they can be anywhere
-    \item Function \code{symmetrize_ROT()} symmetrizes a knot around a
-    point of symmetry, producing a rotationally symmetric knot
   }
 }
 \value{
