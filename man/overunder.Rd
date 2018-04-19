@@ -38,7 +38,6 @@ is.sensible(overunderobj,x)
   
 
 }
-\value{All three functions return a knot object}
 \author{Robin K. S. Hankin}
 \seealso{\code{\link{knot}}}
 \examples{
