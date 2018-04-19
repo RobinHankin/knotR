@@ -109,15 +109,17 @@ reefknot=FALSE,center_crossing=FALSE)
     \code{force_nodes_mirror_images_UD()} symmetrize a knot about a vertical
     (horizontal) axis by taking ordered pairs of nodes, specified by
     matrix \code{Mver} (\code{Mhor}) and forcing the second node to be
-    symmetrically placed with respect to the first
+    symmetrically placed with respect to the first.  It does the same
+    thing to the handles too.
     \item Functions \code{force_nodes_exactly_horizontal()} and
     \code{force_nodes_exactly_vertical()} force nodes to be exactly
-    horizontal or exactly vertical respectively.  Nodes so forced do not
+    horizontal or exactly vertical respectively by restricting the
+    position of their handles.  Nodes so forced do not
     need to be on an axis of symmetry; they can be anywhere
     \item Functions \code{force_nodes_on_V_axis()} and
     \code{force_nodes_on_H_axis()} force nodes specified by \code{xver}
     and \code{xhor} respectively to be on the vertical or horizontal
-    axis 
+    axis, and to have appropriately placed handles 
     \item Function \code{force_nodes_rotational()} imposes the
     rotational symmetry specified by \code{Mrot}
   }
