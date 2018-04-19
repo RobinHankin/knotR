@@ -1,8 +1,6 @@
 \name{knotoptim}
 \alias{knotoptim}
-\title{
-Optimization of knot appearance
-}
+\title{Optimization of knot appearance}
 \description{
 Optimization of knot appearance using user-definable objective functions
 }
@@ -27,15 +25,13 @@ knotoptim(svg, weights=1, symobj=NULL,
 }
 \details{
 Function \code{knotoptim()} is a generic optimization routine that
-starts from an svg file and minimizes the knot's badness.
+starts from an svg file and minimizes the knot's \code{badness()}.
 
 The \code{weights} argument is documented more fully at
 \code{badness.Rd}.
 }
 \value{Returns a knot object}
-\author{
-Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 \seealso{
 \code{\link{symmetry_object}}, \code{\link{badness}}
 }
