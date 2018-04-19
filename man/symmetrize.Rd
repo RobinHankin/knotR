@@ -134,11 +134,6 @@ reefknot=FALSE,center_crossing=FALSE)
   These are the \emph{real} degrees of freedom in the symmetrical knot.
   Only these unmarked values are modified by the optimization routines
   in \code{knotoptim()}
-  }
-
-
-\value{
-These functions return a symmetric knot in \code{minobj} form.
 }
 \author{Robin K.S. Hankin}
 \note{You can achieve up-down symmetry (that is, a horizontal line of
