@@ -33,10 +33,12 @@ non_crossing_strand_close_approach_badness(b,cpb)
   \item{b}{A description of a knot, coerced to a \code{controlpoints}
     object}
   \item{cpb}{Optional argument containing information on crossing
-    points; expensive to calculate, so providing this makes the code run
-    faster}
+    points (it is short for \sQuote{\code{crossing_points(b)}}).  It is
+    time-consuming to calculate, so providing a precalculated value
+    makes the code run faster}
   \item{prob}{In function \code{badness()}, the probability of plotting
-    a knotplot.  Nonzero values are useful when optimizing a knot, to
+    a knotplot.  I used nonzero values  in the early stages of
+    developing the package: when optimizing a knot it was useful to
     keep tabs on the process}
   \item{give}{In function \code{badness()}, Boolean with default
     \code{FALSE} meaning to return the sum of the badnesses, and
@@ -62,7 +64,7 @@ the \code{weights} argument of \code{badness()}.
 
 \describe{
   \item{pot}{Function \code{total_crossing_potential_energy()} gives the
-    potential energy of the nodes, under an inverse square force law.}
+    potential energy of the nodes, under an inverse square force law}
   
   \item{ang}{Function \code{total_crossing_angles()} returns a high value if
     strands cross at angles far from 90 degrees.  It returns the sum, over
@@ -84,35 +86,31 @@ the \code{weights} argument of \code{badness()}.
     nodes too close together (compare function
     \code{total_crossing_potential_energy()})}
   
-  \item{swi}{Function \code{curvature_switching_badness()} provides a penalty
-    for segments with curvatures that switch sign.  The magnitude of the
-    penalty is zero if the curvature is of one sign, otherwise
-    proportional to the square of the minimum of the maximum value of the
-    absolute value of the positive and negative curvatures.  The source
-    code is easier to look at, honest}
+  \item{swi}{Function \code{curvature_switching_badness()} provides a
+    penalty for consecutive segments with curvatures that switch sign.
+    The magnitude of the penalty is zero if both curvatures are of the
+    same sign, otherwise proportional to the square of the minimum of
+    the maximum value of the absolute value of the positive and negative
+    curvatures.  The source code is easier to look at, honest}
   
   \item{con}{Function
     \code{curvature_consecutive_segment_switching_badness()} penalizes
-    knots with consecutive segments that switch curvature from positive to
-    negative}
+    knots with consecutive segments that switch curvature from positive
+    to negative}
   
   \item{ncn}{Function \code{always_left_badness()} penalizes knots that are
     \emph{supposed} to curve to the left all the time (eg knot
     \eqn{8_{18}}{8_18}).  The penalty is proportional to the greatest
-    rightward curvature  over the whole knot}
+    rightward curvature over the whole knot}
 }
 
 The \code{weights} argument is nominally a vector of length 9 which is
 used to assign weights to different aspects of the badness of a knot.
+}
 
-
-}
-\value{
-Returns a scalar badness
-}
-\author{
-Robin K. S. Hankin
-}
+\value{Returns a scalar badness}
+\author{Robin K. S. Hankin}
+\seealso{\code{\link{crossing}}}
 \examples{
 
 
