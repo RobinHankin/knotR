@@ -129,11 +129,14 @@ reefknot=FALSE,center_crossing=FALSE)
   intended for the end-user.  It takes a \code{minobj} object and marks
   a maximal set of dependent entries with a \sQuote{not needed} value.
   The values of the entries so marked may be determined by a combination
-  of the imposed symmetry relations and the unmarked values.  The only
-  entries not so marked are \dQuote{real} degrees of freedom in the
-  symmetrical knot.  Only these unmarked values are modified by the
-  optimization routines in \code{knotoptim()}
-}
+  of the imposed symmetry relations and the unmarked values.  The
+  unmarked entries constitute a \code{minsymvec} object (see above).
+  These are the \emph{real} degrees of freedom in the symmetrical knot.
+  Only these unmarked values are modified by the optimization routines
+  in \code{knotoptim()}
+  }
+
+
 \value{
 These functions return a symmetric knot in \code{minobj} form.
 }
