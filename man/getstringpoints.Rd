@@ -10,25 +10,21 @@ Returns the coordinates of a knot's path
 getstringpoints(b, give_strand = FALSE, n = 100)
 }
 \arguments{
-  \item{b}{Knot path, object coerced to \code{controlpoints} form}
+  \item{b}{The knot path (coerced to \code{controlpoints} form)}
   \item{give_strand}{Boolean, with default \code{FALSE} meaning to
     return a two-column matrix with rows corresponding to coordinates
-    of the strands, and \code{TRUE} meaning to return a matrix with
+    of the knot path, and \code{TRUE} meaning to return a matrix with
     an additional column indicating the strand number}
-  \item{n}{The number of points to use when constructing the Bezier curve}
+  \item{n}{The number of points to use when constructing the Bezier
+    curve}
 }
-\value{
-Returns either a two- or  three- column matrix
-}
+\value{Returns either a two- or three- column matrix}
 \note{
   Function \code{knotplot()} returns the points of the string too, but
   with \code{NA} for understrands.
 }
-\author{
-Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 \seealso{\code{\link{knotplot}}}
-  
 \examples{
 plot(getstringpoints(k4_1),asp=1)
 
