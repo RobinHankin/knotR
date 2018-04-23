@@ -147,7 +147,7 @@
       for(j in overs){  # loop over strands j that pass over strand i; i is under, j is over
         jj <- bezier_intersect(b[[i]],b[[j]],'para') # jj: c(ess,tee)
         crosspoint <- jj[2]  # crosspoint parameter for the OVERstrand
-        xy_thick <- rbind(xy_thick,bezier(b[[j]],tee=seq(from=crosspoint-0.15,to=crosspoint+0.15, length=n)),NA)
+        xy_thick <- rbind(xy_thick,bezier(b[[j]],tee=seq(from=crosspoint-0.2,to=crosspoint+0.2, length=n)),NA)
       }
       xy_thin <- rbind(xy_thin, bezier(b[[i]],tee=tee))
     } # 'i' loop closes
