@@ -49,3 +49,6 @@ man/*.Rd~
 
 
 inst/*.Rout
+inst/*.bat
+inst/*.bat~
+inst/*.R~
