@@ -146,7 +146,7 @@ jj <- knotoptim(filename,
                 symobj = symhex,
                 ou   = ouhex,
                 prob=0,
-                iterlim=1000, print.level=2
+                iterlim=200, print.level=2
 #                control=list(trace=100,maxit=10000), useNLM=FALSE
                 )
 
