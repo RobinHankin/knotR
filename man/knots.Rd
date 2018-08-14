@@ -3,6 +3,7 @@
 \alias{k3_1}
 \alias{k3_1a}
 \alias{k4_1}
+\alias{k4_1a}
 \alias{k5_1}
 \alias{k5_2}
 \alias{k6_1}
