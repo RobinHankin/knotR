@@ -63,6 +63,7 @@
 \alias{k9_21}
 \alias{k9_22}
 \alias{k9_23}
+\alias{k9_23a}
 \alias{k9_24}
 \alias{k9_25}
 \alias{k9_26}
