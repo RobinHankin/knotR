@@ -7,7 +7,7 @@
 # contents of the data/ directory.  To create this file from scratch,
 # use something like:
 
-# for i in *.R ; do sed -n "1p" $i |tr -d '`<-' ; done
+# for i in ../data/*.R ; do sed -n "1p" $i |tr -d '`<-' ; done
 
 # Use this to generate a text file of all knot names.  Then add the
 # three setup lines below, which define function f(), load the
