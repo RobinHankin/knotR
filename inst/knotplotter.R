@@ -1,4 +1,7 @@
-# produces knot_table.pdf 
+# produces knot_table.pdf.
+
+
+# Compare allknotplotter.R, which plots  every knot in the package.
 
 
 library(knotR)

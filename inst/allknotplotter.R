@@ -1,18 +1,27 @@
 # This is an R script to make a PDF of all the knots in the package.
-# I can't figure out a way to do this automatically from the contents
-# of the data/ directory.  To create this file from scratch, use
-# something like:
+
+# Compare file knotplotter.R. which plots knots up to seven crossings
+# and creates knot_table.pdf
+
+# I can't figure out a way to do plot all knots automatically from the
+# contents of the data/ directory.  To create this file from scratch,
+# use something like:
 
 # for i in *.R ; do sed -n "1p" $i |tr -d '`<-' ; done
 
-# to generate a text file of all knot names.  Then add the three setup
-# lines below, which define function f(), load the package, and open a
-# PDF file.  Then use your friendly neighbourhood emacs to change
-# "foo" to "f('foo')"; then add "dev.off()" at the end.
+# Use this to generate a text file of all knot names.  Then add the
+# three setup lines below, which define function f(), load the
+# package, and open a PDF file.  Then use your friendly neighbourhood
+# emacs to change "foo" to "f('foo')"; then add "dev.off()" at the
+# end.
 
+
+## setup lines start
 f <- function(s){knotplot(get(s),main=s)}
 library("knotR")
 pdf(file="allknots.pdf")
+## setup lines end
+
 f('k10_123')
 f('k10_1')
 f('k10_47')
