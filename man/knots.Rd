@@ -3,6 +3,7 @@
 \alias{k3_1}
 \alias{k3_1a}
 \alias{k4_1}
+\alias{k4_1a}
 \alias{k5_1}
 \alias{k5_2}
 \alias{k6_1}
@@ -62,6 +63,7 @@
 \alias{k9_21}
 \alias{k9_22}
 \alias{k9_23}
+\alias{k9_23a}
 \alias{k9_24}
 \alias{k9_25}
 \alias{k9_26}
@@ -170,7 +172,7 @@
 \item J. C. Cha and C. Livingston. \emph{KnotInfo: Table of Knot Invariants},
 \url{http://www.indiana.edu/~knotinfo}, July 7, 2016
 \item K. A. Bryant, 2016. \emph{Slice implies mutant-ribbon for odd,
-  5-stranted pretzel knots}, \code{arXiv:1511.07009v2}
+  5-stranded pretzel knots}, \code{arXiv:1511.07009v2}
 \item{S. Eliahou and J. Fromentin 2017. \dQuote{A remarkable 20-crossing
     tangle}.  Arxiv, \url{https://arxiv.org/abs/1610.05560v2}
 }

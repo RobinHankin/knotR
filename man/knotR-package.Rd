@@ -1,22 +1,36 @@
 \name{knotR-package}
 \alias{knotR-package}
-\alias{knot-package}
+\alias{knotR}
 \docType{package}
 \title{
-The knotR package
+\packageTitle{knotR}
 }
 \description{
-  This page gives an overview of the package and pointers to more
-  detailed documentation.  See the vignette for a more complete
-  exposition.
+\packageDescription{knotR}
 }
 \details{
 
-The basic workflow is to create an \code{.svg} file in inkscape
-comprising a single closed path (that is, the first and last node are
-the same point).  Control nodes should all be symmetrical.  Many
-examples of correctly formatted \code{.svg} files are given in the
-\code{inst/} directory.
+The DESCRIPTION file:
+\packageDESCRIPTION{knotR}
+\packageIndices{knotR}
+
+The package contains a large number of knots, optimized for visual
+appearance in the sense that the knot path is nice and smooth, and
+strands cross at close to right angles.  These can be displayed by
+typing
+
+\code{knotplot(k9_23)}
+
+at the R prompt.  The package includes all prime knots up to an
+including 9 crossings, and a number of other interesting and attractive
+knots.
+
+The package facilitates the creation and optimization of new knots.  The
+basic workflow is to create an \code{.svg} file in inkscape comprising a
+single closed path (that is, the first and last node are the same
+point).  Control nodes should all be symmetrical.  Many examples of
+correctly formatted \code{.svg} files are given in the \code{inst/}
+directory.
 
 The best way to reproduce a knot from an image of its projection is to
 fire up inkscape, then \emph{import} the image into inkscape, resize and
@@ -27,7 +41,7 @@ nodes for longer or more visually prominent segments.
 
 Keep the lines straight at first.  Close the path by making a final
 click on the initial node; now you have a closed polygon, which will
-self-intersect at the knot's crossing points.  To smoothen the path,
+self-intersect at the path crossing points.  To smoothen the path,
 select the \sQuote{edit paths by node} tool (shift-F2), then convert the
 corner nodes of the path to symmetric Bezier nodes (\sQuote{make
 selected nodes symmetric}).  You can then tweak the path by moving the
@@ -37,14 +51,14 @@ make them symmetric by selecting all nodes (\sQuote{Ctrl-A}), then hit
 the \sQuote{make selected nodes symmetric} button.  Do this frequently
 to avoid confusion.
 
-An \code{.svg} file may be imported into R using the package's
+An \code{.svg} file may be imported into R using the 
 \code{reader()} function, which creates an \code{inkscape} object.  This
 represents the \emph{path} of the knot: it does not include over and under
 information.  The package assumes that inkscape uses absolute
 coordinates (as opposed to relative coordinates); see \code{reader.Rd}
 for more information.
 
-The package provides four classes of objects that specify a knot's path:
+The package provides four classes of objects that specify the path of a knot:
 \code{inkscape}, \code{minobj}, \code{controlpoints}, and
 \code{knotvec}.  These four classes have different uses, and objects may
 be converted from one form to another by using functions such as
@@ -59,13 +73,15 @@ symmetry, or rotational symmetry.  Symmetry is imposed by using the
 \code{minobj} form) and a symmetry object.  Symmetry objects are created
 with function \code{symmetry_object()}, which takes a knot path and a
 series of matrices and vectors that specify the symmetry of the knot.
-
-
-
 }
-\author{Robin K. S. Hankin}
+\author{
+\packageAuthor{knotR}
+
+Maintainer: \packageMaintainer{knotR}
+}
 \keyword{ package }
 \examples{
+
 
 a <- reader(system.file("7_6.svg",package="knotR"))
 knotplot2(a)  # shows curvature
@@ -138,6 +154,8 @@ objective <- function(m) {badness(make_minobj_from_minsymvec(m, sym31))}
 startval  <- make_minsymvec_from_minobj(as.minobj(a),sym31)
 
 \dontrun{
+
+# Following examples take a long time to run.
 # nlm() is the best optimization method, I think.  Limit to 1 iteration:
 o <- nlm(f=objective, p=startval, iterlim=1)
 
@@ -150,6 +168,5 @@ knot(x = oo, overunderobj = ou31, symobj = sym31)
 
 # then plot it:
 knotplot(k31_marginally_better)
-
 }
 }

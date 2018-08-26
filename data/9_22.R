@@ -53,8 +53,7 @@ structure(list(minsymvec = structure(c(6.88495489477894, 123.653085344409,
 "node45", "node46", "node47", "node48", "node49", "node50", "node51", 
 "node52", "node53", "node54", "node55", "node56", "node57", "node58", 
 "node59", "node60", "node61", "node62", "node63", "node64"), class = "minsymvec"), 
-    overunderobj = structure(c(1, 16, 5, 10, 7, 26, 19, 13, 23, 
-    18, 3, 24, 6, 27, 9, 11, 21, 15), .Dim = c(9L, 2L)), symobj = structure(list(
+    overunderobj = structure(c(1,18,6,11,8,30,27,15,23,   21,4,28,7,31,10,17,25,12), .Dim = c(9L, 2L)), symobj = structure(list(
         Mver = NULL, xver = 12, Mhor = NULL, xhor = NULL, Mrot = NULL, 
         exact_h = NULL, exact_v = NULL, mcdonalds = FALSE, celtic = FALSE, 
         reefknot = FALSE, center_crossing = FALSE, indep = structure(c(TRUE, 

@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg3078"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
    sodipodi:docname="7_6.svg">
   <defs
      id="defs3080" />
@@ -24,16 +24,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="375"
-     inkscape:cy="894.99212"
+     inkscape:zoom="0.79160156"
+     inkscape:cx="31.620428"
+     inkscape:cy="996.05306"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="824"
-     inkscape:window-x="-3"
-     inkscape:window-y="-3"
+     inkscape:window-width="2560"
+     inkscape:window-height="1315"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3083">
@@ -57,5 +57,11 @@
        id="path3086"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="zzzzzzzzzzzzzzzzz" />
+    <path
+       sodipodi:nodetypes="zzzzzzzzzzzzzzzzz"
+       inkscape:connector-curvature="0"
+       id="path1405"
+       d="M 646.50483,-569.73262 C 446.81277,-536.51227 445.47924,-350.97428 508.96126,-266.26704 572.44328,-181.55981 663.81997,-186.09123 745.32445,-186.09123 826.82894,-186.09123 840.89707,-187.22645 933.46661,-192.73715 1026.0361,-198.24786 1109.7451,-193.50773 1171.0058,-267.49296 1232.2665,-341.4782 1216.919,-466.02674 1105.5506,-506.00306 994.18233,-545.97939 886.44625,-462.9807 852.25296,-357.00242 818.05967,-251.02414 832.46924,-151.95445 841.41531,-67.404462 850.36139,17.145531 871.62529,91.211221 816.59863,163.11879 761.57196,235.02636 651.19753,243.86478 590.60736,162.49717 530.01719,81.129563 565.63367,-11.923331 591.40102,-90.326261 617.16837,-168.72919 659.42027,-258.3536 588.03764,-346.71392 516.65501,-435.07423 301.68352,-442.67839 312.01323,-214.05169 322.34293,14.575011 638.97913,26.592869 737.11596,29.642688 835.25279,32.692507 927.57666,43.207032 999.30617,-40.82248 1071.0357,-124.85199 1046.9608,-226.96644 1008.2581,-324.559 969.55546,-422.15157 846.19688,-602.95298 646.50483,-569.73262 Z"
+       style="fill:none;stroke:#000000;stroke-width:2.07035899px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>

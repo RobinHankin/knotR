@@ -52,3 +52,4 @@ inst/*.Rout
 inst/*.bat
 inst/*.bat~
 inst/*.R~
+inst/allknots.pdf
