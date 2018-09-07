@@ -59,13 +59,13 @@ reefknot=FALSE,center_crossing=FALSE)
   \item{xver,xhor}{Vector specifying nodes to be on the vertical
     (resp. horizontal) axis of symmetry.  The nodes are assumed to flow from
     left to right.  Used by functions \code{force_nodes_on_V_axis()} and
-    \code{force_nodes_on_H_axis()} respectively, which also moves the
+    \code{force_nodes_on_H_axis()} respectively, which also move the
     handles} 
   \item{exact_h,exact_v}{Vector specifying nodes to be exactly
     horizontal or exactly vertical.  A node is exactly horizontal
     (resp. vertical) if the y (resp. x) coordinate of the node is the same as the
     y (resp. x) coordinate of the handle.  Note that the position of an exactly
-    horizontal node is not restricted, and may be anywhere.  Used by
+    horizontal or vertical node is not restricted, and may be anywhere.  Used by
     functions \code{force_nodes_exactly_horizontal()} and
     \code{force_nodes_exactly_vertical()}}
   \item{symobj}{An object representing the symmetry of the knot, usually
