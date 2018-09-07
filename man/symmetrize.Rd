@@ -42,14 +42,14 @@ reefknot=FALSE,center_crossing=FALSE)
 }
 \arguments{
   \item{x}{Object coerced to class \code{minobj}}
-  \item{Mver,Mhor}{Matrices specifying vertical (horizontal) symmetry,
+  \item{Mver,Mhor}{Matrices specifying vertical (resp. horizontal) symmetry,
     with two columns.  The rows specify pairs of symmetric nodes about a
-    vertical (horizontal) axis.  Nodes specified by the first column
-    should be on the left (upper) side; these are fixed.  Used by
+    vertical (resp. horizontal) axis.  Nodes specified by the first column
+    should be on the left (resp. upper) side; these are fixed.  Used by
     functions \code{force_nodes_mirror_images_LR()} and
-    \code{force_nodes_mirror_images_UD()} which move the right (lower)
+    \code{force_nodes_mirror_images_UD()} which move the right (resp. lower)
     nodes and their associated handles to the positions required for
-    exact vertical (horizontal) symmetry}
+    exact vertical (resp. horizontal) symmetry}
   \item{Mrot}{A matrix specifying rotational symmetry.  Each row
     corresponds to a set of nodes in a rotational relationship.  The
     number of columns specifies the order of the rotational symmetry.
@@ -57,14 +57,14 @@ reefknot=FALSE,center_crossing=FALSE)
     Used by \code{force_nodes_rotational()}, which also moves handles
     appropriately} 
   \item{xver,xhor}{Vector specifying nodes to be on the vertical
-    (horizontal) axis of symmetry.  The nodes are assumed to flow from
+    (resp. horizontal) axis of symmetry.  The nodes are assumed to flow from
     left to right.  Used by functions \code{force_nodes_on_V_axis()} and
     \code{force_nodes_on_H_axis()} respectively, which also moves the
     handles} 
   \item{exact_h,exact_v}{Vector specifying nodes to be exactly
     horizontal or exactly vertical.  A node is exactly horizontal
-    (vertical) if the y(x) coordinate of the node is the same as the
-    y(x) coordinate of the handle.  Note that the position of an exactly
+    (resp. vertical) if the y (resp. x) coordinate of the node is the same as the
+    y (resp. x) coordinate of the handle.  Note that the position of an exactly
     horizontal node is not restricted, and may be anywhere.  Used by
     functions \code{force_nodes_exactly_horizontal()} and
     \code{force_nodes_exactly_vertical()}}
@@ -108,18 +108,18 @@ reefknot=FALSE,center_crossing=FALSE)
   \itemize{
     \item Functions \code{force_nodes_mirror_images_LR()} and
     \code{force_nodes_mirror_images_UD()} symmetrize a knot about a vertical
-    (horizontal) axis by taking ordered pairs of nodes, specified by
-    matrix \code{Mver} (\code{Mhor}) and forcing the second node to be
+    (resp. horizontal) axis by taking ordered pairs of nodes, specified by
+    matrix \code{Mver} (resp. \code{Mhor}) and forcing the second node to be
     symmetrically placed with respect to the first.  It does the same
     thing to the handles too.
     \item Functions \code{force_nodes_exactly_horizontal()} and
     \code{force_nodes_exactly_vertical()} force nodes to be exactly
-    horizontal or exactly vertical respectively by restricting the
+    horizontal (resp. vertical) by restricting the
     position of their handles.  Nodes so forced do not
     need to be on an axis of symmetry; they can be anywhere
     \item Functions \code{force_nodes_on_V_axis()} and
     \code{force_nodes_on_H_axis()} force nodes specified by \code{xver}
-    and \code{xhor} respectively to be on the vertical or horizontal
+    (resp. \code{xhor}) to be on the vertical (resp. horizontal)
     axis, and to have appropriately placed handles 
     \item Function \code{force_nodes_rotational()} imposes the
     rotational symmetry specified by \code{Mrot}
