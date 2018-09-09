@@ -13,7 +13,7 @@
 
 `knotplot2` <-
     function(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
-             node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000, lwd=8, setup=TRUE, ...){ # knotplot(reader("7_3.svg"))
+             node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000, lwd=8, add=FALSE, ...){ # knotplot(reader("7_3.svg"))
         
   if(all){ # switch everything on
     rainbow <- TRUE  
@@ -30,7 +30,7 @@
 
   ## first set up the axes:
       
-  if(setup){plot(a,type='n',asp=1, axes=FALSE, xlab='',ylab='')}
+  if(!add){plot(a,type='n',asp=1, axes=FALSE, xlab='',ylab='')}
 
   ## Next the basic plot:
 
@@ -95,14 +95,14 @@
     do.call("rbind",sapply(seq_along(b),f,simplify=FALSE))
 }
 
-`knotplot_old` <- function(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...){
+`knotplot_old` <- function(x, ou, gap=20, n=100, lwd=8, add=FALSE, ...){
     if(inherits(x,'knot')){
       ou <- x$overunderobj
       x <- as.minobj(x)
     }
     stopifnot(is.sensible(ou,x))
     a <- as.inkscape(x)
-    if(setup){
+    if(!add){
       plot(a,type='n',asp=1, axes=FALSE, xlab='', ylab='', ...)
     }
 
@@ -126,14 +126,14 @@
     return(invisible(xy))
 }
 
-`knotplot` <- function(x, ou, gapwidth=1, n=100, lwd=8, setup=TRUE, ...){
+`knotplot` <- function(x, ou, gapwidth=1, n=100, lwd=8, add=FALSE, ...){
     if(inherits(x,'knot')){
       ou <- x$overunderobj
       x <- as.minobj(x)
     }
     stopifnot(is.sensible(ou,x))
     a <- as.inkscape(x)
-    if(setup){
+    if(!add){
       plot(a,type='n',asp=1, axes=FALSE, xlab='', ylab='', ...)
     }
 

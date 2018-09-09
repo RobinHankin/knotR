@@ -9,11 +9,11 @@ Plotting of knots
 Routines to plot projections of knots with a wide range of user-settable options
 }
 \usage{
-knotplot(x, ou, gapwidth=1, n=100, lwd=8, setup=TRUE, ...)
-knotplot_old(x, ou, gap=20, n=100, lwd=8, setup=TRUE, ...)
+knotplot(x, ou, gapwidth=1, n=100, lwd=8, add=FALSE, ...)
+knotplot_old(x, ou, gap=20, n=100, lwd=8, add=FALSE, ...)
 knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
                 node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000,
-                lwd=8, setup=TRUE, ...)
+                lwd=8, add=FALSE, ...)
 }
 \arguments{
   \item{x}{Description of a knot, coerced to a \code{controlpoints}
@@ -26,8 +26,8 @@ knotplot2(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
     strand crossings; see details}
   \item{n}{Number of points on each Bezier curve}
   \item{lwd}{Width of line to use}
-  \item{setup}{Boolean, with default \code{TRUE} meaning to set up a new
-    plot, and \code{FALSE} meaning to just add points and lines to an
+  \item{add}{Boolean, with default \code{FALSE} meaning to set up a new
+    plot, and \code{TRUE} meaning to just add points and lines to an
     existing plot}
   \item{\dots}{Further arguments, passed to \code{plot()} and \code{points()}
   }

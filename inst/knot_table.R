@@ -19,7 +19,7 @@ affine <- function(M,offset,scale){
 scaled_knotplot <- function(knot,offset,scale=1,...){
     knotplot(
         x  = affine(as.inkscape(knot),offset=offset,scale=scale),
-        ou = knot$overunder,setup=FALSE, ...)
+        ou = knot$overunder,add=TRUE, ...)
 }
 
 x0 <- 1000

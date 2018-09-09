@@ -352,17 +352,17 @@ overunder_fig8 <-
       ),ncol=2,byrow=TRUE)
 
 jj <- sweep(as.inkscape(fig8),2,c(0,offy),"+")
-knotplot2(jj,setup=FALSE,node=TRUE,lwd=3,circ=0) # top left
+knotplot2(jj,node=TRUE,lwd=3,circ=0) # top left
 
 fig8_symmetrized <- symmetrize(fig8,sym8)
 jj <- sweep(as.inkscape(fig8_symmetrized),2,c(offx,offy),"+")
-knotplot2(jj,setup=FALSE,node=FALSE,width=TRUE)  # top right
+knotplot2(jj,add=TRUE,node=FALSE,width=TRUE)  # top right
 
 jj <- sweep(as.inkscape(k4_1),2,c(0,0),"+")
-knotplot2(jj,setup=FALSE,node=FALSE,width=TRUE)  # lower left
+knotplot2(jj,add=TRUE,node=FALSE,width=TRUE)  # lower left
 
 jj <- sweep(as.inkscape(k4_1),2,c(offx,0),"+")
-knotplot(jj,overunder_fig8,setup=FALSE,gap=50)  # lower right
+knotplot(jj,overunder_fig8,add=TRUE,gap=50)  # lower right
 
 @ 
 \caption{Figure eight knots drawn using different plotting methods.
@@ -440,9 +440,9 @@ jjB <- as.inkscape(perko_B)*1.7
 oA <- perko_A$overunder
 oB <- perko_B$overunder
 
-knotplot(jjA,ou=oA,setup=FALSE,gap=50,lwd=4)
+knotplot(jjA,ou=oA,add=TRUE,gap=50,lwd=4)
 jjB <- sweep(as.inkscape(jjB),2,c(1500,-600),"+")
-knotplot(jjB,ou=oB,setup=FALSE,gap=50,lwd=4)
+knotplot(jjB,ou=oB,add=TRUE,gap=50,lwd=4)
 @ 
 \caption{Two representations of knot~$10_{125}$, known as the 
 \label{perko_AB}  Perko Pair}
@@ -509,7 +509,7 @@ for(i in 1:3){
         k <- as.inkscape(a[[n]])
         k[,2] <- k[,2] - mean(k[,2])
         k <- sweep(k,2,c(xoff,yoff),"+")
-        knotplot(k,b[[n]],setup=FALSE,lwd=2,gap=30)
+        knotplot(k,b[[n]],add=TRUE,lwd=2,gap=30)
     }
 }
 @ 

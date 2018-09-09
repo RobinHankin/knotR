@@ -11,21 +11,21 @@ if( !exists("o")){
   plot(NULL,xlim=c(-4000,4000),ylim=c(2000,2000),asp=1)
 
   o <- list(
-      l000 = knotplot(unknot,setup=FALSE,gap=40),
-      l3_1 = knotplot(k3_1,setup=FALSE,gap=40),
-      l4_1 = knotplot(k4_1,setup=FALSE,gap=40),
-      l5_1 = knotplot(k5_1,setup=FALSE,gap=40),
-      l5_2 = knotplot(k5_2,setup=FALSE,gap=40),
-      l6_1 = knotplot(k6_1,setup=FALSE,gap=40),
-      l6_2 = knotplot(k6_2,setup=FALSE,gap=40),
-      l6_3 = knotplot(k6_3,setup=FALSE,gap=40),
-      l7_1 = knotplot(k7_1,setup=FALSE,gap=40),
-      l7_2 = knotplot(k7_2,setup=FALSE,gap=40),
-      l7_3 = knotplot(k7_3,setup=FALSE,gap=40),
-      l7_4 = knotplot(k7_4,setup=FALSE,gap=40),
-      l7_5 = knotplot(k7_5,setup=FALSE,gap=40),
-      l7_6 = knotplot(k7_6,setup=FALSE,gap=40),
-      l7_7 = knotplot(k7_7,setup=FALSE,gap=40)
+      l000 = knotplot(unknot,add=TRUE,gap=40),
+      l3_1 = knotplot(k3_1,add=TRUE,gap=40),
+      l4_1 = knotplot(k4_1,add=TRUE,gap=40),
+      l5_1 = knotplot(k5_1,add=TRUE,gap=40),
+      l5_2 = knotplot(k5_2,add=TRUE,gap=40),
+      l6_1 = knotplot(k6_1,add=TRUE,gap=40),
+      l6_2 = knotplot(k6_2,add=TRUE,gap=40),
+      l6_3 = knotplot(k6_3,add=TRUE,gap=40),
+      l7_1 = knotplot(k7_1,add=TRUE,gap=40),
+      l7_2 = knotplot(k7_2,add=TRUE,gap=40),
+      l7_3 = knotplot(k7_3,add=TRUE,gap=40),
+      l7_4 = knotplot(k7_4,add=TRUE,gap=40),
+      l7_5 = knotplot(k7_5,add=TRUE,gap=40),
+      l7_6 = knotplot(k7_6,add=TRUE,gap=40),
+      l7_7 = knotplot(k7_7,add=TRUE,gap=40)
   )
 }
 
