@@ -351,7 +351,7 @@ overunder_fig8 <-
       ),ncol=2,byrow=TRUE)
 
 jj <- sweep(as.inkscape(fig8),2,c(0,offy),"+")
-knotplot2(jj,node=TRUE,lwd=3,circ=0) # top left
+knotplot2(jj,add=TRUE,node=TRUE,lwd=3,circ=0) # top left
 
 fig8_symmetrized <- symmetrize(fig8,sym8)
 jj <- sweep(as.inkscape(fig8_symmetrized),2,c(offx,offy),"+")
@@ -361,7 +361,7 @@ jj <- sweep(as.inkscape(k4_1),2,c(0,0),"+")
 knotplot2(jj,add=TRUE,node=FALSE,width=TRUE)  # lower left
 
 jj <- sweep(as.inkscape(k4_1),2,c(offx,0),"+")
-knotplot(jj,overunder_fig8,add=TRUE,gap=50)  # lower right
+knotplot(jj,overunder_fig8,add=TRUE)          # lower right
 
 @ 
 \caption{Figure eight knots drawn using different plotting methods.
