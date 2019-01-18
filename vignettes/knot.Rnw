@@ -439,9 +439,9 @@ jjB <- as.inkscape(perko_B)*1.7
 oA <- perko_A$overunder
 oB <- perko_B$overunder
 
-knotplot(jjA,ou=oA,add=TRUE,gap=3,lwd=4)
+knotplot(jjA,ou=oA,add=TRUE,lwd=4)
 jjB <- sweep(as.inkscape(jjB),2,c(1500,-600),"+")
-knotplot(jjB,ou=oB,add=TRUE,gap=3,lwd=4)
+knotplot(jjB,ou=oB,add=TRUE,lwd=4)
 @ 
 \caption{Two representations of knot~$10_{125}$, known as the 
 \label{perko_AB}  Perko Pair}
