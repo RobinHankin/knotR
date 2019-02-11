@@ -3,7 +3,7 @@ Type: Package
 Title: Knot Diagrams using Bezier Curves
 Version: 1.0-4
 Date: 2018-04-18
-Author: Robin K. S. Hankin
+Authors@R: person(given=c("Robin", "K. S."), family="Hankin", role = c("aut","cre"), email="hankin.robin@gmail.com", comment = c(ORCID = "0000-0001-5982-0415"))
 Depends: R (>= 2.10)
 Maintainer: Robin K. S. Hankin <hankin.robin@gmail.com>
 LazyData: TRUE
