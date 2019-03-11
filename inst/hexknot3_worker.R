@@ -15,21 +15,21 @@ library(knotR)
 filename <- "hexknot3.svg"
 a <- reader(filename)
 jj <- c(-1,1)*350
-plot(jj,jj,asp=1)
+#plot(jj,jj,asp=1)
 #knotplot2(a,node=TRUE,add=TRUE)
 
 rothex <- matrix(c(
-    19,9,59,49,39,29,
+    19,09,59,49,39,29,
     20,10,60,50,40,30,
-    18,8,58,48,38,28,
-    11,1,51,41,31,21,
-    12,2,52,42,32,22,
-    27,17,7,57,47,37,
-    12,2,52,42,32,22,
-    26,16,6,56,46,36,
-    13,3,53,43,33,23,
-    25,15,5,55,45,35,
-    4,54,44,34,24,14
+    18,08,58,48,38,28,
+    11,01,51,41,31,21,
+    12,02,52,42,32,22,
+    27,17,07,57,47,37,
+    12,02,52,42,32,22,
+    26,16,06,56,46,36,
+    13,03,53,43,33,23,
+    25,15,05,55,45,35,
+    04,54,44,34,24,14
 ),byrow=TRUE,ncol=6)
 
 hexMver <- matrix(c(
@@ -54,7 +54,7 @@ a <- symmetrize(a,symhex)
 #knotplot2(a,node=T,circ=FALSE,add=TRUE,lwd=1,seg=F)
 
 
-if(TRUE){
+if(FALSE){
   abline(0,tan(pi/3),col='gray',lty=3)
   abline(0,-tan(pi/3),col='gray',lty=3)
   abline(0,tan(pi/6),col='gray',lty=3)
@@ -67,9 +67,9 @@ if(TRUE){
 
 ouhex <- matrix(c(
 
-    8,1,   # 1
-    15,4,  # 2
-    2,17,  # 3
+    08,01,   # 1
+    15,04,  # 2
+    02,17,  # 3
     18,11, # 4
     25,14, # 5
     12,27, # 6
@@ -78,16 +78,15 @@ ouhex <- matrix(c(
     22,37, # 9    
 
 
- 38, 31,
- 45, 34,
- 32, 47,
- 48, 41,
- 52,  7,
- 5,  54,
- 55, 44,
- 42, 57,
- 58, 51
-     
+    38, 31,
+    45, 34,
+    32, 47,
+    48, 41,
+    52, 07,
+    05, 54,
+    55, 44,
+    42, 57,
+    58, 51
     
 ),ncol=2,byrow=TRUE)
 
@@ -95,12 +94,11 @@ ouhex <- matrix(c(
 
 
 
-# We will try and request that node 4 is on the vertical centreline.
 
 jj <- knotoptim(filename,
                 symobj = symhex,
-                ou   = ouhex,
-                prob=0,
+                ou     = ouhex,
+                prob   = 0,
 #                iterlim=100, print.level=2
                 control=list(trace=100,maxit=10000), useNLM=FALSE
                 )
