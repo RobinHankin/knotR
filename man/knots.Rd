@@ -113,6 +113,7 @@
 \alias{flower}
 \alias{hexknot}
 \alias{hexknot2}
+\alias{hexknot3}
 \alias{longthin}
 \alias{ochiai}
 \alias{ornamental20}
@@ -177,26 +178,27 @@
 \code{k8_10}, \code{k8_11}, \code{k8_12}, \code{k8_13}, \code{k8_14},
 \code{k8_15}, \code{k8_16}, \code{k8_17}, \code{k8_18}, \code{k8_19},
 \code{k8_19a}, \code{k8_19b}, \code{k8_2}, \code{k8_20}, \code{k8_21},
-\code{k8_3}, \code{k8_4}, \code{k8_4a}, \code{k8_5}, \code{k8_6}, \code{k8_7},
-\code{k8_8}, \code{k8_9}, \code{k9_1}, \code{k9_10}, \code{k9_11},
-\code{k9_12}, \code{k9_13}, \code{k9_14}, \code{k9_15}, \code{k9_16},
-\code{k9_17}, \code{k9_18}, \code{k9_19}, \code{k9_2}, \code{k9_20},
-\code{k9_21}, \code{k9_22}, \code{k9_23}, \code{k9_23a}, \code{k9_24},
-\code{k9_25}, \code{k9_26}, \code{k9_27}, \code{k9_28}, \code{k9_29},
-\code{k9_3}, \code{k9_30}, \code{k9_31}, \code{k9_32}, \code{k9_33},
-\code{k9_34}, \code{k9_35}, \code{k9_36}, \code{k9_37}, \code{k9_38},
-\code{k9_39}, \code{k9_4}, \code{k9_40}, \code{k9_41}, \code{k9_42},
-\code{k9_43}, \code{k9_44}, \code{k9_45}, \code{k9_46}, \code{k9_47},
-\code{k9_48}, \code{k9_49}, \code{k9_5}, \code{k9_6}, \code{k9_7},
-\code{k9_8}, \code{k9_9}, \code{D16}, \code{T20}, \code{amphichiral15},
-\code{celtic3}, \code{fiveloops}, \code{flower}, \code{fourloops},
-\code{hexknot}, \code{hexknot2}, \code{k_infinity}, \code{k11a1},
-\code{k11a179}, \code{k11a361}, \code{k11n157},
-\code{k11n157_morenodes}, \code{k11n22}, \code{k12n_0242},
-\code{k12n_0411}, \code{longthin}, \code{ochiai}, \code{ornamental20},
-\code{perko_A}, \code{perko_B}, \code{pretzel_2_3_7},
-\code{pretzel_7_3_7}, \code{pretzel_p3_p5_p7_m3_m5}, \code{reefknot},
-\code{satellite}, \code{sum_31_41}, \code{three_figure_eights},
+\code{k8_3}, \code{k8_4}, \code{k8_4a}, \code{k8_5}, \code{k8_6},
+\code{k8_7}, \code{k8_8}, \code{k8_9}, \code{k9_1}, \code{k9_10},
+\code{k9_11}, \code{k9_12}, \code{k9_13}, \code{k9_14}, \code{k9_15},
+\code{k9_16}, \code{k9_17}, \code{k9_18}, \code{k9_19}, \code{k9_2},
+\code{k9_20}, \code{k9_21}, \code{k9_22}, \code{k9_23}, \code{k9_23a},
+\code{k9_24}, \code{k9_25}, \code{k9_26}, \code{k9_27}, \code{k9_28},
+\code{k9_29}, \code{k9_3}, \code{k9_30}, \code{k9_31}, \code{k9_32},
+\code{k9_33}, \code{k9_34}, \code{k9_35}, \code{k9_36}, \code{k9_37},
+\code{k9_38}, \code{k9_39}, \code{k9_4}, \code{k9_40}, \code{k9_41},
+\code{k9_42}, \code{k9_43}, \code{k9_44}, \code{k9_45}, \code{k9_46},
+\code{k9_47}, \code{k9_48}, \code{k9_49}, \code{k9_5}, \code{k9_6},
+\code{k9_7}, \code{k9_8}, \code{k9_9}, \code{D16}, \code{T20},
+\code{amphichiral15}, \code{celtic3}, \code{fiveloops}, \code{flower},
+\code{fourloops}, \code{hexknot}, \code{hexknot2}, \code{hexknot3},
+\code{k_infinity}, \code{k11a1}, \code{k11a179}, \code{k11a361},
+\code{k11n157}, \code{k11n157_morenodes}, \code{k11n22},
+\code{k12n_0242}, \code{k12n_0411}, \code{longthin}, \code{ochiai},
+\code{ornamental20}, \code{perko_A}, \code{perko_B},
+\code{pretzel_2_3_7}, \code{pretzel_7_3_7},
+\code{pretzel_p3_p5_p7_m3_m5}, \code{reefknot}, \code{satellite},
+\code{sum_31_41}, \code{three_figure_eights},
 \code{trefoil_of_trefoils}, \code{triloop}, \code{unknot}
 
 }
