@@ -42,6 +42,7 @@ the creation of production-quality artwork of knot diagrams.
 %% \Year{2004}
 %% \Submitdate{2004-09-29}
 %% \Acceptdate{2004-09-29}
+%% \Repository{https://github.com/RobinHankin/knotR} %% this line for Tragula
 
 %% The address of (at least) one author should be given
 %% in the following format:
