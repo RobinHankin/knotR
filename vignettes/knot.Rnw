@@ -13,12 +13,12 @@
 
 
 \author{Robin K. S. Hankin\\Auckland University of Technology}
-\title{Knot theory in \proglang{R}}
+\title{Visually pleasing knot projections in \proglang{R}}
 %\VignetteIndexEntry{A vignette for the knot package}
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Robin K. S. Hankin}
-\Plaintitle{Pleasing knot projections in R}
-\Shorttitle{Pleasing knot projections in \proglang{R}}
+\Plaintitle{Visually pleasing knot projections in R}
+\Shorttitle{Visually pleasing knot projections in \proglang{R}}
 
 %% an abstract and keywords
 \Abstract{
