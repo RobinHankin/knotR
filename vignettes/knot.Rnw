@@ -47,7 +47,7 @@ the creation of production-quality artwork of knot diagrams.
 %% The address of (at least) one author should be given
 %% in the following format:
 \Address{
-  Robin K. S. Hankin\\
+  Robin K. S. Hankin\\%\orcid{https://orcid.org/0000-0001-5982-0415}\\
   Auckland University of Technology\\
   New Zealand
 }
