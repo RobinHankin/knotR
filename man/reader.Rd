@@ -25,7 +25,7 @@ write_svg(k, oldfile, safe=TRUE,
 }
 \details{
   Function \code{reader()} is the way to get started with a new
-  knot. This takes a filename which is an \code{.svg} file created with
+  knot.  This takes a filename which is an \code{.svg} file created with
   inkscape.  Instructions for creating a suitable inkscape file are
   given in \code{knotR-package.Rd}.
 }
@@ -61,7 +61,7 @@ write_svg(k, oldfile, safe=TRUE,
   technique into \code{reader()} but this turned out to be harder than I
   thought).
   
-  }
+}
   
 \author{Robin K. S. Hankin}
 \seealso{\code{\link{utilities}},\code{\link{knotR-package}}}
