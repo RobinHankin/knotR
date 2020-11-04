@@ -1,8 +1,12 @@
 File jma_knot.tex is to be sent (eventually) to "Journal of
 Mathematics and the Arts".  It needs various latex style files
 provided by bjourdoc.zip, available at the journal website.  It also
-needs image files, PDF and PNG files, that are either stored in the
-vignettes/ directory, or created by R CMD Sweave knot.Rnw from the
-commandline (make sure you are in the vignettes/ directory).  So, for
-the JMA paper, the only file under version control is jma_knot.tex and
-the other files are elsewhere.
+needs image files, PDF and PNG files, that are either:
+
+- stored in the vignettes/ directory
+- created by R CMD Sweave knot.Rnw from the commandline (make sure you are in the vignettes/
+directory)
+- created by inst/knotter.R
+
+So, for the JMA paper, the only files under version control are
+jma_knot.tex and knotter.R; the other files are elsewhere.
