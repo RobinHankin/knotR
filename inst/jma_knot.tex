@@ -70,7 +70,7 @@
 \email{hankin.robin@gmail.com}
 
 %----------classification, keywords, date
-\subjclass{Primary 99Z99; Secondary 00A00}
+\subjclass{Primary 57K10-XX; 32-XX}
 
 \keywords{Knot projections, Bezier curves, Multidimensional optimization}
 
@@ -79,17 +79,12 @@
 %%% ----------------------------------------------------------------------
 
 \begin{abstract}
-In this short article I introduce software which creates two
-dimensional knot diagrams optimized for visual appearance.  Different
-aspects of a knot's appearance are discussed and a framework for
-objectively optimizing the visual appeal of a knot projection is
-given.
-
-In this short article I show how to create two dimensional knot
-diagrams optimized for visual appearance using the R programming
-language.  The package associated with this paper is a suite
-of software for the creation of production-quality artwork of knot
-diagrams, released under GPL2.
+In this short article I discuss the \ae sthetics of knot projections
+and introduce software which creates two dimensional knot diagrams
+optimized for visual appearance.  Different aspects of knot appearance
+are discussed and a framework for objectively optimizing the visual
+appeal of a knot projection is given.   I use the software to create 
+a wide range of knot diagrams.
 \end{abstract}
 
 %%% ----------------------------------------------------------------------
@@ -101,10 +96,12 @@ diagrams, released under GPL2.
 
 A {\em mathematical knot} is a smooth, unoriented embedding of a
 circle~$\mathbb{S}^1$ into~$\mathbb{R}^3$~\cite{manturov2004}.  Two
-knots are said to be equivalent if one can be continuously deformed in
-to the other; if so, there is a
+knots are said to be equivalent if the embedding of one can be
+continuously deformed to the other; if so, there is a
 homeomorphism~$h\colon\mathbb{R}^3\longrightarrow\mathbb{R}^3$ which
-takes one embedded circle to the other.  In the art world, knot theory
+takes one embedded circle to the other.  Knot theory 
+
+In the art world, knot theory
 has applications to the study of dance~\cite{khorami2020}, sculpture,
 \cite{bosch2010, widmark2020}, and many other branches of mathematical
 art~\cite{hart2008}.
@@ -162,6 +159,11 @@ knot in terms of its Bezier control points within inkscape, import the
 object into R~\cite{rcore2016}, and then to use numerical optimization
 techniques to improve the visual appearance of the knot.
 
+One plausible technique for creating knot projections is to consider a
+two-dimensional projection of a knot's embedding
+$\mathbb{E}\in\mathbb{R}^3$.  However, this approach often results in
+poor visual appearance: cusps or other displeasing effects can occur.
+
 \section{The package in use}
 
 In this section, I give workflows for creating two simple knots:
@@ -175,11 +177,12 @@ package).  Note that this file contains only the knot {\em path}; the
 over and under information is to be added later.
 
 Here, knot paths are required to have Bezier handles that are
-symmetrically placed with regard to nodes.  Although radius of
-curvature is not necessarily matched at either side of a node, visual
-continuity of the strand is ensured.  In the diagram, strand crossing
-points are far from nodes, as this ensures visual continuity of
-strands at crossing points, especially the understrand.
+symmetrically placed with regard to nodes (this is a user-settable
+option in inkscape).  Although radius of curvature is not necessarily
+matched at either side of a node, visual continuity of the strand is
+ensured.  In the diagram, strand crossing points are far from nodes,
+as this ensures visual continuity of strands at crossing points,
+especially the understrand.
 
 \begin{figure}[h]
   \centering
