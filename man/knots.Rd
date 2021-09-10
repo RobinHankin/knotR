@@ -20,6 +20,7 @@
 \alias{k8_1}
 \alias{k8_2}
 \alias{k8_3}
+\alias{k8_3_90deg_crossing}
 \alias{k8_4}
 \alias{k8_4a}
 \alias{k8_5}
@@ -178,7 +179,8 @@
 \code{k8_10}, \code{k8_11}, \code{k8_12}, \code{k8_13}, \code{k8_14},
 \code{k8_15}, \code{k8_16}, \code{k8_17}, \code{k8_18}, \code{k8_19},
 \code{k8_19a}, \code{k8_19b}, \code{k8_2}, \code{k8_20}, \code{k8_21},
-\code{k8_3}, \code{k8_4}, \code{k8_4a}, \code{k8_5}, \code{k8_6},
+\code{k8_3}, \code{k8_3_90deg_crossing},
+\code{k8_4}, \code{k8_4a}, \code{k8_5}, \code{k8_6},
 \code{k8_7}, \code{k8_8}, \code{k8_9}, \code{k9_1}, \code{k9_10},
 \code{k9_11}, \code{k9_12}, \code{k9_13}, \code{k9_14}, \code{k9_15},
 \code{k9_16}, \code{k9_17}, \code{k9_18}, \code{k9_19}, \code{k9_2},
