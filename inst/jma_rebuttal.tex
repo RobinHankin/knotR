@@ -1,43 +1,19 @@
-Sep 08, 2021 
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\begin{document}
+
+\section*{Rebuttal to second editorial review: overall response}
+
+(Below, the reviewer's comments are in black, and my replies to the
+issues are in \textcolor{blue}{blue}.  I have indicated changes to the
+manuscript where appropriate.
+
+Short story: I have accommodated all the comments with rewording.  The
+resulting document is, I believe, stronger and more scholarly than
+before and I recommend it to you.  
 
 
-Ref.:  Ms. No. TMAA-2020-0042
-Visually pleasing knot projections
-Journal of Mathematics and the Arts
-
-Dear Robin Hankin,
-
-Reviewers have now commented on your paper.  You will see that they
-are advising that you revise your manuscript.  If you are prepared to
-undertake the work required, I would be pleased to review a revision.
-
-For your guidance, reviewers' comments are appended below.
-
-If you decide to revise the work, please submit a list of changes or a
-rebuttal against each point which is being raised when you submit the
-revised manuscript.
-
-Your revision is due by Dec 08, 2021.
-
-To submit a revision, go to
-https://rp.tandfonline.com/submission/flow?submissionId=209604076&step=1. If
-you decide to revise the work, please submit a list of changes or a
-rebuttal against each point which is being raised when you submit the
-revised manuscript.
-
-If you have any questions or technical issues, please contact the
-journal's editorial office at SP-ingest@journals.tandf.co.uk.
-
-Yours sincerely,
-
-Susan Goldstine, Ph.D.
-Associate Editor
-Journal of Mathematics and the Arts
-
-
-Comments from the Editors and Reviewers:
-
-Reviewer #1:
+\section*{Detailed rebuttal: Reviewer \#1}
 
 This short article is a tutorial example of how to use Inkscape and
 KnotR to beautify 2-dimensional knot diagrams found in the knot
@@ -47,13 +23,29 @@ shown 2D symmetries, and render all strand crossings as close to 90
 degrees as possible.  The paper does not discuss the underlying
 mathematics by which this optimization is achieved, but relies on the
 power built into the software packages mentioned.  Also, the user has
-to characterize explicitly the desired symmetries; there is no "magic"
+to characterize explicitly the desired symmetries; there is no ``magic"
 power that discovers the maximal possible symmetry that a given knot
 can assume.  This exemplified by Figure 7, where the Figure-8-knot is
 drawn with a single mirror axis, even though this same knot can
 readily be drawn with two mirror lines; -- and also in Figure 9 where
 a symmetrical and an asymmetrical rendering of the same knot is
 presented.
+
+\textcolor{blue}{This is a good characterisation of the submission,
+  but the comment that there is no ``magic" power ascertaining
+  maximal possible symmetry that a given knot may assume is a good
+  one, and one that I had not explicitly realised.  I have added a
+  brief discussion of this issue to the caption of Figure 9 that
+  discusses the Perko pair:
+  \begin{description}
+    \item[OLD text] ``Two representations of knot~$10_{125}$, known as the 
+     Perko Pair"
+    \item[NEW text] ``Two representations of knot~$10_{125}$, known as the 
+      Perko Pair.   The software requires the user to specify the symmetry
+      (mirror or rotational) of a knot projecton and has no notion of
+      topological invariance of a knot"
+      \end{description}
+}
 
 This paper is clearly useful to someone who specifically wants to
 clean up a given rendering of a particular knot, but it offers little
@@ -64,23 +56,23 @@ Detailed comments about the presentation:
 Abstract: It should mention the software packages that are used in
 this paper.
 
-P1, line 46:  "Knot theory" -- ?  -- Is this an incomplete reference?
+P1, line 46:  ``Knot theory" -- ?  -- Is this an incomplete reference?
 
-P2, line 43: "uniform" curvature is not possible, since many knots
+P2, line 43: ``uniform" curvature is not possible, since many knots
 have inflection points.  It is better to ask for 'smoothly changing'
 curvature, and to limit maximal curvature.
 
-P2, line 46: What does it mean for symmetry to be "present" in the
+P2, line 46: What does it mean for symmetry to be ``present" in the
 knot?
 
-P3, line 31: Define "visual continuity".  Are you referring to tangent
-continuity, G1-, or G2-continuity?
+P3, line 31: Define ``visual continuity".  Are you referring to tangent
+continuity, $G1-$, or $G2-$ continuity?
 
-P3, line 33:  The "understrand" has not been designated yet.
+P3, line 33:  The ``understrand" has not been designated yet.
 
 Figure 2:  Specify what order Bezier curves are being used.
 
-P4, line 18: A gentle introduction to "R" would help to make the
+P4, line 18: A gentle introduction to ``R" would help to make the
 following easier to understand.
 
 P4, lines 27-32: What is the meaning of this? - Six points defining
@@ -93,8 +85,8 @@ solid blotches result from densely overlapping circles.)
 Figure 4: Why is this required?  -- Does the user have to specify the
 type of crossing via an "overunder" object?  -- (Lines 53-62?)
 
-P10, line 17: "... a vertical line of symmetry." - Better to say that
-this figure has D_5 symmetry with five mirror lines.
+P10, line 17: ``... a vertical line of symmetry." - Better to say that
+this figure has $D_5$ symmetry with five mirror lines.
 
 P11, line 26: It seems that all the functionality needed to deal with
 links is already present in the software packages mentioned, as long
@@ -103,24 +95,23 @@ as one can let the program go around more than one single closed loop.
 Fig. 10: Why is the absence of mirror symmetry pointed out here?
 
 Fig. 11: Why is this table shown?  It is not mentioned in the main
-text.  The figures are "better" than in Figure 1, but still not
-optimal in the spirit of this paper.  "Rolfsen" needs a reference.
+text.  The figures are ``better" than in Figure 1, but still not
+optimal in the spirit of this paper.  ``Rolfsen" needs a reference.
 
 References to some of the background material are somewhat random.
-E.g.  For JMA readers, "The Knot Book" by Colin Adams would be a good
+E.g.  For JMA readers, ``The Knot Book" by Colin Adams would be a good
 introductory reference.
 
 Ref [10]  Give a more up-to-date access date.
 
-Ref [11]  Give URL of  Inkscape:  https://inkscape.org/
+Ref [11]  Give URL of  Inkscape:  {\tt https://inkscape.org/}
 
-Ref [14]  Give URL of  R Core Team:  https://www.r-project.org/
-
->>>>>>>>>>>>>>
+Ref [14]  Give URL of  R Core Team:  {\tt https://www.r-project.org/}
 
 
+\section*{Detailed rebuttal: Reviewer \#2}
 
-Reviewer #2: This lovely article addresses the interesting question of
+This lovely article addresses the interesting question of
 how to produce pleasing and informative images of two dimensional knot
 diagrams. In addition to the discussion it describes how to use a
 combination of the software packages Inkscape and R to optimise knots.
@@ -137,18 +128,19 @@ are reasonable, they are simply stated, rather than including a
 justification for why they are chosen. They certainly only apply to a
 particular knid of knot diagram. This can be see in the final image
 showing all the knots with up to 8 crossings. While some of the
-resulting diagrams are beautiful, I particularly enjoyed 8_10 and
-8_17, some are not so pleasing to me. In particular the algorithm
-given likes to over-tighten when the line wraps round itself. This can
-be seen particularly in 8_3, but also in 8_5, 8_6 and 8_11. This is
-itself a personal preference not an absolute, but a discussion of how
-to adjust the set-up of the software to make personal aesthetic
-choices would strengthen the paper.
+resulting diagrams are beautiful, I particularly enjoyed {\tt 8\_10}
+and {\tt 8\_17}, some are not so pleasing to me. In particular the
+algorithm given likes to over-tighten when the line wraps round
+itself. This can be seen particularly in {\tt 8\_3}, but also in {\tt
+  8\_5}, {\tt 8\_6} and {\tt 8\_11}. This is itself a personal
+preference not an absolute, but a discussion of how to adjust the
+set-up of the software to make personal aesthetic choices would
+strengthen the paper.
 
 The paper also needs to do a far stronger job of placing itself within
 the relevant literature. Simply showing that a single diagram from
 wikipedia has weaknesses is not sufficient. The nineteenth century
-series of papers "On Knots" by Peter Guthrie Tait in the Transactions
+series of papers ``On Knots" by Peter Guthrie Tait in the Transactions
 of the Royal Society of Edinburgh contain far superior images for
 example. This is not the first paper to look at making pleasing knot
 diagrams, the software knotplot for example offers many tools to do a
@@ -170,7 +162,7 @@ context as well as the broader context of optimisation in art.
 2) Include a discussion of why the aesthetic choices made for the
 optimisation are pleasing as well as how to adjust the methodology in
 order to make different personal choices. It might even be interesting
-to develop some distinct styles of diagrams (by changing the "badness"
+to develop some distinct styles of diagrams (by changing the ``badness"
 function, and use the methods to create optimised images for each
 style.
 
@@ -182,6 +174,5 @@ With these changes the paper could be an interesting one, discussing
 the context of knot diagrams more broadly and providing practical help
 to help create sets for oneself.
 
-__________________________________________________
-In compliance with data protection regulations, you may request that we remove your personal registration details at any time.  (Use the following URL: https://www.editorialmanager.com/tmaa/login.asp?a=r). Please contact the publication office if you have any questions.
 
+\end{document}
