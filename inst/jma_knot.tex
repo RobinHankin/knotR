@@ -283,11 +283,14 @@ The knots supplied in the package minimize a weighted sum of these and
 other badnesses\footnote{Function {\tt badness()} includes various
 ``housekeeping'' badnesses which are used to make sure that the
 minimum found by {\tt nlm()} is topologically identical to the
-starting configuration.  Function
-{\tt non\_crossing\_strand\_close\_approach\_badness()}, for example,
+starting configuration.  Function {\tt
+  non\_crossing\_strand\_close\_approach\_badness()}, for example,
 makes non-crossing strands ``repel'' one another so as not to
-introduce spurious intersections.}, as evaluated by function
-{\tt badness()}:
+introduce spurious intersections.}.  The weightings for the various
+badnesses are, of course, subjective; but the system discussed here
+allows the user to change the weightings used and compare results.  I
+present a short discussion in section~\ref{section_cca} below.
+Numeically, the badnesses are evaluated by function {\tt badness()}:
 
 \begin{verbatim}
 > badness(k76_rough)
@@ -432,6 +435,33 @@ vertical axis.  The {\tt Mrot} argument specifies sets of nodes that
 map to themselves under rotation.  The top line of {\tt Mrot}
 indicates that nodes 12, 4, 16, 8, and~20 are concyclic.  An example
 of a rotationally symmetric knot is given in Figure~\ref{orn20}.
+
+\subsection{Subjective \label{section_cca} choice for weighting}
+
+
+One of the benefits of the {\tt knotR} software is that it allows the
+relative importance of the different aspects of appearance to be
+assessed.  In the package, the badness weightings may be altered
+easily, and in this way we can investigate the visual impact of the
+badness components.  The default weightings were originally chosen as
+a bland compromise, but it is easy to place greater weight on one or
+other compoent.  Figure~\ref{figure_cca} shows the same knot optimized
+using different weightings; we see the effect of imposing right-angled
+strand crossing angles on the remainder of the knot.  Readers will
+have to judge for themselves which version they prefer.
+
+\begin{figure}[htbp]
+  \begin{center}
+\includegraphics[width=13cm]{compare_crossing_angles}  % created by
+                                                       % inst/knotter.R
+\caption{Comparison between optimized knot projections for $8_3$
+  \label{figure_cca} using different  badness weightings.  On the
+  left we see the default knot, and on the right we see the result of
+  increasing the angle-crossing penalty by a factor of 100,
+  effectively forcing all strand crossing angles to be $\pi/2$.  Which
+  one is preferable is, of course, a subjective choice}
+  \end{center}
+\end{figure}
 
 
 \section{Conclusions and further work}
