@@ -117,17 +117,17 @@ leg <- list(  # legend
 
 b <- lapply(a,overunder)
 
-pdf(file=filename2,width=7,height=6)
+pdf(file=filename2,width=6,height=4)
 par(pty='m',
 oma = c(0, 0, 0, 0), # two rows of text at the outer left and bottom margin
 mar = c(0, 0, 0, 0), # space for one row of text at ticks and to separate plots
 mgp = c(0, 0, 0))
 plot(NA,xlim=c(400,2600),ylim=c(6000,7500),asp=1,type='n',axes=FALSE,xlab='',ylab='')
 
-xs <- 1200  # spacing between knots (x)
+xs <- 900  # spacing between knots (x)
 ys <- 1200  # spacing between knots (y)
 
-xstart <- -300 # offset for whole diagram (x)
+xstart <- +100 # offset for whole diagram (x)
 ystart <- +700 # offset for whole diagram (y)
 
 xtext <- -350
