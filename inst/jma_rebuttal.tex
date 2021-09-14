@@ -96,6 +96,27 @@ Figure 3: What is the color assignment? - one color for each Bezier
 segment?  How many circles are drawn for each segment?  (Say that
 solid blotches result from densely overlapping circles.)
 
+\textcolor{blue}{The original caption was lacking detail.
+  \begin{description}
+  \item[OLD text] ``The \emph{path} of (unoptimized) knot~$7_6$,
+    showing Bezier handles as thin straight lines and circles.  The
+    coloured circles have a radius proportional to the curvature (that
+    is, the reciprocal of the radius of curvature) along the strand;
+    note large curvature at loop on left"
+  \item[NEW text] ``The \emph{path} of (unoptimized) knot~$7_6$,
+    showing Bezier handles as thin straight lines and circles.  The
+    coloured circles have a radius proportional to the curvature (that
+    is, the reciprocal of the radius of curvature) along the strand.
+    Colouring is arbitrary, one color for each Bezier segment; solid
+    blotches result from densely overlapping circles.  Note large
+    curvature at loop on left"
+  \end{description}
+  Each segment has one circle per control point (which defaults to
+  $n=100$) but this is user-settable.
+}
+
+
+
 Figure 4: Why is this required?  -- Does the user have to specify the
 type of crossing via an "overunder" object?  -- (Lines 53-62?)
 

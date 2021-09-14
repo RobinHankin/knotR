@@ -237,17 +237,19 @@ allow for easy construction of Bezier interpolation between nodes.
 > k76_rough <- reader(system.file("7_6_first_draft.svg",package="knotR"))
 > knotplot2(k76_rough, seg=TRUE)
 \end{verbatim}
+
 \begin{centering}
 \includegraphics[scale = 0.9]{knot-7_6_rough}
 \caption{The \emph{path} of (unoptimized) \label{7_6_rough}
   knot~$7_6$, showing Bezier handles as thin straight lines and
-  circles.  The coloured circles have a radius  proportional to the
+  circles.  The coloured circles have a radius proportional to the
   curvature (that is, the reciprocal of the radius of curvature) along
-  the strand; note large curvature at loop on left}
+  the strand.  Colouring is arbitrary, one color for each Bezier
+  segment; solid blotches result from densely overlapping circles.
+  Note large curvature at loop on left}
   \end{centering}
   \end{center}
 \end{figure}
-
 
 \begin{figure}[!tbp]
 \begin{verbatim}
