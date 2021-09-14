@@ -222,14 +222,15 @@ using the {\tt reader()} function; a typical R session follows:
 
 Object~{\tt k76} is stored as an object of class {\tt inkscape}: a
 two-column matrix with rows corresponding to the node and handle
-positions of the inkscape path.  This representation has a certain
-amount of redundancy as knot paths have handles which are
-symmetrically placed with respect to nodes; also, the first node is
-the same as the last for the loop is closed.  The package can coerce
-inkscape objects to other forms, specifically {\tt minobj} objects,
-which contain no redundancy (the position of each node, as well as one
-of the handles, is stored); or {\tt controlpoints} objects, which
-allow for easy construction of Bezier interpolation between nodes.
+positions of the inkscape path.  Above we see only the first six lines
+of the object.  Inkscape representation has a certain amount of
+redundancy as knot paths have handles which are symmetrically placed
+with respect to nodes; also, the first node is the same as the last
+for the loop is closed.  The package can coerce inkscape objects to
+other forms, specifically {\tt minobj} objects, which contain no
+redundancy (the position of each node, as well as one of the handles,
+is stored); or {\tt controlpoints} objects, which allow for easy
+construction of Bezier interpolation between nodes.
 
 \begin{figure}[htbp]
   \begin{center}
