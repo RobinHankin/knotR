@@ -5,3 +5,5 @@ paper.md
 .gitignore
 inst/.RData
 inst/*.pdf
+inst/*_worker.R
+inst/*.tex
