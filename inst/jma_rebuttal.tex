@@ -143,6 +143,41 @@ P11, line 26: It seems that all the functionality needed to deal with
 links is already present in the software packages mentioned, as long
 as one can let the program go around more than one single closed loop.
 
+\textcolor{blue}{I have spent many many hours pondering how to deal
+  with links.  As the referee says, much of the required functionality
+  is (in principle) already present in the software.  Each component
+  would have its own badness, and in addition there would be
+  $n(n-1)/2$ inter-component interaction terms measuring features such
+  as closeness between non-intersecting strands of different
+  components.  Several problems stood out: firstly, the problem of
+  inter-component points.  Currently this is a (symmetrical) Boolean
+  matrix of strands with rows and columns corresponding to strands,
+  and entries corresponding to whether that strand pair intersects or
+  not.  The link generalization would be a symmetric matrix of
+  intersection matrices: an object with four indices and entry
+  (i,j,k,l) indicating whether strand j of component i intersects
+  strand k of component l.  I found this object to be unweildy to work
+  with and difficult to manipulate.  The second problem was the
+  imposition of symmetry.  Sometimes one might desire that some
+  components of a link have a particular kind of symmetry and others
+  to have a different kind (or no!) symmetry.  One unexpectedly
+  difficult problem was that one might have a subset of links that
+  individually possess no symmetry but collectively possess mirror-,
+  rotational-, or indeed dihedral- symmetry.  Thistlethwaite's L4a1 is
+  problematic: one would expect the two components to be identical
+  except for a 90-degree rotation, and implementing this in the
+  context of the package I found impossible. L6a3 is similarly
+  difficult.  We would need new badnesses too.  Consider L6a4; the
+  smaller component should be not only as circular as possible (?),
+  but also one might desire the overall length to be smaller than that
+  of the other component.\\ My overall view was that dealing with
+  links would be possible in principle but, due to a number of rather
+  poorly delineated reasons (which are not really suitable for
+  inclusion in a scholarly publication), an order of magnitude harder
+  than the single-component links considered in the submission.  I'm
+  not saying it's impossible, but just very difficult and, for me,
+  firmly in the category of ``further work''.  I hope that's OK.}
+
 Fig. 10: Why is the absence of mirror symmetry pointed out here?
 
 Fig. 11: Why is this table shown?  It is not mentioned in the main
