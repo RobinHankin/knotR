@@ -44,7 +44,7 @@ par(mai=c(0,0,0,0))
 knotplot_new(hexknot,lwd=15)
 dev.off()
 
-sticker("knotR_icon.pdf", package="hypergeo", p_size=18, s_x=1, s_y=1,
+sticker("knotR_icon.pdf", package="knotR", p_size=18, s_x=1, s_y=1,
         s_width=0.9,asp=0.85, white_around_sticker=TRUE, h_fill="#7733FF",
         h_color="#000000", filename="knotR.png")
 
