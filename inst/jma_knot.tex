@@ -111,10 +111,30 @@ art~\cite{hart2008}.
 It is common to present a knot using diagrams such as
 Figure~\ref{knot_table}, in which a two-dimensional projection of the
 knot is given with broken lines indicating where one strand passes
-over another.  Knot diagrams figure prominently in Celtic
-artwork~\cite{cromwell2008} and are discussed from a mathematical
-perspective by Browne~\cite{browne2005,browne2006}.
+over another.  Knot diagrams have a long history:
+Przytycki~\cite{przytycki1998} discusses an intricate braid used as a
+seal sign in around 1700\,BCE; they figure prominently in {\em The
+  Book of Kells} and the Lindisfarne gospels, graphic art produced
+around 800\,CE~\cite{bain1973}.  Such artwork makes extensive use of
+symmetry~\cite{cromwell2008}.
 
+Knot diagrams are ubiquitous in the modern discipline of mathematical
+knot theory.  In the nineteeth century we see Tait~\cite{tait1884}
+publishing an early systematic study of knots including a beautiful
+plate of elegantly hand-drawn cursive knot diagrams.  The tradition
+continues into the twentieth century with Rolfsen~\cite{rolfsen1976}
+presenting an appendix containing many knot and link projections.
+Rolfsen's diagrams are used widely today: Adams~\cite{adams2004}
+reproduces his work extensively, as do many more recent works.  Online
+resources are becoming more widely available, with one prominent
+example being the {\em Knot Atlas}~\cite{knot_atlas} presenting
+extensive knot tables following Rolfsen~\cite{rolfsen1976}---for knots
+up to~10 crossings---and Thistlethwaite~\cite{hoste1998}, for knots
+of~11 crossings.  Symbolic software such as Mathematica and Maple can
+be used to produce representations of knots, typically in the form of
+nonstandard embeddings of the torus into~$\mathcal{R}^3$; but as
+discussed below this approach is suboptimal from the perspective of producing a
+visually appealing projection.
 
 \begin{figure}[h]
   \centering
@@ -474,8 +494,10 @@ The {\tt knotR} package allows the user to create rough diagrams of
 knots using the inkscape suite of software, and subsequently polish up
 such diagrams in terms of a customizable objective function using
 numerical optimization techniques.  Further work might include
-functionality to deal with links.
-
+functionality to deal with links.  In the broader context of
+optimisation in art, we observe that numerical optimisation techniques
+can produce aesthetically pleasing results, an observation that might
+find uptake by graphic artists.
 
 \clearpage
 \section{Gallery}
@@ -514,7 +536,7 @@ knotplot(perko_B)
   \begin{center}
 \includegraphics[width=13cm]{knots_to_8crossings}  % created by inst/knotter.R
 \caption{All \label{all8} prime knots with 8 or fewer crossings,
-notation following Rolfsen~\cite{rolfsen2003}}
+notation following Rolfsen~\cite{rolfsen1976}}
   \end{center}
 \end{figure}
 
