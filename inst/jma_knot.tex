@@ -115,8 +115,13 @@ over another.  Knot diagrams have a long history:
 Przytycki~\cite{przytycki1998} discusses an intricate braid used as a
 seal sign in around 1700\,BCE; they figure prominently in {\em The
   Book of Kells} and the Lindisfarne gospels, graphic art produced
-around 800\,CE~\cite{bain1973}.  Such artwork makes extensive use of
-symmetry~\cite{cromwell2008}.
+around 800\,CE~\cite{bain1973}.  Such Celtic artwork makes extensive
+use of symmetry~\cite{cromwell2008}, and their visual appeal persists
+to the present day~\cite{antonsen2021}.  More recent examples would
+include bobbin lace~\cite{irvine2020}, in which many threads are
+braided together to form a loose fabric.  The enduring popularity of
+such fibre arts attests to the aesthetic of knots and braids in the
+modern world
 
 Knot diagrams are ubiquitous in the modern discipline of mathematical
 knot theory.  In the nineteeth century we see Tait~\cite{tait1884}
@@ -130,11 +135,59 @@ resources are becoming more widely available, with one prominent
 example being the {\em Knot Atlas}~\cite{knot_atlas} presenting
 extensive knot tables following Rolfsen~\cite{rolfsen1976}---for knots
 up to~10 crossings---and Thistlethwaite~\cite{hoste1998}, for knots
-of~11 crossings.  Symbolic software such as Mathematica and Maple can
-be used to produce representations of knots, typically in the form of
-nonstandard embeddings of the torus into~$\mathcal{R}^3$; but as
-discussed below this approach is suboptimal from the perspective of producing a
+of~11 crossings.
+
+\subsection{Computer-generated knot visualisations}
+
+Symbolic software such as Mathematica and Maple can be used to produce
+representations of knots, typically in the form of nonstandard
+embeddings of the torus into~$\mathbb{R}^3$; but as discussed below
+this approach is suboptimal from the perspective of producing a
 visually appealing projection.
+
+Visual appeal of knot projections appears to be important to
+contemporary mathematicians.  Recent work by Taalman (writing as
+mathgrrl)~\cite{taalman2019}, for example, shows that large amounts of
+effort have been expended by serious mathematicians making
+representations of knots attractive.  Robert Bosch~\cite{bosch2010},
+taking a different approach to knot representations, presents artwork
+that utilises high-dimensional computer optimization in a similar way
+to that presented here.
+
+No discussion of computer-generated representations of knots would be
+complete without the tour de force that is~{\em
+  KnotPlot}~\cite{scharein1997,scharein1998} which includes extensive
+functionality for visualising knots.  Much of the visualization
+considers (nonstandard) embeddings of a torus in $\mathbb{R}^3$; the
+configuration is ``relaxed'' in such a way as to produce a smoother
+output.  {\em KnotPlot} has two major display modes: any knot may be
+displayed in either a ``beads and sticks" mode or in a ``smooth tubes"
+mode.  The software does render knot diagrams but the author states
+[p77] that ``knots with higher crossing numbers (greater than six or
+seven) will not produce good 2D projections when fully relaxed"; he
+goes on to say that this phenomenon merits further study, and admits
+that some of the diagrams are ``a bit messy".
+
+%One of the early works using this approach is the 1932 German classic
+%Anschauliche Geometrie by David Hilbert and S. Cohn-Vossen, available
+%in English translation as Geometry and the Imagination [HCV52].  This
+%book is remarkable for the quality of insight and also for its
+%incredible diagrams, mostly hand drawn and (obviously) predating the
+%computer era.
+
+\subsubsection{Knot theory in R}
+
+The R programming language~\cite{rcore2021}, while usually associated
+with statistical analysis and data processing, is also a suitable tool
+for producing visually attractive illustrations.  Generative art [that
+  is, use of an algorithm, with or without a random component, in a
+  creative process] is possible in R~\cite{brunner2021}.  More
+specficially to knot theory, the {\tt Rknots}
+package\cite{comoglio2011,comoglio2016} presents software for folded
+protein structures, and includes 3D renderings of commonly encountered
+knotted strands.
+
+\section{The knotR package: Rationale}
 
 \begin{figure}[h]
   \centering
@@ -202,7 +255,10 @@ The first step is to create a closed curve in inkscape that shows the
 rough outline of the knot~(Figure~\ref{screenshot_inkscape_7_6} shows
 a screenshot of {\tt 7\_6\_first\_draft.svg}, supplied with the
 package).  Note that this file contains only the knot {\em path}; the
-over and under information is to be added later.
+over and under information is to be added later.  Irvine {\em
+  et. al.}~\cite{irvine2020} use the terms {\em drawing} and {\em
+  braid word} for analogous concepts in their work on bobbin lace
+patterns.
 
 Here, knot paths are required to have Bezier handles that are
 symmetrically placed with regard to nodes (this is a user-settable
@@ -392,15 +448,21 @@ knotplot(k7_6)
 
 \subsection{Symmetry}
 
-Many of the knots in Figure~\ref{knot_table} have an axis of symmetry,
-or possess rotational symmetry; some have both and thus have a
-dihedral symmetry group.  The package has the ability to impose these
-symmetry relations on knots, and to optimize the resulting symmetrical
-knot.  Minimizing the badness is not entirely straightforward on
-account of the induced redundancy, which is characterized using a
-symmetry object specific to the knot under consideration.  However,
-symmetry constraints do reduce the dimensionality of the optimization
-problem.
+If a knot diagram can be drawn with a particular symmetry, one common
+response is to demand that this symmetry be respected exactly.
+Bosch~\cite{bosch2010}, for example, considered rotational symmetry to
+be sufficiently important to impose five-fold rotatioal symmetry in
+one of his works; similar comments apply to mirror symmetry.  Many of
+the knots in Figure~\ref{knot_table} have an axis of symmetry, or
+possess rotational symmetry; some have both and thus have a dihedral
+symmetry group.  The package implements Bosch-type symmetry: one can
+impose these symmetry relations on knots, and optimize the resulting
+symmetrical knot.
+
+Minimizing the badness is not entirely straightforward on account of
+the induced redundancy, which is characterized using a symmetry object
+specific to the knot under consideration.  However, symmetry
+constraints do reduce the dimensionality of the optimization problem.
 
 I will consider the figure-of-eight knot~$4_1$ as an example.  Using
 Figure~\ref{four_figure_8_knots}, top left, as reference, the
