@@ -345,8 +345,12 @@ knotplot2(k7_6,text=TRUE,lwd=1,circ=0,rainbow=TRUE)
 \end{verbatim}
  \centering
 \includegraphics[scale = 0.9]{knot-004}
-\caption{Knot~$7_6$ with strands numbered \label{k76_strands} to guide
-creation of over and under information} \end{figure}
+\caption{Knot~$7_6$ with strands numbered \label{k76_strands} so that
+  the sense of the crossings can be established.  For example, strand
+  7 passes over strand 3.  In the package, this fact is specified by
+  the {\tt overunder} object, as discussed in the text, having a row
+  {\tt 7 3} (and not {\tt 3 7} which would be the crossing having the
+  opposite sense)} \end{figure}
 
 To beautify it we need to specify a function of the path that
 quantifies its displeasingness, and then minimize this objective
