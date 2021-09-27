@@ -486,10 +486,12 @@ appropriate symmetry object is defined as follows:
 > sym8 <- symmetry_object(fig8, Mver=Mver8, xver=8)
 \end{verbatim}
 
-(Matrix {\tt Mver8} specifies that nodes~2 and~3 are symmetric, as
-are nodes~9 and~7, and so on; {\tt xver=8} forces node~8 to be on the
-axis of symmetry).  The results are shown in
-Figure~\ref{four_figure_8_knots}.
+(Matrix {\tt Mver8} specifies that nodes~2 and~3 are symmetric, as are
+nodes~9 and~7, and so on; {\tt xver=8} forces node~8 to be on the axis
+of symmetry).  The results are shown in
+Figure~\ref{four_figure_8_knots}.  Note that $4_1$ may be rendered in
+a form that has two mirror lines, and this is available in the package
+as object {\tt k4\_1a}.
 
 \begin{figure}[!tbp]
   \centering
@@ -504,7 +506,6 @@ Figure~\ref{four_figure_8_knots}.
 \end{figure}
 
 
-  
 \subsection{Rotational symmetry}
 
 Consider knot~$5_1$. This knot has $D_5$ symmetry with five mirror
@@ -539,7 +540,7 @@ symmetrical about the vertical axis, nodes~2 and~12 are on the
 vertical axis.  The {\tt Mrot} argument specifies sets of nodes that
 map to themselves under rotation.  The top line of {\tt Mrot}
 indicates that nodes 12, 4, 16, 8, and~20 are concyclic.  An example
-of a rotationally symmetric knot is given in Figure~\ref{orn20}.
+of a rotationally symmetric knot is given in Figure~\ref{orn20}.  
 
 \subsection{Subjective \label{section_cca} choice for weighting}
 
