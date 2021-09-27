@@ -121,7 +121,7 @@ to the present day~\cite{antonsen2021}.  More recent examples would
 include bobbin lace~\cite{irvine2020}, in which many threads are
 braided together to form a loose fabric.  The enduring popularity of
 such fibre arts attests to the aesthetic of knots and braids in the
-modern world
+modern world.
 
 Knot diagrams are ubiquitous in the modern discipline of mathematical
 knot theory.  In the nineteeth century we see Tait~\cite{tait1884}
@@ -130,14 +130,16 @@ plate of elegantly hand-drawn cursive knot diagrams.  The tradition
 continues into the twentieth century with Rolfsen~\cite{rolfsen1976}
 presenting an appendix containing many knot and link projections.
 Rolfsen's diagrams are used widely today: Adams~\cite{adams2004}
-reproduces his work extensively, as do many more recent works.  Online
+reproduces his work extensively, as do many more recent works.
+
+\subsection{Computer-generated knot visualisations}
+
+Online
 resources are becoming more widely available, with one prominent
 example being the {\em Knot Atlas}~\cite{knot_atlas} presenting
 extensive knot tables following Rolfsen~\cite{rolfsen1976}---for knots
 up to~10 crossings---and Thistlethwaite~\cite{hoste1998}, for knots
 of~11 crossings.
-
-\subsection{Computer-generated knot visualisations}
 
 Symbolic software such as Mathematica and Maple can be used to produce
 representations of knots, typically in the form of nonstandard
@@ -164,9 +166,8 @@ output.  {\em KnotPlot} has two major display modes: any knot may be
 displayed in either a ``beads and sticks" mode or in a ``smooth tubes"
 mode.  The software does render knot diagrams but the author states
 [p77] that ``knots with higher crossing numbers (greater than six or
-seven) will not produce good 2D projections when fully relaxed"; he
-goes on to say that this phenomenon merits further study, and admits
-that some of the diagrams are ``a bit messy".
+seven) will not produce good 2D projections when fully relaxed", and
+admits that some of the diagrams are ``a bit messy".
 
 %One of the early works using this approach is the 1932 German classic
 %Anschauliche Geometrie by David Hilbert and S. Cohn-Vossen, available
@@ -182,7 +183,7 @@ with statistical analysis and data processing, is also a suitable tool
 for producing visually attractive illustrations.  Generative art [that
   is, use of an algorithm, with or without a random component, in a
   creative process] is possible in R~\cite{brunner2021}.  More
-specficially to knot theory, the {\tt Rknots}
+specificially to knot theory, the {\tt Rknots}
 package\cite{comoglio2011,comoglio2016} presents software for folded
 protein structures, and includes 3D renderings of commonly encountered
 knotted strands.
@@ -228,12 +229,10 @@ system available under the GPL).  One way of smoothly interpolating
 between specified points is Bezier curves~\cite{olsen2014}.  A Bezier
 curve is a visually pleasing polynomial path that can be used to
 specify the path of a knot projection; here cubic Bezier curves are
-used.
-
-The software discussed here~\cite{hankin2020} allows one to specify a
-knot in terms of its Bezier control points within inkscape, import the
-object into R~\cite{rcore2021}, and then to use numerical optimization
-techniques to improve the visual appearance of the knot.
+used.  The software discussed here~\cite{hankin2020} allows one to
+specify a knot in terms of its Bezier control points within inkscape,
+import the object into R~\cite{rcore2021}, and then to use numerical
+optimization techniques to improve the visual appearance of the knot.
 
 One plausible technique for creating knot projections is to consider a
 two-dimensional projection of a knot's embedding
@@ -388,7 +387,7 @@ introduce spurious intersections.}.  The weightings for the various
 badnesses are, of course, subjective; but the system discussed here
 allows the user to change the weightings used and compare results.  I
 present a short discussion in section~\ref{section_cca} below.
-Numeically, the badnesses are evaluated by function {\tt badness()}:
+Numerically, the badnesses are evaluated by function {\tt badness()}:
 
 \begin{verbatim}
 > badness(k76_rough)
@@ -458,7 +457,7 @@ knotplot(k7_6)
 If a knot diagram can be drawn with a particular symmetry, one common
 response is to demand that this symmetry be respected exactly.
 Bosch~\cite{bosch2010}, for example, considered rotational symmetry to
-be sufficiently important to impose five-fold rotatioal symmetry in
+be sufficiently important to impose five-fold rotational symmetry in
 one of his works; similar comments apply to mirror symmetry.  Many of
 the knots in Figure~\ref{knot_table} have an axis of symmetry, or
 possess rotational symmetry; some have both and thus have a dihedral
@@ -551,7 +550,7 @@ assessed.  In the package, the badness weightings may be altered
 easily, and in this way we can investigate the visual impact of the
 badness components.  The default weightings were originally chosen as
 a bland compromise, but it is easy to place greater weight on one or
-other compoent.  Figure~\ref{figure_cca} shows the same knot optimized
+other component.  Figure~\ref{figure_cca} shows the same knot optimized
 using different weightings; we see the effect of imposing right-angled
 strand crossing angles on the remainder of the knot.  Readers will
 have to judge for themselves which version they prefer.
@@ -589,7 +588,7 @@ datasets provided with the package, illustrating the relative ease
 with which knot diagrams may be created and optimized.
 Figure~\ref{perko_AB} shows two forms of a 10-crossing knot once
 erroneously considered to be topologically distinct;
-figure~\ref{orn20} shows an ornamnental knot with exact five-fold
+figure~\ref{orn20} shows an ornamenntal knot with exact five-fold
 symmetry (but not dihedral symmetry); and figure~\ref{all8} shows all
 prime knots with eight or fewer crossings, following
 Rolfsen~\cite{rolfsen1976}.  The package includes all knots to nine
@@ -630,8 +629,6 @@ notation following Rolfsen~\cite{rolfsen1976}}
   \end{center}
 \end{figure}
 
-
-\section*{References}
 
 \bibliography{knot}
 \bibliographystyle{unsrt}
