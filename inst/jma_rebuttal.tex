@@ -250,8 +250,8 @@ describe the techniques used by the software to create the optimised
 images.%issue35<
 
 \textcolor{blue}{I think this is a perfectly reasonable comment for
-  the original manuscript but the revision is a very much improved
-  document.}
+  the original manuscript.  I believe the revision is a very much
+  improved document.}
 
 
 In addition there is a rather consistent use of absolute terms for
@@ -279,15 +279,15 @@ strengthen the paper.
   view was that there was a single set of weightings for the various
   badnesses, that most people would agree upon; and my task as
   software engineer was to find the projection that optimizes these
-  standard weightings.\\ \\ Following this comment, I realise with a
-  shock that my weightings do not reflect some universal ideal.
-  Rather, my choice of weightings are as subjective as any other
-  aspect of the software and, as such, are peculiar to me.  This is
-  obvious in retrospect but was not clear to me at all until just
-  now.\\ \\ One of the benefits of the {\tt knotR} software is that it
-  allows this kind of conversation to occur; I have added a discussion
-  to the manuscript, just before the conclusions section.  There, I
-  present projections of $8_3$ and $8_5$ but with different penalties
+  standard weightings.\\ \\ Reflecting on the referee's comment, I
+  realise with a shock that my weightings do not reflect some
+  universal ideal.  Rather, my choice of weightings are as subjective
+  as any other aspect of the software and, as such, are peculiar to
+  me.  This is obvious in retrospect but was not clear to me at all
+  until just now.\\ \\ One of the benefits of the {\tt knotR} software
+  is that it allows this kind of conversation to occur; I have added a
+  discussion to the manuscript, just before the conclusions section.
+  There, I present projections of $8_3$ but with different penalties
   for angle crossing terms.  We see the results and can compare like
   with like, perhaps coming to a deeper understanding of pleasingness
   of projections in the process.\\ \\}
@@ -333,13 +333,18 @@ to develop some distinct styles of diagrams (by changing the ``badness"
 function, and use the methods to create optimised images for each
 style.
 
+\textcolor{blue}{I have included a figure that compares a knot with
+  two different weightings}
+
+
 3) Give basic information about the specific methods being used for
 the optimisation rather than just using the function given in R as a
 black box.
 
 
-\textcolor{blue}{Brief discussion added}
-
+\textcolor{blue}{Brief discussion added: the package includes
+  Nelder-Mead by default but the user has the option to use a
+  Newton-type method.}
 
 With these changes the paper could be an interesting one, discussing
 the context of knot diagrams more broadly and providing practical help
