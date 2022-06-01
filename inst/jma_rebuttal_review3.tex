@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\begin{document}
+
+(Below, the reviewer's comments are in black, and my replies to the
+issues are in \textcolor{blue}{blue}.  I have indicated changes to the
+manuscript where appropriate.
+
+\section*{Rebuttal to second third review: overall response}
+
+Short story: the reviewers make reasonable and constructivde comments.
+I have accommodated the comments with  with rewording.  The resulting
+document is, I believe, stronger and more scholarly than before and I
+recommend it to you.
+
+
+\section*{Detailed rebuttal: Reviewer \#1}
+
+
+Comments from the Editors and Reviewers:
+
+Thank you for this revised manuscript.  My apologies for contributing
+to the slow turnaround of these reviews.
+
+I have given this version the official status of ``Minor Revision" to
+reflect the fact that we all agree that this draft is much closer to
+publication-ready. In particular, I believe that the remaining
+reviewer concerns can be addressed with moderate rewriting.  However,
+some of the reviewer feedback falls closer to ``Major Revision," so I
+wanted to acknowledge that a few of the remaining critiques are beyond
+surface level.
+
+As you will see in the detailed feedback below, one of the reviewers
+still has substantive concerns about the overall framing of your
+discussion and how directly it addresses the mathematical and
+aesthetic choices that went into the software package.  I suspect that
+you can address the concerns in the first few review paragraphs by
+being more specific about the constraints of your implementation, the
+level of flexibility you hoped to provide for the user, and the
+alternate possibilities for future work, but since I don't know what
+technical decisions went into your coding, I might be misjudging
+exactly what is suitable.
+
+I look forward to receiving your further revision, and will make sure
+the editorial process goes more quickly from this point forward.
+
+Best wishes,
+
+Susan Goldstine, Ph.D.
+Associate Editor
+Journal of Mathematics and the Arts
+
+
+Reviewer \#1: The paper has improved in terms of its overall
+presentation in the context of knot renderings, and many detailed
+fixes have been made as suggested by the reviewers.
+
+However, the paper still has the major weakness of being too much a
+somewhat ad-hoc technical manual on ``How-to-use-R and Inkplot to get
+some decent knot plots" by using the software package [27].
+
+
+The paper is lacking good discussions of the key issues and
+explanations of the choices made, specifically: What makes a knot plot
+attractive, followed by a thorough discussion of how to best set up a
+knot representation and an optimization procedure to achieve the
+desired qualities?
+
+The problem starts with the basic curve representation:
+
+Why use Bezier curves? 
+
+Why not use some other spline curve that guarantees G2-continuity?
+
+And, if forced by the chosen tool to use Bezier curves, why not place
+nodes at the crossing points, (and one or two more for large loopy
+lobes between subsequent crossing points)?  -- This would allow the
+user to place the crossing points far enough apart to start with, and
+this would make it easy to set the Bezier handles to force right-angle
+crossings.
+
+Also, the implementation in the ``badness function" seems far from
+optimal.  ``Total crossing angles()" does not address a key problem
+directly: If one wants to avoid highly acute crossing angles, then
+this can be addressed in a much more sensitive way with a function
+such as 1/ sqr( cross.angle ).  This would go to infinity in the worst
+case!  It also corresponds more directly to the way that excessive
+curvature is avoided by minimizing ``bending energy," which is the
+integral over the square of curvature -- or: 1/ sqr( curve-radius).
+These are some ``math" issues that readers of JMA would be interested
+in.
+
+
+Some more detailed comments:
+
+Page 3 line 42: ``...knots possess a line of symmetry (at least, the
+diagrams do if the breaks are ignored), which ..."  -$>>$ ``...knots
+possess a C2 rotation axis, which ..."
+
+Page 4 lines 22-25: ``One plausible technique for creating knot
+projections is to consider a two-dimensional projection of a knot's
+embedding E in R3. However, this approach often results in poor visual
+appearance: cusps or other displeasing effects can occur."  -$>>$ True!
+- But what is the alternative, if the user has an entangled physical
+knot in her hands?
+
+Page 4 line 45: Define ``nodes" !
+
+Page 4 line 48: ``However, if we can ensure that the radius of
+curvature changes only by a small amount,..."  -$>>$ HOW can the user do
+this?
+
+Page 4 lines 50-52: No need to differentiate here between over- and
+under-strands.  I assume they are treated the same in the optimization
+process.
+
+Page 4 lines 53-54: ``We would like strand crossing points to be far
+from nodes,..."  -- Why?  The curves are also visually continuous across
+the nodes!
+
+Page 5 lines 46-51: Why are there SEVEN significant decimal digits?
+Does the graphic screen have 10 million pixels per line?
+
+Figure 3, 5, 7: Perhaps fewer than 100 circles per Bezier curve would
+be better.
+
+
+Figure 4.  Knot 76 with strands numbered... -- The main use here seems
+to be to see very clearly the extent of every Bezier curve.
+Over-/under-crossings seem to become relevant only for the final
+rendering of the knot curve with the gaps included.
+
+Page 7 line 52: ``The optimization typically proceeds over R 50" - What
+is the meaning of this?
+
+Page 7 line 56: ``...function total crossing angles()" The function is
+not explicitly defined in the paper, but it sounds clearly suboptimal.
+One bad acute-angle crossing can easily ```hide" in a sum of all angles.
+It would be better to individually penalize acute angles.  A suitable
+term might be: 1/ sqr( cross.angle ).  This would go to infinity in
+the worst case!
+
+Page 8 line 20, and footnote: The ``devil" and the ``interesting math"
+is in the details!  The footnote is not sufficient to explain the
+trade-offs that are being made in the optimization process.
+
+Page 9, line 62: What is ``Bosch-type symmetry:..." ?  Please explain.
+$>>$ If all nodes fulfill the specified symmetry constraints (as shown
+on page 11, lines 15-22 and on lines 35-43), but the connection
+diagram does not completely adhere to the specified symmetry - What
+happens? - Does the package check this and let the user know about the
+discrepancy?
+
+Page 10 lines 56-58: ``Minimizing the badness is not entirely
+straightforward..."  -- What is the problem?  I think that if all the
+points are moved jointly within the specified symmetry constraints, an
+optimized symmetrical solution will result.
+
+{The above two comments suggest, that it might be advantageous to use
+  some hierarchy in the representation of symmetrical knots: Only
+  specify the curve for one unique fragment of the knot curve, and
+  compose the complete curve by instancing that fragment with
+  mirroring and rotation as required to construct the complete knot!
+  The optimization would then only have to be done for this unique
+  fragment (with proper end-conditions).  If this same hierarchy is
+  also used in the graphical display of the knot curve, the user could
+  easily make adjustments to just a few nodes, while always
+  automatically obtaining the desired symmetrical result.}
+
+Page 10 lines 55: ``In the package, the badness weightings may be
+altered easily,..."  -- What is the user interface for this?  Are
+there sliders in the display that allow interactive adjustments of the
+weights?
+
+Figure 9: The fact that ``angle-crossing penalty" had to be enhanced by
+a factor of 100 to achieve a more desirable (in my opinion) result,
+illustrates the fact that the "total crossing angles()"-function is
+not a good choice for optimization.
+
+I am missing a description how the two breaks at every crossing point
+are being graphically implemented.
+
+Conclusions:
+
+RE: ``Further work might include functionality to deal
+with links."  $>>$ Readers may think that this would be a trivial
+extension.  Please add a paragraph like the one you wrote in response
+to Reviewer 1, to explain why the extension to links may be more
+difficult than one might think.
+
+RE: ``In the broader context of optimization in art, we observe that
+numerical optimization techniques can produce aesthetically pleasing
+results, an observation that might find uptake by graphic artists."
+$>>$ This only holds with the proviso that we can think of a good
+mathematical formulations to capture the various features that capture
+aesthetics appropriately.  - This then becomes the real ``art."
+
+Gallery:
+
+Knot diagrams 83 through 86 in Figure 12 stand out with their helices
+too tightly wound.  The two criteria on page 4, lines 54 and 55 do not
+seem to be sufficiently enforced.  I suggest adjusting these figures
+in the spirit of Figure 9b.  This may happen automatically with a
+better ``badness function" that penalizes non-orthogonal crossing
+angles more directly.
+
+[27]:  Incomplete reference.  Perhaps give a URL.
+
+
+
+Reviewer \#2: Firstly I would like to apologise for my late response on
+this. Reviewing this edited paper had not got onto my radar.
+
+Secondly all the points in my original report have now been
+addressed. I do feel that the literature review could have gone a
+little bit further beyond my stated suggestions, but it is now
+sufficient to give the paper more context.
+
+\end{document}
