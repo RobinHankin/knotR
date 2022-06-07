@@ -13,6 +13,8 @@
 ## quality!  It needs to be tidied up in inkscape before anyone sees
 ## it.
 
+library("knotR")
+
 `arc` <- function(x,y,r,theta1,theta2,rot=0,center=FALSE, ...){
   n <- 100
   jj <- matrix(c(cos(rot),sin(rot),-sin(rot),cos(rot)),2,2) %*% c(x,y)
@@ -44,4 +46,9 @@ f(0*pi/3)
 f(2*pi/3)
 f(4*pi/3)
 
+dev.off()
+
+
+pdf(file="trefoil_proper.pdf",height=9,width=9)
+knotplot(k3_1,lwd=16)
 dev.off()
