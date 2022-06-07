@@ -3,9 +3,11 @@
 
 filename1 <- "knots_to_8crossings.pdf"
 filename2 <- "compare_crossing_angles.pdf"
+filename3 <- "two_trefoil_knots.pdf"
 
-do1 <- TRUE   # change to FALSE to save time
-do2 <- TRUE
+do1 <- F  # change to FALSE to save time
+do2 <- F
+do3 <- TRUE
 
 library(knotR)
 
@@ -148,4 +150,80 @@ for(i in 1:1){
 }
 
 dev.off()
+}
+
+if(do3){
+    a <- list(k3_1)
+    leg <- list( expression(3[1]))  # legend
+    b <- lapply(a,overunder)
+
+    pdf(file=filename3,width=6,height=4)
+    par(pty='m',
+        oma = c(0, 0, 0, 0), # two rows of text at the outer left and bottom margin
+        mar = c(0, 0, 0, 0), # space for one row of text at ticks and to separate plots
+        mgp = c(0, 0, 0))
+    plot(NA,xlim=c(400,2600),ylim=c(6000,7500),asp=1,type='n',axes=FALSE,xlab='',ylab='')
+    
+    xs <- 900  # spacing between knots (x)
+    ys <- 1200  # spacing between knots (y)
+    
+    xstart <- +100 # offset for whole diagram (x)
+    ystart <- +700 # offset for whole diagram (y)
+    
+    xtext <- -350
+    ytext <- 450
+    
+    i <- 1
+    j <- 1
+    
+    n <- (i-1)*2 + j
+    xoff <-    j * xs + xstart
+    yoff <- (6-i)* ys + ystart
+    k <- as.inkscape(a[[n]])
+    k[,2] <- k[,2] - mean(k[,2])
+    k <- sweep(k,2,c(xoff,yoff),"+")
+    print(n)
+    knotplot(k,b[[n]],add=TRUE,lwd=2.5,gap=3)
+
+    `arc` <- function(x,y,r,theta1,theta2,rot=0,center=FALSE, ...){
+        n <- 100
+        jj <- matrix(c(cos(rot),sin(rot),-sin(rot),cos(rot)),2,2) %*% c(x,y)
+        x <- jj[1]
+        y <- jj[2] 
+        if(center){ points(x,y, ...) } 
+        theta <- seq(from=theta1-rot,to=theta2-rot,len=n)
+        cbind(x+r*sin(theta),y+r*cos(theta))
+    }
+   
+small <- 0.05
+    
+    `f` <- function(angle,o,...){
+        if(o==1){
+            arc(x=0, y=-2-2/sqrt(3), theta1 =   0, theta2 =   pi/12, r=sqrt(6)+sqrt(2), rot=angle)
+        } else if(o==2){
+            arc(x=0, y=+2-2/sqrt(3), theta1 =  0, theta2 = 7*pi/12, r=sqrt(6)-sqrt(2), rot=angle)
+        } else if(o==3){
+            arc(x=0, y=-2-2/sqrt(3), theta1 = pi/12-small, theta2 =   pi/12+small, r=sqrt(6)+sqrt(2), rot=angle)
+        } else if(o==4){
+            arc(x=0, y=-2-2/sqrt(3), theta1 =    -pi/12, theta2 =   0, r=sqrt(6)+sqrt(2), rot=angle)
+        } else if(o==5){
+            arc(x=0, y=+2-2/sqrt(3), theta1 =  -7*pi/12, theta2 = 0, r=sqrt(6)-sqrt(2), rot=angle)
+        } else {
+            stop()
+        }
+    }
+    x0 <- 2170
+    y0 <- 6720
+    scale <- 300
+    for(angle in c(0,2,4)*pi/3){
+        points(sweep(scale*f(angle,o=1),2,c(x0,y0),"+"),type="l",lwd=2.5,col="red")
+        points(sweep(scale*f(angle,o=2),2,c(x0,y0),"+"),type="l",lwd=2.5,col="orange")
+        points(sweep(scale*f(angle,o=3),2,c(x0,y0),"+"),type="l",lwd=2.5*4,col="yellow")
+        points(sweep(scale*f(angle,o=4),2,c(x0,y0),"+"),type="l",lwd=2.5,col="green")
+        points(sweep(scale*f(angle,o=5),2,c(x0,y0),"+"),type="l",lwd=2.5,col="blue")
+    }
+    
+    dev.off()
+
+    
 }
