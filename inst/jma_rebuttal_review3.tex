@@ -146,20 +146,39 @@ from nodes,..."  -- Why?  The curves are also visually continuous across
 the nodes!
 
 \textcolor{blue}{The curves certainly are visually continuous across
-  the nodes---but only in the optimized knots.  Figure 4, for example,
-  illustrates an unoptimized knot and we see that the Bezier nodes can
-  exhibit ugly features.  The motivation for keeping Bezier nodes far from crossing points 
-I have added a
-  figure of a trefoil knot that illustrates the reason why nodes'
-  being at crossing points is undesirable.  In short, at the node of a
-  Bezier curve, the radius of curvature undergoes a visually jarring
-  discontinuity which looks bad, especially the understrand, which is
-  particularly susecptible to such considerations because of the
-  break.\\ \\ Also (refer to figure 5, which shows 7_6 with numbered
-  strands), we can see that if a Bezier
-
-
-}
+  the nodes---but only in the optimized knots.  The motivation for
+  keeping Bezier nodes far from crossing points is twofold.  Firstly,
+  as one traces a curve visually, Bezier nodes cannot possibly avoid
+  introducing {\em some} form of disjointness in the path; and such
+  disjointness is particularly disruptive if on the understrand of a
+  node, as the visual continuity is interrupted.  I have added a
+  figure (including two different diagrams of a trefoil knot) to the
+  Gallery that illustrates the reason why nodes' being at crossing
+  points is undesirable.  In short, at the node of a Bezier curve, the
+  radius of curvature undergoes a visually jarring discontinuity which
+  looks bad, especially the understrand, which is particularly
+  susecptible to such considerations because of the break.  I do
+  appreciate that many viewers will find the distinction invisible or
+  inconsequential; but my informal polling of family and colleagues
+  reveals that, once sensitised to the issue, they cannot unsee the
+  kink.  \\ \\ The second reason is more mundane.  With reference to
+  figure 7 (the four figure-of-eight knots diagram), we can see a
+  vertical line of symmetry on which there are two crossing points.
+  Imagine there was a node at one of these crossing points.  There
+  would have to be {\em two} nodes at the same point, one for the
+  overstrand and one for the understrand; the software would somehow
+  have to impose vertical mirror symmetry on the diagram and this
+  would necessitate that the knot class contain yet another symmetry
+  object, alongside the 12 existing ones.  These considerations become
+  yet more onerous when considering rotational symmetry as in Figure 8
+  (which shows $5_1$).  If there were a node at, say, the intersection
+  of strand 18-19 and 9-10 then somehow the two nodes would have to
+  embody not only mirror symmetry (with respect to 5-6/14-15) but also
+  fivefold rotational symmetry.  Simply put, this is a nightmare.  The
+  software documentation contains a substantial discussion of the
+  issue, but I do not believe that the manuscript would benefit from
+  what amounts to little more than me grumbling about implementation
+  difficulties.}
 
 Page 5 lines 46-51: Why are there SEVEN significant decimal digits?
 Does the graphic screen have 10 million pixels per line?

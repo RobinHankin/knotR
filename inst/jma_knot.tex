@@ -269,43 +269,8 @@ important that both the unbroken and broken strands (designated
 ``overstrand'' and ``understrand'' respectively) are smooth.  We would
 like strand crossing points to be far from nodes, as this ensures
 visual continuity of strands at crossing points, especially the
-understrand (see Figure~\ref{trefoil_circles} for an example and
+understrand (see Figure~\ref{two_trefoil_knots} for an example and
 discussion).
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=10cm]{trefoil_circles_post_inkscape.pdf}
-\caption{A trefoil knot \label{trefoil_circles} constructed from arcs
-  of circles (elastica) constrained to cross at right angles; the
-  strands exert a couple but no force on one another.  Mirror symmetry
-  and threefold rotational symmetry are imposed.  Elementary
-  trigonometry shows that the radii of the inner and outer loops are
-  $\operatorname{cosec}(\pi/12)=\sqrt{6}+\sqrt{2}$ and
-  $\sec(\pi/12)=\sqrt{6}-\sqrt{2}$ respectively.  The curvature thus
-  has a displeasing discontinuity at a node which interrupts the
-  visual continuity there, especially the understrand}
-\end{figure}
-
-\begin{figure}[h]
-  \centering  
-  % To create file "two_trefoil_knots_post_inkscape.pdf", run
-  % knotter.R, which makes (among other things) two_trefoil_knots.pdf.
-  % Edit this in inkscape [make a mirror image, then change the
-  % colours and finally use the raise and lower tools to put
-  % everything in the right order]
-    \includegraphics[width=10cm]{two_trefoil_knots_post_inkscape.pdf}
-    \caption{Two trefoil knots \label{two_trefoil_knots}.  Left,
-      optimized as per the {\tt knotR} package techniques documented
-      here; right, constructed from arcs of circles constrained to
-      cross at right angles.  The strands exert a couple but no force
-      on one another.  Mirror symmetry and threefold rotational
-      symmetry are imposed.  Elementary trigonometry shows that the
-      radii of the inner and outer loops are
-      $\operatorname{cosec}(\pi/12)=\sqrt{6}+\sqrt{2}$ and
-      $\sec(\pi/12)=\sqrt{6}-\sqrt{2}$ respectively.  The curvature
-      thus has a displeasing discontinuity at a node which interrupts
-      the visual continuity there, especially the understrand}
-\end{figure}
 
 \begin{figure}[h]
   \centering
@@ -620,13 +585,35 @@ find uptake by graphic artists.
 There now follows a selection of pleasing knot diagrams taken from
 datasets provided with the package, illustrating the relative ease
 with which knot diagrams may be created and optimized.
-Figure~\ref{perko_AB} shows two forms of a 10-crossing knot once
-erroneously considered to be topologically distinct;
-figure~\ref{orn20} shows an ornamental knot with exact five-fold
-symmetry (but not dihedral symmetry); and figure~\ref{all8} shows all
-prime knots with eight or fewer crossings, following
-Rolfsen~\cite{rolfsen1976}.  The package includes all knots to nine
-crossings.
+Figure~\ref{two_trefoil_knots} shows and compares two plausible
+schemes for rendering a trefoil.  Figure~\ref{perko_AB} shows two
+forms of a 10-crossing knot once erroneously considered to be
+topologically distinct; figure~\ref{orn20} shows an ornamental knot
+with exact five-fold symmetry (but not dihedral symmetry); and
+figure~\ref{all8} shows all prime knots with eight or fewer crossings,
+following Rolfsen~\cite{rolfsen1976}.  The package includes all knots
+to nine crossings.
+
+\begin{figure}[h]
+  \centering  
+  % To create file "two_trefoil_knots_post_inkscape.pdf", run
+  % knotter.R, which makes (among other things) two_trefoil_knots.pdf.
+  % Edit this in inkscape [make a mirror image, then change the
+  % colours and finally use the raise and lower tools to put
+  % everything in the right order]
+    \includegraphics[width=10cm]{two_trefoil_knots_post_inkscape.pdf}
+    \caption{Two trefoil \label{two_trefoil_knots} knots.  Left,
+      optimized as per the {\tt knotR} package techniques documented
+      here; right, constructed from arcs of circles constrained to
+      cross at right angles.  The strands exert a couple but no force
+      on one another.  Mirror symmetry and threefold rotational
+      symmetry are imposed.  Elementary trigonometry shows that the
+      radii of the inner and outer loops are
+      $\operatorname{cosec}(\pi/12)=\sqrt{6}+\sqrt{2}$ and
+      $\sec(\pi/12)=\sqrt{6}-\sqrt{2}$ respectively.  The curvature
+      thus has a displeasing discontinuity at a node which interrupts
+      the visual continuity there, especially the understrand}
+\end{figure}
 
 \begin{figure}[htbp]
   \begin{center}
