@@ -275,6 +275,11 @@ It would be better to individually penalize acute angles.  A suitable
 term might be: 1/ sqr( cross.angle ).  This would go to infinity in
 the worst case!
 
+\textcolor{blue}{Function {\tt total\_crossing\_angles()} was poorly
+  named.  With crossing angles $\theta_i$, $i=1,2,\ldots k$ the
+  function actually returns $\sum_{i=1}^k\left(\cos\theta_i\right)^2$.
+  \\ \\}
+
 Page 8 line 20, and footnote: The ``devil" and the ``interesting math"
 is in the details!  The footnote is not sufficient to explain the
 trade-offs that are being made in the optimization process.
