@@ -266,16 +266,16 @@ Here, knot paths are required to have Bezier handles that are
 symmetrically placed with regard to nodes (this is a user-settable
 option in inkscape).  One consequence of this design choice is that
 radius of curvature is not matched exactly across a node; the path is
-not G2 smooth in CAD terminology.  However, if we can ensure that the
-radius of curvature changes only by a small amount, visual
-continuity---in the sense of absence of visible interruptions to a
-smoothly evolving strand---is preserved.  At a crossing point it is
-important that both the unbroken and broken strands (designated
-``overstrand'' and ``understrand'' respectively) are smooth.  We would
-like strand crossing points to be far from nodes, as this ensures
-visual continuity of strands at crossing points, especially the
-understrand (see Figure~\ref{two_trefoil_knots} for an example and
-discussion).
+not G2 smooth in CAD terminology.  However, because the optimization
+routine ensures that the radius of curvature changes only by a small
+amount, visual continuity---in the sense of absence of visible
+interruptions to a smoothly evolving strand---is preserved.  At a
+crossing point it is important that both the unbroken and broken
+strands (designated ``overstrand'' and ``understrand'' respectively)
+are smooth.  We would like strand crossing points to be far from
+nodes, as this ensures visual continuity of strands at crossing
+points, especially the understrand (see Figure~\ref{two_trefoil_knots}
+for an example and discussion).
 
 \begin{figure}[h]
   \centering
