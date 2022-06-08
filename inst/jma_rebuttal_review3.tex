@@ -298,6 +298,20 @@ straightforward..."  -- What is the problem?  I think that if all the
 points are moved jointly within the specified symmetry constraints, an
 optimized symmetrical solution will result.
 
+\textcolor{blue}{The problem is reconstructing the knot from the
+  minimal set of of nodes and the various types of imposed symmetry.
+  This is not difficult exactly, but not entirely straightforward
+  either.\\ \\ Also, optimizing high-dimensional functions is rarely
+  straightforward: the search space is large; in my field of
+  computational ecology we talk of the ``curse of dimensionality''.
+  One has to contend with a wide variety of frustrating issues such as
+  local extrema, expensive function evaluation, and not least the
+  inadequacies of Euclidean distance as a metric for the domain.
+  Dimensionally cursed problems such as that addressed by {\tt knotR}
+  are sometimes literally intractable.  My considered view is that
+  Nelder-Mead simplex technique used in the package is unreasonably
+  effective.\\ \\ }
+
 {The above two comments suggest, that it might be advantageous to use
   some hierarchy in the representation of symmetrical knots: Only
   specify the curve for one unique fragment of the knot curve, and
