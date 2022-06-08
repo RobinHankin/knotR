@@ -227,10 +227,15 @@ system available under the GPL).  One way of smoothly interpolating
 between specified points is Bezier curves~\cite{olsen2014}.  A Bezier
 curve is a visually pleasing polynomial path that can be used to
 specify the path of a knot projection; here cubic Bezier curves are
-used.  The software discussed here~\cite{hankin2020} allows one to
-specify a knot in terms of its Bezier control points within inkscape,
-import the object into R~\cite{rcore2021}, and then to use numerical
-optimization techniques to improve the visual appearance of the knot.
+used.  Bezier curves are a natural choice for working with
+mathematical knots for several reasons: they are familiar to many
+graphical workers; they have a natural and intuitive control system
+(usually called ``handles''), and are implemented in many graphical
+software suites.  The software discussed here~\cite{hankin2020} allows
+one to specify a knot in terms of its Bezier control points within
+inkscape, import the object into R~\cite{rcore2021}, and then to use
+numerical optimization techniques to improve the visual appearance of
+the knot.
 
 One plausible technique for creating knot projections is to consider a
 two-dimensional projection of a knot's embedding
