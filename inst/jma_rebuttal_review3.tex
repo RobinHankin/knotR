@@ -113,12 +113,22 @@ Why use Bezier curves?
 
 Why not use some other spline curve that guarantees G2-continuity?
 
+\textcolor{blue}{I don't have a good answer to that, other than to
+  point out that the focus of the manuscript was to investigate the
+  visual appearance of knots using mathematical optimization routines.
+  I do not wish to rule out using other G2-continuous splines, and it
+  might be interesting some day to consider (e.g.) B-splines.  But as
+  I say above, Bezier curves are a good starting point.}
+
 And, if forced by the chosen tool to use Bezier curves, why not place
 nodes at the crossing points, (and one or two more for large loopy
 lobes between subsequent crossing points)?  -- This would allow the
 user to place the crossing points far enough apart to start with, and
 this would make it easy to set the Bezier handles to force right-angle
 crossings.
+
+
+
 
 Also, the implementation in the ``badness function" seems far from
 optimal.  ``Total crossing angles()" does not address a key problem
