@@ -90,7 +90,7 @@ desired qualities?
   are indeed profound, and were not addressed directly in the old
   manuscript.  In the revision I have prominently stated the questions
   in the introduction, and given a provocative, if brief, outline of
-  my view.}
+  my view.\\ \\}
 
 
 The problem starts with the basic curve representation:
@@ -109,7 +109,7 @@ Why use Bezier curves?
   wish to suggest that Bezier curves are the only parametrizations for
   working with knots; but they are a natural starting point, and
   AFAICS they have no serious disadvantages in this context, nor is
-  there any obvious superior method.}
+  there any obvious superior method.\\ \\}
 
 Why not use some other spline curve that guarantees G2-continuity?
 
@@ -118,7 +118,7 @@ Why not use some other spline curve that guarantees G2-continuity?
   visual appearance of knots using mathematical optimization routines.
   I do not wish to rule out using other G2-continuous splines, and it
   might be interesting some day to consider (e.g.) B-splines.  But as
-  I say above, Bezier curves are a good starting point.}
+  I say above, Bezier curves are a good starting point.\\ \\}
 
 And, if forced by the chosen tool to use Bezier curves, why not place
 nodes at the crossing points, (and one or two more for large loopy
@@ -133,7 +133,7 @@ crossings.
     happen to coincide spatially] to result in their two respective
   lines being orthogonal.  Observe that the overstrand and understrand
   of a crossing point may have (for good reasons!) very different
-  curvatures.}
+  curvatures.\\ \\}
 
 Also, the implementation in the ``badness function" seems far from
 optimal.  ``Total crossing angles()" does not address a key problem
@@ -176,13 +176,13 @@ knot in her hands?
   for this is that the user specifies a particular diagram which the
   software then optimizes for appearance.  The manuscript includes two
   diagrams of $10_{125}$, the Perko pair, which show that sometimes
-  one wants to preserve the topology of the diagram.}
+  one wants to preserve the topology of the diagram.\\ \\}
   
 Page 4 line 45: Define ``nodes" !
 
 \textcolor{blue}{``Nodes'' is a standard word in the context of Bezier
   curves. I have not used the word in any other sense in the
-  manuscript and I think the text is clear as it stands.}
+  manuscript and I think the text is clear as it stands.\\ \\}
 
 Page 4 line 48: ``However, if we can ensure that the radius of
 curvature changes only by a small amount,..."  -$>>$ HOW can the user do
@@ -210,7 +210,7 @@ process.
 \textcolor{blue}{The referee is correct to say that the over and under
   strand are treated the same by the optimization routine, but my
   intent was to introduce and define the words themselves (rather than
-  to differentiate between them).}
+  to differentiate between them).\\ \\}
 
 Page 4 lines 53-54: ``We would like strand crossing points to be far
 from nodes,..."  -- Why?  The curves are also visually continuous across
@@ -249,7 +249,7 @@ the nodes!
   software documentation contains a substantial discussion of the
   issue, but I do not believe that the manuscript would benefit from
   what amounts to little more than me grumbling about implementation
-  difficulties.}
+  difficulties.\\ \\}
 
 Page 5 lines 46-51: Why are there SEVEN significant decimal digits?
 Does the graphic screen have 10 million pixels per line?
@@ -259,7 +259,7 @@ Does the graphic screen have 10 million pixels per line?
   attempt by me to change the print method would, I believe, be
   confusing and unnecessary.  The point of the table was to show that
   a knot path could be represented by a few dozen floating-point
-  numbers.}
+  numbers.\\ \\}
 
 Figure 3, 5, 7: Perhaps fewer than 100 circles per Bezier curve would
 be better.
@@ -302,7 +302,8 @@ Page 9, line 62: What is ``Bosch-type symmetry:..." ?  Please explain.
 \textcolor{blue}{Bosch-type symmetry refers to Bosch (2010) which was
   cited in the previous sentence.\\ \\ old text: The package
   implements Bosch-type symmetry\ldots \\ \\ new text: The package
-  implements symmetry in a similar way to that of Bosch (2010)\ldots}
+  implements symmetry in a similar way to that of Bosch
+  (2010)\ldots\\ \\}
   
 $>>$ If all nodes fulfill the specified symmetry constraints (as shown
 on page 11, lines 15-22 and on lines 35-43), but the connection
@@ -311,7 +312,7 @@ happens? - Does the package check this and let the user know about the
 discrepancy?
 
 \textcolor{blue}{This situation cannot occur: symmetric nodes imply a
-  symmetric diagram.}
+  symmetric diagram.\\ \\}
 
 Page 10 lines 56-58: ``Minimizing the badness is not entirely
 straightforward..."  -- What is the problem?  I think that if all the
@@ -363,12 +364,13 @@ not a good choice for optimization.
 
 \textcolor{blue}{As discussed above, {\tt total\_crossing\_angles()}
   was a somewhat misleading name.  The factor of 100 ensured that even
-  tiny deviations from exactly $90^\circ$ were heavily penalised.}
+  tiny deviations from exactly $90^\circ$ were heavily penalised.\\ \\}
 
 I am missing a description how the two breaks at every crossing point
 are being graphically implemented.
 
-\textcolor{blue}{New figure added (Figure 6) which illustrates the implementation}
+\textcolor{blue}{New figure added (Figure 6) which illustrates the
+  implementation\\ \\}
 
 
 Conclusions:
@@ -380,7 +382,7 @@ to Reviewer 1, to explain why the extension to links may be more
 difficult than one might think.
 
 \textcolor{blue}{Done, new subsection ``some reflections on links''
-  at the end, under ``conclusions and further work''}
+  at the end, under ``conclusions and further work''\\ \\}
 
 RE: ``In the broader context of optimization in art, we observe that
 numerical optimization techniques can produce aesthetically pleasing
@@ -424,7 +426,7 @@ angles more directly.
 
 [27]:  Incomplete reference.  Perhaps give a URL.
 
-\textcolor{blue}{Canonical URL now added}
+\textcolor{blue}{Canonical URL now added\\ \\}
 
 
 Reviewer \#2: Firstly I would like to apologise for my late response on
