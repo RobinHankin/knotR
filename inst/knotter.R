@@ -5,8 +5,8 @@ filename1 <- "knots_to_8crossings.pdf"
 filename2 <- "compare_crossing_angles.pdf"
 filename3 <- "two_trefoil_knots.pdf"
 
-do1 <- F  # change to FALSE to save time
-do2 <- F
+do1 <- TRUE  # change to FALSE to save time
+do2 <- TRUE
 do3 <- TRUE
 
 library(knotR)
