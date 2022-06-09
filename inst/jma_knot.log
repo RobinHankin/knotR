@@ -1,0 +1,467 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.3)  9 JUN 2022 14:55
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**jma_knot
+(./jma_knot.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (./birkjour.cls
+Document Class: birkjour 2009/09/04 v6.0
+\linespacing=\dimen138
+\normalparindent=\dimen139
+\normaltopskip=\skip47
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen140
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count179
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count180
+\leftroot@=\count181
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count182
+\DOTSCASE@=\count183
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count184
+\c@MaxMatrixCols=\count185
+\dotsspace@=\muskip16
+\c@parentequation=\count186
+\dspbrk@lvl=\count187
+\tag@help=\toks16
+\row@=\count188
+\column@=\count189
+\maxfields@=\count190
+\andhelp@=\toks17
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks18
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+\lheadtstbox=\box49
+\rheadtstbox=\box50
+\lmaxhead=\dimen151
+\rmaxhead=\dimen152
+\copyins=\insert199
+\abstractbox=\box51
+\listisep=\skip51
+\c@part=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@figure=\count196
+\c@table=\count197
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\captionindent=\dimen153
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks26
+)
+\c@firstpage=\count198
+\c@lastpage=\count266
+\c@nrofpages=\count267
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count268
+\Gm@cntv=\count269
+\c@Gm@tempcnt=\count270
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks27
+)) (./cite.sty
+Package: cite 1999/04/23  v 3.8
+)
+\c@thm=\count271
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count272
+\l__pdf_internal_box=\box52
+) (./jma_knot.aux)
+\openout1 = `jma_knot.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count273
+\scratchdimen=\dimen162
+\scratchbox=\box53
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen163
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside asymmetric 
+* h-part:(L,W,R)=(54.06023pt, 332.89726pt, 54.06023pt)
+* v-part:(T,H,B)=(59.75078pt, 549.1382pt, 59.75078pt)
+* \paperwidth=441.01772pt
+* \paperheight=668.63976pt
+* \textwidth=332.89726pt
+* \textheight=549.1382pt
+* \oddsidemargin=-18.20976pt
+* \evensidemargin=-18.20976pt
+* \topmargin=-37.51921pt
+* \headheight=7.0pt
+* \headsep=18.0pt
+* \topskip=10.0pt
+* \footskip=12.0pt
+* \marginparwidth=90.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Overfull \hbox (7.70822pt too wide) in paragraph at lines 101--110
+\OT1/cmr/m/n/10 A \OT1/cmr/m/it/10 math-e-mat-i-cal knot \OT1/cmr/m/n/10 is a s
+mooth, un-ori-ented em-bed-ding of a cir-cle $\U/msb/m/n/10 S[]$ \OT1/cmr/m/n/1
+0 into $\U/msb/m/n/10 R[]$ \OT1/cmr/m/n/10 [1,
+ []
+
+[1
+Non-PDF special ignored!
+<special> papersize=15.5cm,23.5cm
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<1280px-Knot_table.png, id=16, 1284.8pt x 956.57375pt>
+File: 1280px-Knot_table.png Graphic file (type png)
+<use 1280px-Knot_table.png>
+Package pdftex.def Info: 1280px-Knot_table.png  used on input line 193.
+(pdftex.def)             Requested size: 284.52756pt x 211.8335pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] [3 <./1280px-Knot_table.png>]
+<screenshot_inkscape_7_6.png, id=27, 1235.61626pt x 909.3975pt>
+File: screenshot_inkscape_7_6.png Graphic file (type png)
+<use screenshot_inkscape_7_6.png>
+Package pdftex.def Info: screenshot_inkscape_7_6.png  used on input line 282.
+(pdftex.def)             Requested size: 284.52756pt x 209.4068pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+Overfull \hbox (18.84967pt too wide) in paragraph at lines 311--311
+[]\OT1/cmtt/m/n/10 > k76 <- reader(system.file("7_6_first_draft.svg",package="k
+notR"))[] 
+ []
+
+[5 <./screenshot_inkscape_7_6.png>]
+Overfull \hbox (50.3494pt too wide) in paragraph at lines 330--330
+[]\OT1/cmtt/m/n/10 > k76_rough <- reader(system.file("7_6_first_draft.svg",pack
+age="knotR"))[] 
+ []
+
+<knot-7_6_rough.pdf, id=35, 411.03569pt x 326.04813pt>
+File: knot-7_6_rough.pdf Graphic file (type pdf)
+<use knot-7_6_rough.pdf>
+Package pdftex.def Info: knot-7_6_rough.pdf  used on input line 333.
+(pdftex.def)             Requested size: 369.9287pt x 293.4406pt.
+
+Overfull \hbox (37.03143pt too wide) in paragraph at lines 333--340
+ [][] 
+ []
+
+<knot-004.pdf, id=36, 433.62pt x 289.08pt>
+File: knot-004.pdf Graphic file (type pdf)
+<use knot-004.pdf>
+Package pdftex.def Info: knot-004.pdf  used on input line 350.
+(pdftex.def)             Requested size: 390.2544pt x 260.16959pt.
+
+Overfull \hbox (57.35713pt too wide) in paragraph at lines 350--357
+ [] 
+ []
+
+[6 <./knot-7_6_rough.pdf>] [7 <./knot-004.pdf>]
+<knot-k76_knotplot2.pdf, id=54, 433.62pt x 433.62pt>
+File: knot-k76_knotplot2.pdf Graphic file (type pdf)
+<use knot-k76_knotplot2.pdf>
+Package pdftex.def Info: knot-k76_knotplot2.pdf  used on input line 424.
+(pdftex.def)             Requested size: 390.2544pt x 390.2544pt.
+
+Overfull \hbox (57.35713pt too wide) in paragraph at lines 424--425
+ [] 
+ []
+
+<overundergraphicalimplementation.pdf, id=55, 505.89pt x 505.89pt>
+File: overundergraphicalimplementation.pdf Graphic file (type pdf)
+<use overundergraphicalimplementation.pdf>
+Package pdftex.def Info: overundergraphicalimplementation.pdf  used on input li
+ne 455.
+(pdftex.def)             Requested size: 289.07999pt x 289.08589pt.
+<knot-009.pdf, id=56, 433.62pt x 433.62pt>
+File: knot-009.pdf Graphic file (type pdf)
+<use knot-009.pdf>
+Package pdftex.def Info: knot-009.pdf  used on input line 469.
+(pdftex.def)             Requested size: 390.2544pt x 390.2544pt.
+
+Overfull \hbox (57.35713pt too wide) in paragraph at lines 469--471
+ [] 
+ []
+
+[8] [9 <./knot-k76_knotplot2.pdf>]
+Overfull \hbox (24.09962pt too wide) in paragraph at lines 508--508
+[]\OT1/cmtt/m/n/10 > fig8 <- reader(system.file("4_1_first_draft.svg",package="
+knotR"))[] 
+ []
+
+<knot-four_figure_eight_knots.pdf, id=70, 433.62pt x 433.62pt>
+File: knot-four_figure_eight_knots.pdf Graphic file (type pdf)
+<use knot-four_figure_eight_knots.pdf>
+Package pdftex.def Info: knot-four_figure_eight_knots.pdf  used on input line 5
+19.
+(pdftex.def)             Requested size: 312.9803pt x 312.99353pt.
+[10 <./overundergraphicalimplementation.pdf>]
+<knot-k5_1.pdf, id=77, 433.62pt x 433.62pt>
+File: knot-k5_1.pdf Graphic file (type pdf)
+<use knot-k5_1.pdf>
+Package pdftex.def Info: knot-k5_1.pdf  used on input line 542.
+(pdftex.def)             Requested size: 312.9803pt x 312.99353pt.
+ [11 <./knot-009.pdf>] [12 <./knot-four_figure_eight_knots.pdf>]
+<compare_crossing_angles.pdf, id=93, 433.62pt x 289.08pt>
+File: compare_crossing_angles.pdf Graphic file (type pdf)
+<use compare_crossing_angles.pdf>
+Package pdftex.def Info: compare_crossing_angles.pdf  used on input line 582.
+(pdftex.def)             Requested size: 369.88582pt x 246.60135pt.
+
+Overfull \hbox (36.98856pt too wide) in paragraph at lines 582--589
+ [] 
+ []
+
+[13 <./knot-k5_1.pdf>] [14 <./compare_crossing_angles.pdf>]
+<L4a1_L7a1.pdf, id=109, 525.12894pt x 297.20511pt>
+File: L4a1_L7a1.pdf Graphic file (type pdf)
+<use L4a1_L7a1.pdf>
+Package pdftex.def Info: L4a1_L7a1.pdf  used on input line 646.
+(pdftex.def)             Requested size: 199.16928pt x 112.72142pt.
+ [15 <./L4a1_L7a1.pdf>]
+<two_trefoil_knots_post_inkscape.pdf, id=121, 433.62pt x 289.08pt>
+File: two_trefoil_knots_post_inkscape.pdf Graphic file (type pdf)
+<use two_trefoil_knots_post_inkscape.pdf>
+Package pdftex.def Info: two_trefoil_knots_post_inkscape.pdf  used on input lin
+e 676.
+(pdftex.def)             Requested size: 284.52756pt x 189.69504pt.
+<knot-perko_A_and_B.pdf, id=122, 354.45424pt x 169.84453pt>
+File: knot-perko_A_and_B.pdf Graphic file (type pdf)
+<use knot-perko_A_and_B.pdf>
+Package pdftex.def Info: knot-perko_A_and_B.pdf  used on input line 697.
+(pdftex.def)             Requested size: 312.9803pt x 149.97678pt.
+<knot-ornamental.pdf, id=123, 505.89pt x 505.89pt>
+File: knot-ornamental.pdf Graphic file (type pdf)
+<use knot-ornamental.pdf>
+Package pdftex.def Info: knot-ornamental.pdf  used on input line 710.
+(pdftex.def)             Requested size: 312.9803pt x 312.9847pt.
+<knots_to_8crossings.pdf, id=124, 2890.8pt x 2890.8pt>
+File: knots_to_8crossings.pdf Graphic file (type pdf)
+<use knots_to_8crossings.pdf>
+Package pdftex.def Info: knots_to_8crossings.pdf  used on input line 719.
+(pdftex.def)             Requested size: 369.88582pt x 369.86235pt.
+
+Overfull \hbox (36.98856pt too wide) in paragraph at lines 719--724
+ [] 
+ []
+
+(./jma_knot.bbl [16
+
+ <./two_trefoil_knots_post_inkscape.pdf>] [17 <./knot-perko_A_and_B.pdf>] [18 <
+./knot-ornamental.pdf>] [19 <./knots_to_8crossings.pdf>])
+[20] (./jma_knot.aux) ) 
+Here is how much of TeX's memory you used:
+ 3639 strings out of 478994
+ 51600 string characters out of 5858185
+ 355734 words of memory out of 5000000
+ 20914 multiletter control sequences out of 15000+600000
+ 412170 words of font info for 61 fonts, out of 8000000 for 9000
+ 1302 hyphenation exceptions out of 8191
+ 83i,6n,88p,772b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmb10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmcsc10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on jma_knot.pdf (20 pages, 1658782 bytes).
+PDF statistics:
+ 216 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+
