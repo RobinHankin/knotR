@@ -443,10 +443,24 @@ crossings, we create an overunder object which is a two-column matrix:
 With reference to Figure~\ref{k76_strands}, each row of {\tt ou76}
 corresponds to a crossing; the first element gives the overstrand and
 the second the understrand; thus strand~12 passes over strand~1,
-strand~2 passes over strand~11, and so on. The result is shown in
-figure~\ref{76_overunder}.
+strand~2 passes over strand~11, and so on.  The graphical
+implementation is indicated in
+Figure~\ref{overundergraphicalimplementation}, and the complete knot
+is shown in figure~\ref{76_overunder}.
 
   
+\begin{figure}[!tbp] % file overundergraphicalimplementation.pdf is
+                     % created in file inst/overunder.R
+  \centering
+\includegraphics[width=4in]{overundergraphicalimplementation}
+\caption{Diagram \label{overundergraphicalimplementation} showing the
+  graphical implementation of the line breaks distinguishing
+  overstrand from understrand at a crossing point.  Top, details of
+  technique used, with mask coloured red.  Bottom, same diagram but
+  with mask coloured white, illustrating mechanism for production of
+  publication-quality knots}
+\end{figure}
+
 \begin{figure}[!tbp]
 \begin{verbatim}
 knotplot(k7_6)
@@ -456,7 +470,6 @@ knotplot(k7_6)
 \caption{Knot $7_6$, post-optimization with breaks indicating
   \label{76_overunder}  underpassing strands}
 \end{figure}
-
 
 \subsection{Symmetry}
 
