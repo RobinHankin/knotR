@@ -127,8 +127,13 @@ user to place the crossing points far enough apart to start with, and
 this would make it easy to set the Bezier handles to force right-angle
 crossings.
 
-
-
+\textcolor{blue}{Most of this issue is discussed below, at the comment
+  for page 4, lines 53-54.  But here I would observe that it is not at
+  all easy to manipulate Bezier handles on two distinct nodes [which
+    happen to coincide spatially] to result in their two respective
+  lines being orthogonal.  Observe that the overstrand and understrand
+  of a crossing point may have (for good reasons!) very different
+  curvatures.}
 
 Also, the implementation in the ``badness function" seems far from
 optimal.  ``Total crossing angles()" does not address a key problem
