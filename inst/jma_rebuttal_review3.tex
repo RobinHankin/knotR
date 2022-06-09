@@ -352,9 +352,13 @@ altered easily,..."  -- What is the user interface for this?  Are
 there sliders in the display that allow interactive adjustments of the
 weights?
 
-\textcolor{blue}{I have not implemented sliders.  The weightings may
-  be changed in function {\tt badness()}, and documentation (including
-  examples) is given at {\tt badness.Rd}.\\ \\}
+\textcolor{blue}{I have not implemented sliders.  A typical
+  optimization takes a couple of hours, a big one [e.g. some of the
+    pretzel knots in the package] may take a few weeks.  With a slider
+  interface, one would adjust a slider's position and have to wait
+  several days to see the effect.  Weightings may be changed in
+  function {\tt badness()}, and documentation (including examples) is
+  given at {\tt badness.Rd}.\\ \\}
 
   
 Figure 9: The fact that ``angle-crossing penalty" had to be enhanced by
