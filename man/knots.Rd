@@ -134,6 +134,11 @@
 \alias{unknot}
 \alias{D16}
 \alias{T20}
+\alias{k8_11_90deg_crossing}
+\alias{k8_5_90deg_crossing}
+\alias{k8_6_90deg_crossing}
+\alias{pretzel_2_3_7_90deg_crossing}
+\alias{pretzel_7_3_7_90deg_crossing}
 \docType{data}
 \title{Optimized knots}
 \description{A variety of knots with optimized forms}
