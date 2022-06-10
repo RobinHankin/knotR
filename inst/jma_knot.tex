@@ -739,6 +739,19 @@ metrics used to evaluate knot diagrams in the package.
     p}_i$ we have $\sum_{i\neq j}\left|{\mathbf p}_i-{\mathbf
     p}_j\right|^{2}$.  The idea is to encourage more compact
   configurations rather than long skinny ones.
+\item[{\tt node\_crossing\_badness()}] Here we make the crossing
+  points {\em repel} one another, as though they are all charged
+  objects (with the same sign).  The idea is to spread out the nodes
+  so no two nodes are too close together.  If crossing point $i$ is at
+  position ${\mathbf p}_i$ we have $\sum_{i\neq j}\left|{\mathbf
+    p}_i-{\mathbf p}_j\right|^{-1}$.  The length scale for this
+  repulsion is smaller than that of the attractive term above.  The
+  overall potential thus resembles that sometimes seen in atomic
+  physics when considering the hydrogen molecule $H_2$: the two
+  protons attract one another when distant, but repel when closer.  In
+  the package, the intent is for this optimal distance to be a shallow
+  minimum and the optimization routine is free to adjust within a wide
+  range.
 \item[{\tt total\_crossing\_angles()}] Here we wish to punish
   configurations with strands that cross at acute angles.  If crossing
   point $i$ has crossing angle $\theta_i$ the metric is
@@ -753,19 +766,12 @@ metrics used to evaluate knot diagrams in the package.
   copy).
 \item[{\tt midpoint\_badness()}] The idea is to suppress strands with
   crossing points too close to the endpoint nodes.  For each crossing
-  point $c_ij$ of strand $i$ with strand $j$, we calculate the arc
-  length $s=\int_{s=0}^{c_{ij}}\,ds$ from the node to each crossing
+  point $c_{ij}$ of strand $i$ with strand $j$, we calculate the arc
+  length $\int_{s=0}^{c_{ij}}\,ds$ from the node to each crossing
   point and normalize with the strand length $\int\,ds$.  We reward
   configurations with normalized crossing point arc lengths that are
   close to $1/2$.  Note that this particular metric is not independent
   of the total crossing potential energy metric.
-\item[{\tt node\_crossing\_badness()}] Somewhat complementary to {\em
-  total crossing potential energy}, here we make the crossing points
-  repel one another, as though they are all charged objects (with the
-  same sign).  The idea is to spread out the nodes so no two nodes are
-  too close together.  If crossing point $i$ is at position ${\mathbf
-    p}_i$ we have $\sum_{i\neq j}\left|{\mathbf p}_i-{\mathbf
-    p}_j\right|^{-1}$.
 \item[{\tt curvature\_switching\_badness()}] Here the problem is knots
   which should have either all their strands curving to the left, or
   all to the right; the signed curvature should be everywhere the same
