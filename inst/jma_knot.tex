@@ -386,8 +386,8 @@ The knots supplied in the package minimize a weighted sum of these and
 other badnesses\footnote{Function {\tt badness()} includes various
 ``housekeeping'' badnesses which are used to make sure that the
 minimum found by {\tt nlm()} is topologically identical to the
-starting configuration.  Function {\tt
-  non\_crossing\_strand\_close\_approach\_badness()}, for example,
+starting configuration (a list is given in the Appendix).  Function
+{\tt non\_crossing\_strand\_close\_approach\_badness()}, for example,
 makes non-crossing strands ``repel'' one another so as not to
 introduce spurious intersections.}.  The weightings for the various
 badnesses are, of course, subjective; but the system discussed here
@@ -722,10 +722,69 @@ knotplot(perko_B)
   \end{center}
 \end{figure}
 
-
-
 \bibliography{knot}
 \bibliographystyle{unsrt}
+
+\clearpage
+\section*{Appendix}
+
+There follows a more detailed description and motivation for various
+metrics used to evaluate knot diagrams in the package.
+
+\begin{description}
+\item[{\tt total\_crossing\_potential\_energy()}] The idea is to make
+  the crossing points attract one another as if they are
+  gravitationally active objects; metric measured by their mutual
+  potential energy.  If crossing point $i$ is at position ${\mathbf
+    p}_i$ we have $\sum_{i\neq j}\left|{\mathbf p}_i-{\mathbf
+    p}_j\right|^{2}$.  The idea is to encourage more compact
+  configurations rather than long skinny ones.
+\item[{\tt total\_crossing\_angles()}] Here we wish to punish
+  configurations with strands that cross at acute angles.  If crossing
+  point $i$ has crossing angle $\theta_i$ the metric is
+  $\sum_i\left(\cos\theta_i\right)^2$.
+\item[{\tt total\_bending\_energy()}] The idea is for the strands to
+  preferentially follow elastica curves, as in elementary (nonlinear)
+  beam theory.  From differential geometry, the Euler elastica
+  potential energy is $\int\kappa(s)^2\,ds$.  In the package, this is
+  calculated numerically for each strand and the total returned.
+\item[{\tt total\_string\_length()}] The length is just $\int ds$, with a
+  nominal value of 5000 (which value is about right for a printed
+  copy).
+\item[{\tt midpoint\_badness()}] The idea is to suppress strands with
+  crossing points too close to the endpoint nodes.  For each crossing
+  point $c_ij$ of strand $i$ with strand $j$, we calculate the arc
+  length $s=\int_{s=0}^{c_{ij}}\,ds$ from the node to each crossing
+  point and normalize with the strand length $\int\,ds$.  We reward
+  configurations with normalized crossing point arc lengths that are
+  close to $1/2$.  Note that this particular metric is not independent
+  of the total crossing potential energy metric.
+\item[{\tt node\_crossing\_badness()}] Somewhat complementary to {\em
+  total crossing potential energy}, here we make the crossing points
+  repel one another, as though they are all charged objects (with the
+  same sign).  The idea is to spread out the nodes so no two nodes are
+  too close together.  If crossing point $i$ is at position ${\mathbf
+    p}_i$ we have $\sum_{i\neq j}\left|{\mathbf p}_i-{\mathbf
+    p}_j\right|^{-1}$.
+\item[{\tt curvature\_switching\_badness()}] Here the problem is knots
+  which should have either all their strands curving to the left, or
+  all to the right; the signed curvature should be everywhere the same
+  sign (the canonical example would be $8_{18}$ which in earlier
+  versions of the software had ugly changes of curvature).  We impose
+  a fixed penalty for any knot with more than one sign.
+\item[{\tt curvature\_consecutive\_segment\_switching\_badness()}] We
+  wish to discourage configurations in which curvature undergoes a
+  sudden change at a node.  The value for a single (Bezier) node is
+  simply $\left(\delta\kappa\right)^2$, and the penalty for a given
+  configuration is the sum of the values for each node.  See
+  Figure~\ref{two_trefoil_knots} for motivation and discussion.
+\item[{\tt non\_crossing\_strand\_close\_approach\_badness()}] Here
+  the idea is to prevent non-intersecting strands from approaching one
+  another too closely.  Quite apart from aesthetic considerations,
+  this metric prevents the creation of new spurious nodes that would
+  disrupt the optimization routines.
+\end{description}
+
 \end{document}
 
 
