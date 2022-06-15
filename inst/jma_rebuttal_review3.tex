@@ -8,10 +8,11 @@ manuscript where appropriate.
 
 \section*{Rebuttal to second third review: overall response}
 
+\textcolor{blue}{
 Short story: the reviewers make reasonable and constructive comments.
 I have accommodated the comments with  with rewording.  The resulting
 document is, I believe, stronger and more scholarly than before and I
-recommend it to you.
+recommend it to you.}
 
 
 \section*{Detailed rebuttal: Reviewer \#1}
@@ -70,27 +71,26 @@ desired qualities?
   comment on the large amount of programming-oriented detail in the
   submission.  This reviewer evidently regards the knots in the
   submission as ``decent'', which I take to be a great compliment.  It
-  is often difficult to know the correct balance between overly
-  technical descriptions [which indeed often overlaps with the aims of
-    a technical manual] and gushing conceptual big-picture thinking.
-  However, I note that many of the comments below are essentially
-  requests for clarifications of minor technical details of the
-  implementation: and this would indicate that perhaps the balance
-  should be shifted back toward the technical manual end of the
-  spectrum.  The other observation I would make here is that the
-  software package [27] is intended to be part of the submission (it
-  is released under the GPL and is thus available for public use) and
-  with this understanding, even a downbeat technical manual would have
-  scholarly value in conjunction with the new software it describes.
-  I want the editor and reviewer to know that in addressing the
-  concerns below I have tried hard to answer not just ``what'' but
-  also the ``why'' of the implementation.  \\ \\ Nevertheless, the cue
-  above is a good one.  The two questions: (a) {\em what makes a knot
-    plot attractive?}, and (b) {\em how best ... to achieve this?}
-  are indeed profound, and were not addressed directly in the old
-  manuscript.  In the revision I have prominently stated the questions
-  in the introduction, and given a provocative, if brief, outline of
-  my view.\\ \\}
+  is often difficult to know the correct balance between an overly
+  technical description [which indeed often overlaps with the aims of
+    a technical manual] and conceptual big-picture thinking.  However,
+  I note that many of the comments below are essentially requests for
+  clarifications of minor technical details of the implementation: and
+  this would indicate that perhaps the balance should be shifted back
+  toward the technical manual end of the spectrum.  The other
+  observation I would make here is that the software package [27] is
+  intended to be part of the submission (it is released under the GPL
+  and is thus available for public use) and with this understanding,
+  even a downbeat technical manual would have scholarly value in
+  conjunction with the new software it describes.  I want the editor
+  and reviewer to know that in addressing the concerns below I have
+  tried hard to answer not just ``what'' but also the ``why'' of the
+  implementation.  \\ \\ Nevertheless, the cue above is a good one.
+  The two questions: (a) {\em what makes a knot plot attractive?}, and
+  (b) {\em how best ... to achieve this?}  are indeed profound, and
+  were not addressed directly in the old manuscript.  In the revision
+  I have prominently stated the questions in the introduction (section
+  1.2), and given a provocative, if brief, outline of my view.\\ \\}
 
 
 The problem starts with the basic curve representation:
@@ -100,16 +100,16 @@ Why use Bezier curves?
 \textcolor{blue}{Most of the answer is in the manuscript: ``A Bezier
   curve is a visually pleasing polynomial path that can be used to
   specify the path of a knot projection; here cubic Bezier curves are
-  used''.  However, Bezier curves are a natural choice for a number of
-  reasons and I have added the following sentence: ``Bezier curves are
-  a natural choice for working with mathematical knots for several
-  reasons: they are familiar to many graphical workers; they have a
-  natural and intuitive control system (usually called ``handles''),
-  and are implemented in many graphical software suites''.  I do not
-  wish to suggest that Bezier curves are the only parametrizations for
-  working with knots; but they are a natural starting point, and
-  AFAICS they have no serious disadvantages in this context, nor is
-  there any obvious superior method.\\ \\}
+  used''.  However, as observed, there are alternatives.  I have added
+  the following sentence: ``Bezier curves are a natural choice for
+  working with mathematical knots for several reasons: they are
+  familiar to many graphical workers; they have a natural and
+  intuitive control system (usually called ``handles''), and are
+  implemented in many graphical software suites''.  I do not wish to
+  suggest that Bezier curves are the only parametrizations for working
+  with knots; but they are a natural starting point, and AFAICS they
+  have no serious disadvantages in this context, nor is there any
+  obvious superior method.\\ \\}
 
 Why not use some other spline curve that guarantees G2-continuity?
 
@@ -166,14 +166,14 @@ possess a C2 rotation axis, which ..."
   rotation about a particular axis in 3D space.  I am considering the
   knot path here, which is a plane figure.  Referring to a C2 axis
   might suggest to readers that I am considering a 3D figure [e.g. the
-    result of ``lifting'' the strand slightly at a crossing point].
-  But this particular 3D figure might not possess a C2 axis, a
-  potentially confusing (and anyway irrelevant) fact.  On balance, I
-  believe that mirror symmetry is the appropriate concept here, but
-  the original sentence was poorly worded.\\ \\
-OLD TEXT: ...possess a line of symmetry (at least if...ignored)\\ \\
-NEW TEXT: ...possess mirror symmetry (at least if...ignored)\\ \\
-}
+    result of taking a 2D figure and perturbing strands slightly at a
+    crossing point to avoid self-intersection].  But this particular 3D
+  figure might not possess a C2 axis, a potentially confusing (and
+  anyway irrelevant) fact.  On balance, I believe that mirror symmetry
+  is the appropriate concept here, but the original sentence was
+  poorly worded.\\ \\ OLD TEXT: ...possess a line of symmetry (at
+  least if...ignored)\\ \\ NEW TEXT: ...possess mirror symmetry (at
+  least if...ignored)\\ \\ }
 
 
 
@@ -188,20 +188,22 @@ knot in her hands?
   corresponding to a physical knot that one has in one's hands is a
   reasonable wish.  But not one that I can fulfil.  Indeed, the
   package is predicated upon the notion that the diagram is the
-  ``real'' object, and the (3D) knot itself is irrelevant.  Thus much
-  of the package {\em prevents} the optimization routine from making
-  Reidermeister moves [that is, changes that affect the topology of
-    the diagram but not that of the 3D knot].  The operational reason
-  for this is that the user specifies a particular diagram which the
-  software then optimizes for appearance.  The manuscript includes two
-  diagrams of $10_{125}$, the Perko pair, which show that sometimes
-  one wants to preserve the topology of the diagram.\\ \\}
+  ``real'' object, and the (3D) knot itself is to some extent
+  irrelevant.  Thus much of the package {\em prevents} the
+  optimization routine from making Reidermeister moves [that is,
+    changes that affect the topology of the diagram but not that of
+    the 3D knot].  The operational reason for this is that the user
+  specifies a particular diagram which the software then optimizes for
+  appearance.  The manuscript includes two diagrams of $10_{125}$, the
+  Perko pair, which show that sometimes one wants to preserve the
+  topology of the diagram.\\ \\}
   
 Page 4 line 45: Define ``nodes" !
 
 \textcolor{blue}{``Nodes'' is a standard word in the context of Bezier
-  curves. I have not used the word in any other sense in the
-  manuscript and I think the text is clear as it stands.\\ \\}
+  curves, defined in the caption of figure 2.  I have not used the
+  word in any other sense in the manuscript and I think the text is
+  clear as it stands.\\ \\}
 
 Page 4 line 48: ``However, if we can ensure that the radius of
 curvature changes only by a small amount,..."  -$>>$ HOW can the user do
@@ -294,7 +296,9 @@ Over-/under-crossings seem to become relevant only for the final
 rendering of the knot curve with the gaps included.
 
 \textcolor{blue}{Good point, I have added a sentence to this effect to
-  the caption of figure 4.\\ \\}
+  the caption of figure 4 which now ends with `` Crossings become
+  relevant only for the final rendering of the knot curve with the
+  gaps included''.  \\ \\}
 
 Page 7 line 52: ``The optimization typically proceeds over R 50" - What
 is the meaning of this?
@@ -442,17 +446,17 @@ better ``badness function" that penalizes non-orthogonal crossing
 angles more directly.
 
 \textcolor{blue}{The referee is correct to say that changing the
-  badness function would result in figures less like 9a and more like
-  9b.  But I would take issue with the phrase ``too tightly wound''.
-  I have polled my colleagues who appear to be evenly split between
-  preferring 9a and 9b.  The comparison appears to elicit strong
-  opinions here at AUT.  Proponents of 9b point to the broader winding
-  along the central helix, while those of 9a point to the more liquid
-  and languid appearance, and in particular emphasise the absence of
-  retrograde curvature at the bottom.  I have added a brief discussion
-  of these issues to the caption of figure 12 [which is now figure 15
-    of the resubmission].  I would observe that the {\tt knotR}
-  package makes such discussions possible.\\ \\}
+  badness function would result in diagrams less like Figure 10a and
+  more like 10b.  But I would take issue with the phrase ``too tightly
+  wound''.  I have polled my colleagues who appear to be evenly split
+  between preferring 10a and 10b.  The comparison appears to elicit
+  strong opinions here at AUT.  Proponents of 10b point to the broader
+  winding along the central helix, while those of 10a point to the
+  more liquid and languid appearance, and in particular emphasise the
+  absence of retrograde curvature at the bottom.  I have added a brief
+  discussion of these issues to the caption of figure 12 [which is now
+    figure 15 of the resubmission].  I would observe that the {\tt
+    knotR} package makes such discussions possible.\\ \\}
 
 [27]:  Incomplete reference.  Perhaps give a URL.
 
