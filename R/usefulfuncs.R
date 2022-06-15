@@ -260,7 +260,7 @@
     out[out[,9]>0,1:2]
 }
   
-`total_crossing_angles` <- function(b,cpb){
+`total_crossing_angle_badness` <- function(b,cpb){
   if(missing(cpb)){cpb <- crossing_points(b)}
   
   jj <- cpb[cpb[,9]==1,1:2,drop=FALSE]  # strand numbers of crossing strand pairs
@@ -381,7 +381,7 @@
   if(missing(cpb)){  cpb <- crossing_points(b) }  
   c(
       pot = total_crossing_potential_energy(b,cpb=cpb),
-      ang = total_crossing_angles(b,cpb=cpb),
+      ang = total_crossing_angle_badness(b,cpb=cpb),
       ben = total_bending_energy(b,power=2),
       len = total_string_length(b),
       mid = midpoint_badness(b,cpb),

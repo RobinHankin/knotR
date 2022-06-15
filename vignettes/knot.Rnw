@@ -220,12 +220,12 @@ function using numerical methods.
 Two examples of desiderata for such an objective function might be to
 keep the strands crossing at right angles, and the overall bending
 energy.  These are evaluated in the package by functions
-\code{total_crossing_angles()} and~\code{total_bending_energy()}
+\code{total_crossing_angle_badness()} and~\code{total_bending_energy()}
 respectively:
 
 <<k76_desiderata>>=
 b <- as.controlpoints(k76_rough)
-total_crossing_angles(b)
+total_crossing_angle_badness(b)
 total_bending_energy(b)
 @ 
 

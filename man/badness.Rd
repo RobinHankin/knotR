@@ -8,6 +8,7 @@
 \alias{total_bending_energy}
 \alias{total_crossing_potential_energy}
 \alias{total_crossing_angles}
+\alias{total_crossing_angle_badness}
 \alias{always_left_badness}
 \alias{metrics}
 \alias{non_crossing_strand_close_approach_badness}
@@ -24,7 +25,7 @@ node_crossing_badness(b,cpb)
 total_string_length(b)
 total_bending_energy(b,power=2)
 total_crossing_potential_energy(b,cpb)
-total_crossing_angles(b,cpb)
+total_crossing_angle_badness(b,cpb)
 metrics(b,cpb)
 always_left_badness(b)
 non_crossing_strand_close_approach_badness(b,cpb)
@@ -66,7 +67,7 @@ the \code{weights} argument of \code{badness()}.
   \item{pot}{Function \code{total_crossing_potential_energy()} gives the
     potential energy of the nodes, under an inverse square force law}
   
-  \item{ang}{Function \code{total_crossing_angles()} returns a high value if
+  \item{ang}{Function \code{total_crossing_angle_badness()} returns a high value if
     strands cross at angles far from 90 degrees.  It returns the sum, over
     all crossings, of \code{bezier_angle()}}
   
