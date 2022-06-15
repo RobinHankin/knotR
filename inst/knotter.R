@@ -82,13 +82,13 @@ leg <- list(
       for(j in overs){  # loop over strands j that pass over strand i; i is under, j is over
         jj <- bezier_intersect(b[[i]],b[[j]],'para') # jj: c(ess,tee)
         crosspoint <- jj[2]  # crosspoint parameter for the OVERstrand
-        xy_thick <- rbind(xy_thick,bezier(b[[j]],tee=seq(from=crosspoint-0.3,to=crosspoint+0.3, length=n)),NA)
+        xy_thick <- rbind(xy_thick,bezier(b[[j]],tee=seq(from=crosspoint-0.4,to=crosspoint+0.4, length=n)),NA)
       }
       xy_thin <- rbind(xy_thin, bezier(b[[i]],tee=tee))
     } # 'i' loop closes
 
     points(xy_thin, type='l',lwd=lwd,              lend=1, ljoin=1,              ...)
-    points(xy_thick,type='l',lwd=lwd*(1+gapwidth), lend=1, ljoin=1, col="white", ...)
+    points(xy_thick,type='l',lwd=lwd*(1+gapwidth*0.6), lend=1, ljoin=1, col="white", ...)
     points(xy_thick,type='l',lwd=lwd,              lend=1, ljoin=1,              ...)
 
     return(invisible(xy_thin))
