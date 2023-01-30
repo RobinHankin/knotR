@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\begin{document}
+
+(Below, the reviewer's comments are in black, and my replies to the
+issues are in \textcolor{blue}{blue}.  I have indicated changes to the
+manuscript where appropriate.
+
+\section*{Rebuttal to "Visually pleasing knot projections" by
+  Robin K. S. Hankin (submitted to JMA, manuscript 209604076); review
+  30 January 2023}
+
+\textcolor{blue}{ Short story: }
+
+
+
+\section*{Detailed rebuttal}
+
+
+
+Comments from the Editors and Reviewers:
+
+I appreciate and accept most of the comments made by the author in his
+rebuttal and the corresponding fixes in the manuscript.  But I have a
+remaining concern that much of this material is perfect for an on-line
+tutorial on how to use package [27] to draw optimized knot diagrams,
+but JMA is not the right place to publish such a tutorial.
+
+The content that is most fitting for a JMA paper is a discussion of
+what makes a knot diagram "beautiful"  and that discussion will
+clearly be biased by the personal view of the author (perhaps enhanced
+by a "user-study" among family and colleagues).  Thus lines 14 - 20 on
+page 4 are of prime importance and could be fleshed out more.
+
+The main contribution to JMA would then be a detailed discussion of
+how the author has struggled to capture these goals in the form of
+mathematical functions that can be optimized and will then approximate
+these goals.  In this respect, the manuscript still has some
+shortcomings.
+
+They may be fixed in two ways: Enhance the detailed explanations of
+the choices made in creating package [27]; and add a more extended
+discussion of a few things that might be approached differently in a
+future package ( -- which can also handle links).
+
+In view of this, I recommend that Appendices A and B should be firmly
+integrated into the main text.  The discussions therein relate rather
+directly to what I see as the main contribution of a JMA paper on this
+topic.
+
+A few comments on some rebuttals:
+
+RE: Why use Bezier curves? : A key point, which should be mentioned in
+the justification for Bezier curves, is that they interpolate their
+end-points. This gives users a convenient, more direct control of
+where these curve segments will appear than what they would get from
+G2-continuous B-splines, which are only approximating their control
+points.
+
+RE: Why not place nodes at the crossing points? : Yes, this will
+require a different, slightly more sophisticated drawing interface;
+but this may then pay off heavily in a simpler, more efficient
+optimization process.
+
+For each crossing point, the user would see an orthogonal "cross-hair"
+that can be shifted and rotated as a whole.  In addition, there are
+two parameters (handle-pairs) that control the "velocities" of the two
+strands through the crossing.  The optimization routine would
+fine-tune these velocities to achieve matching curvature for the two
+sequentially connected Bezier curves.
+
+And, yes, if a crossing point falls on a line of mirror symmetry, the
+crosshair would automatically be angled at 45 degrees with respect to
+this line.  And if the knot has n-fold rotational symmetry, n such
+cross hairs would be placed at the vertices of a regular n-gon.  (All
+this is not such a "nightmare" if it is properly considered from the
+beginning.)
+
+I don't expect that anything in the current system should be changed;
+but this approach should definitely be considered in a future version
+of such a package.
+
+
+RE: Mismatched diagram and symmetry specifications: "This situation
+cannot occur" -- If the user makes a mistake, will the current system
+send a suitable error message?
+
+RE: A hierarchical way of dealing with symmetry: "This is exactly what
+I have done!  The referee gives an accurate summary of the code's
+methodology."  - Place a corresponding, extended description into the
+main text.
+
+RE: A slider interface for changing some optimization parameters: It
+is clear why this would not be practical in the current system, where
+the optimization of a pretzel knot "may take a few weeks."  But this
+also suggests that there is much room for improvement!  Perhaps some
+badness functions are not really needed or are badly implemented.
+
+RE: Link projections: In a future system, the planning for handling
+links should come in right at the beginning.  It is not at all clear
+why "Each component would have its own badness."
+
+Many of the important badness functions (e.g. separations of nodes or
+of non-crossing curve segments) are based purely on local geometry and
+need not know what component of a link they refer to.  Perhaps the
+overall length of a knot or of a link-component is not a good metric,
+and should be replaced with some other functions of the length of
+curve segments between crossings.
+
+Some detailed comments on manuscript R2:
+
+Page 6, line 20:  How many (x,y) pairs are there?
+
+Page 6, Line 36: Why "R50"? - Are there a total of 50 parameters?
+What are they?
+
+Page 6, Line 39: "… the overall bending energy." ->> 'minimizing
+overall bending energy.'
+
+Page 6, Line 42:  What is "> b <" ?
+
+Figures 3 and 5: Try running these figures with only 50 points (and
+circles) for each Bezier segment.
+
+Figure 4 caption: Much of the explanation of "7 3" versus "3 7" is
+already in the main text.
+
+Page 8, Line 60: "Why 64 real variables"?  What are they?  How does
+this agree with "R50" on page 6 ?
+
+Figure 7:  Where does the spiky artifact in the upper right lobe come from?
+
+Page 12, Line 52: "...a rotationally symmetric" ->> " ... a knot with
+pure cyclic rotational symmetry, rather than dihedral symmetry"
+
+Figure 9: Why did the user choose to place three nodes on the outer
+lobes, rather than only two? - Was this easier to express the desired
+symmetry??
+
+Page 16, Line 47: "The strands exert a couple but no force on one
+another." ??  Lengthy discussions should be relegated to the main
+text, rather than be in figure captions.
+
+Figure 14: All the knots are nicer than the ones in Ref [24].  Good
+results!
+
+References: Several of them are incomplete and need an URL or a more
+detailed description where the source can be found.
+
+
+
+
+\end{document}
