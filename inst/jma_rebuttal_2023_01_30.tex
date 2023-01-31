@@ -111,9 +111,16 @@ main text.
 
 RE: A slider interface for changing some optimization parameters: It
 is clear why this would not be practical in the current system, where
-the optimization of a pretzel knot "may take a few weeks."  But this
+the optimization of a pretzel knot ``may take a few weeks."  But this
 also suggests that there is much room for improvement!  Perhaps some
 badness functions are not really needed or are badly implemented.
+\textcolor{blue}{\\ This is an excellent suggestion and indeed many of
+  the badness functions may well turn out to be superfluous, or at
+  least susceptible to faster heuristics [although I would argue that
+    the functions all adhere to efficient vectorised R coding
+    standards].  If it turns out that some of the badness weightings
+  can be set to zero without degrading the resulting visual
+  attractiveness, this would certainly be worth pursuing.\\ \\}
 
 RE: Link projections: In a future system, the planning for handling
 links should come in right at the beginning.  It is not at all clear
