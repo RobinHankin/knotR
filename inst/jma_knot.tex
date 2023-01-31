@@ -376,8 +376,10 @@ quantifies its displeasingness, and then minimize this objective
 function using numerical methods.  In the package, minimization is
 performed using either Nelder-Mead~\cite{nelder1965} or a Newton-type
 method~\cite{dennis1983} (gradient information is not available).  The
-optimization typically proceeds over $\mathbb{R}^{50}$ and in the
-context of the package, the methods appear to be broadly comparable.
+optimization proceeds over $\mathbb{R}^n$ where $n$ is the number of
+parameters needed to specify the path; typically $n\simeq 50$ for the
+knots presented here.  In the context of the package, the methods
+appear to be broadly comparable.
 
 Two examples of desiderata for such an objective function might be to
 keep the strands crossing at right angles, and minimizing overall bending

@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{xcolor}
+\usepackage{amssymb}
 \begin{document}
 
 (Below, the reviewer's comments are in black, and my replies to the
@@ -111,8 +112,13 @@ Some detailed comments on manuscript R2:
 
 Page 6, line 20:  How many (x,y) pairs are there?
 
-Page 6, Line 36: Why "R50"? - Are there a total of 50 parameters?
-What are they?
+Page 6, Line 36: Why "$\mathbb{R}^{50}$"? - Are there a total of 50
+parameters?  What are they?  \textcolor{blue}{\\This was not clear and
+  I have rephased.  Old text: ``The optimization typically proceeds
+  over $\mathbb{R}^{50}$\ldots"`. New text: ``The optimization
+  proceeds over $\mathbb{R}^n$ where $n$ is the number of parameters
+  needed to specify the path; typically $n\simeq 50$ for the knots
+  presented here".\\ \\}
 
 Page 6, Line 39: ``... the overall bending energy." {\tt ->>} 'minimizing
 overall bending energy.'
