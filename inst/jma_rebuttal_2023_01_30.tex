@@ -82,9 +82,27 @@ but this approach should definitely be considered in a future version
 of such a package.
 
 
-RE: Mismatched diagram and symmetry specifications: "This situation
+RE: Mismatched diagram and symmetry specifications: ``This situation
 cannot occur" -- If the user makes a mistake, will the current system
-send a suitable error message?
+send a suitable error message?\textcolor{blue}{\\For convenience, I
+  reproduce the original exchange below:\\ \\} {\tiny Reviewer's
+  comment, round 3: ``If all nodes fulfill the specified symmetry
+  constraints (as shown on page 11, lines 15-22 and on lines 35-43),
+  but the connection diagram does not completely adhere to the
+  specified symmetry - What happens? - Does the package check this and
+  let the user know about the discrepancy?"}  \textcolor{blue}{\tiny
+  My original reply: ``This situation cannot occur: symmetric nodes
+  imply a symmetric diagram".\\ \\} \textcolor{blue}{A more nuanced
+  reply would be to observe that in the event of a mismatch between
+  diagram and symmetry specifications, the symmetry specifications
+  take priority and the resulting symmetrised diagram automatically
+  accommodates the imposed symmetry.  In practice what happens is
+  immediately visually apparent: one sees beautiful symmetric nodes
+  joined by Bezier curves that do not posess the intended topology.
+  The diagram is a disorganised ugly tangled mess, clearly not
+  reflecting the intended configuration.  In practice, one glance at
+  the diagram simultaneously reveals the problem and its solution
+  (just reconnect the dots in the correct order).\\ \\}
 
 RE: A hierarchical way of dealing with symmetry: "This is exactly what
 I have done!  The referee gives an accurate summary of the code's
