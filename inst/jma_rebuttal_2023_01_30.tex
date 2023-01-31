@@ -163,7 +163,22 @@ pure cyclic rotational symmetry, rather than dihedral symmetry"
 
 Figure 9: Why did the user choose to place three nodes on the outer
 lobes, rather than only two? - Was this easier to express the desired
-symmetry??
+symmetry??  \textcolor{blue}{Sort of.  Having more nodes allows for
+  finer and more sophisticated control over the path, and having too
+  few nodes results in a displeasing, unnatural flabby configuration.
+  On the other hand, having too many nodes results in the optimization
+  routine thrashing and failing to converge.  In this case it is
+  desirable to have an odd number of nodes: 12,4,16,8,20 are
+  constrained by the symmetry routine to be exactly on one of the five
+  lines of symmetry, and to intersect its line at exactly $90^\circ$.
+  Frankly the choice of number of nodes has been troublesome in the
+  development of the software.  Perhaps this issue is of interest to
+  the JMA readership and I have added a brief sentence discussing it
+  to the manuscript: ``Note that increasing the number of nodes
+  provides more control over the path at the expense of a more
+  difficult optimization process".  Also, at the discussion of Figure
+  9: ``from Figure 9 we see that these nodes are constrained to lie on
+  one of the five lines of symmetry, cutting it at $90^\circ$".}
 
 Page 16, Line 47: "The strands exert a couple but no force on one
 another." ??  Lengthy discussions should be relegated to the main

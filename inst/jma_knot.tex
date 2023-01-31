@@ -333,7 +333,7 @@ for the loop is closed.  The package can coerce inkscape objects to
 other forms, specifically {\tt minobj} objects, which contain no
 redundancy (the position of each node, as well as one of the handles,
 is stored); or {\tt controlpoints} objects, which allow for easy
-construction of Bezier interpolation between nodes.
+construction of Bezier interpolation between nodes.  Note that increasing the number of nodes provides more control over the path at the expense of a more difficult optimization process.
 
 \begin{figure}[htbp]
   \begin{center}
@@ -572,9 +572,11 @@ Thus, using the same notation as before, nodes~11 and~13 are
 symmetrical about the vertical axis, nodes~2 and~12 are on the
 vertical axis.  The {\tt Mrot} argument specifies sets of nodes that
 map to themselves under rotation.  The top line of {\tt Mrot}
-indicates that nodes 12, 4, 16, 8, and~20 are concyclic.  An example
-of a knot with pure rotational symmetry, rather than dihedral
-symmetry, is given in Figure~\ref{orn20}.
+indicates that nodes 12, 4, 16, 8, and~20 are concyclic and indeed
+from Figure~\ref{k5_1_twoknots} we see that these nodes are
+constrained to lie on one of the five lines of symmetry, cutting it at
+$90^\circ$.  An example of a knot with pure rotational symmetry,
+rather than dihedral symmetry, is given in Figure~\ref{orn20}.
 
 \subsection{Subjective \label{section_cca} choice for weighting}
 
