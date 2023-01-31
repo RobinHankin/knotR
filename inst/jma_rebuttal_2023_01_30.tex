@@ -117,7 +117,16 @@ What are they?
 Page 6, Line 39: "… the overall bending energy." ->> 'minimizing
 overall bending energy.'
 
-Page 6, Line 42:  What is "> b <" ?
+Page 6, Line 42:  What is "{\tt > b <}" ?
+\\ \\
+\textcolor{blue}{This is just a detail of standard R syntax.  The
+  first ``{\tt > }'' is just the R prompt; letter {\tt b} is just a
+  variable; and the symbol ``{\tt <-}" usually has a gloss of
+  ``becomes".  Thus {\tt b <- 4} is read ``{\tt b} becomes 4". The
+  reason I need a variable is that I want to show the result of
+  applying two functions, {\tt total\_crossing\_angles()} and {\tt
+    total\_bending\_energy()}, to the same variable {\tt b}.}
+
 
 Figures 3 and 5: Try running these figures with only 50 points (and
 circles) for each Bezier segment.
