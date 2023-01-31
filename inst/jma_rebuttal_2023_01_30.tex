@@ -56,7 +56,7 @@ the justification for Bezier curves, is that they interpolate their
 end-points. This gives users a convenient, more direct control of
 where these curve segments will appear than what they would get from
 G2-continuous B-splines, which are only approximating their control
-points.
+points.\textcolor{blue}{\\Fixed: sentence added to manuscript\\ \\}
 
 RE: Why not place nodes at the crossing points? : Yes, this will
 require a different, slightly more sophisticated drawing interface;
@@ -128,15 +128,14 @@ Page 6, Line 39: ``... the overall bending energy." {\tt ->>} 'minimizing
 overall bending energy.'
 \textcolor{blue}{\\Fixed\\ \\}
 
-Page 6, Line 42:  What is "{\tt > b <}" ?
-\\ \\
-\textcolor{blue}{This is just a detail of standard R syntax.  The
-  first ``{\tt > }" is just the R prompt; letter {\tt b} is just a
-  variable; and the symbol ``{\tt <-}" usually has a gloss of
-  ``becomes".  Thus {\tt b <- 4} is read ``{\tt b} becomes 4". The
-  reason I need a variable is that I want to show the result of
-  applying two functions, {\tt total\_crossing\_angles()} and {\tt
-    total\_bending\_energy()}, to the same variable {\tt b}.}
+Page 6, Line 42: What is "{\tt > b <}" ?  \textcolor{blue}{\\ This is
+  just a detail of standard R syntax.  The first ``{\tt > }" is just
+  the R prompt; letter {\tt b} is just a variable; and the symbol
+  ``{\tt <-}" usually has a gloss of ``becomes".  Thus {\tt b <- 4} is
+  read ``{\tt b} becomes 4". The reason I need a variable is that I
+  want to show the result of applying two functions, {\tt
+    total\_crossing\_angles()} and {\tt total\_bending\_energy()}, to
+  the same variable {\tt b}.\\ \\}
 
 
 Figures 3 and 5: Try running these figures with only 50 points (and

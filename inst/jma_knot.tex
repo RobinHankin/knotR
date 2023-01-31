@@ -241,7 +241,11 @@ system available under the GPL).  One way of smoothly interpolating
 between specified points is Bezier curves~\cite{olsen2014}.  A Bezier
 curve is a visually pleasing polynomial path that can be used to
 specify the path of a knot projection; here cubic Bezier curves are
-used.  Bezier curves are a natural choice for working with
+used.  This gives users a convenient, direct control of where these
+curve segments will appear; compare G2-continuous B-splines, which
+only approximate their control points.
+
+Bezier curves are a natural choice for working with
 mathematical knots for several reasons: they are familiar to many
 graphical workers; they have a natural and intuitive control system
 (usually called ``handles''), and are implemented in many graphical
