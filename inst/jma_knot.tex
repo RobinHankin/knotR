@@ -7,6 +7,7 @@
 %%%Optional but convenient to use is the package ``cite''. If you do not want to use, remark the next line by placing the percent sign % in front of it:
 \usepackage[noadjust]{cite}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{url}
 %
 %
@@ -580,6 +581,13 @@ from Figure~\ref{k5_1_twoknots} we see that these nodes are
 constrained to lie on one of the five lines of symmetry, cutting it at
 $90^\circ$.  An example of a knot with pure rotational symmetry,
 rather than dihedral symmetry, is given in Figure~\ref{orn20}.
+
+From a numerical perspective, the software takes advantage of a
+hierarchical representation of symmetrical knots: the curve is
+specified for one unique fragment of the knot, and the complete knot
+is reconstructed by replicating that fragment with mirroring and
+rotation as required.  The optimization is effectively carried out for
+this unique fragment (with proper end-conditions).  
 
 \subsection{Subjective \label{section_cca} choice for weighting}
 
