@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{xcolor}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \begin{document}
 
 (Below, the reviewer's comments are in black, and my replies to the
@@ -173,7 +174,13 @@ Page 6, Line 42: What is "{\tt > b <}" ?  \textcolor{blue}{\\ This is
 
 
 Figures 3 and 5: Try running these figures with only 50 points (and
-circles) for each Bezier segment.
+circles) for each Bezier segment. \textcolor{blue}{\\This is easily
+  achievable in the package but the result fails to provide any
+  informative or enlightening information.  It simply highlights the
+  fact that $n$ was too small.  I show the requested figure below}
+
+\includegraphics[width=13cm]{k7_6_n05.pdf}
+% created by knotplot2(k7_6,n=7)
 
 Figure 4 caption: Much of the explanation of "7 3" versus "3 7" is
 already in the main text.  \textcolor{blue}{\\Fixed\\ \\}
