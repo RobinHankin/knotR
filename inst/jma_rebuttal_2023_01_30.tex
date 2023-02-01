@@ -2,6 +2,7 @@
 \usepackage{xcolor}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{fancyvrb}
 \begin{document}
 
 (Below, the reviewer's comments are in black, and my replies to the
@@ -180,10 +181,24 @@ Figures 3 and 5: Try running these figures with only 50 points (and
 circles) for each Bezier segment. \textcolor{blue}{\\This is easily
   achievable in the package but the result fails to provide any
   informative or enlightening information.  It simply highlights the
-  fact that $n$ was too small.  I show the requested figure below}
+  fact that $n$ was too small.  Using $n=50$ is (almost)
+  indistinguishable from $n=100$.  I found that $n=100$ represented
+  essentially the best visual representation while being
+  computationally not too onerous.  I show the requested figure at the
+  end (along with $n=7$ and $n=100$ for comparison),
+  figures~\ref{7_6_n7}, \ref{7_6_n50}, and \ref{7_6_n100}.  These were
+  created with}
 
-\includegraphics[width=13cm]{k7_6_n05.pdf}
-% created by knotplot2(k7_6,n=7)
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{blue}{R> pdf(file="k7_6_n07.pdf") ; knotplot2(k7_6,n=7)   ; dev.off()}
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{blue}{R> pdf(file="k7_6_n50.pdf") ; knotplot2(k7_6,n=50)  ; dev.off()}
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{blue}{R> pdf(file="k7_6_n100.pdf") ; knotplot2(k7_6,n=100) ; dev.off()}
+\end{Verbatim}
+
 
 Figure 4 caption: Much of the explanation of "7 3" versus "3 7" is
 already in the main text.  \textcolor{blue}{\\Fixed\\ \\}
@@ -239,5 +254,22 @@ detailed description where the source can be found.
 \textcolor{blue}{\\Done. \\ \\}
 
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{"k7_6_n07.pdf"}
+  \caption{Knot \label{7_6_n7} $7_6$ with $n=7$ nodes per segment}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{"k7_6_n50.pdf"}
+  \caption{Knot \label{7_6_n50} $7_6$ with $n=50$ nodes per segment}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{"k7_6_n100.pdf"}
+  \caption{Knot \label{7_6_n100} $7_6$ with $n=100$ nodes per segment}
+\end{figure}
 
 \end{document}
