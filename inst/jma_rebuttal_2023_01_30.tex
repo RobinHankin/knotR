@@ -51,7 +51,6 @@ integrated into the main text.  The discussions therein relate rather
 directly to what I see as the main contribution of a JMA paper on this
 topic.\textcolor{blue}{Done.}
 
-
 A few comments on some rebuttals:
 
 RE: Why use Bezier curves? : A key point, which should be mentioned in
@@ -104,8 +103,8 @@ send a suitable error message?\textcolor{blue}{\\For convenience, I
   take priority and the resulting symmetrised diagram automatically
   accommodates the imposed symmetry.  In practice what happens is
   immediately visually apparent: one sees beautiful symmetric nodes
-  joined by Bezier curves that do not posess the intended topology.
-  The diagram is a disorganised ugly tangled mess, clearly not
+  joined by Bezier curves that do not possess the intended topology.
+  The diagram is a disorganised and ugly tangled mess, clearly not
   reflecting the intended configuration.  In practice, one glance at
   the diagram simultaneously reveals the problem and its solution
   (just reconnect the dots in the correct order).\\ \\}
@@ -146,7 +145,26 @@ of non-crossing curve segments) are based purely on local geometry and
 need not know what component of a link they refer to.  Perhaps the
 overall length of a knot or of a link-component is not a good metric,
 and should be replaced with some other functions of the length of
-curve segments between crossings.
+curve segments between crossings.  \textcolor{blue}{I have spent many
+  hours pondering this comment, in particular my original assertion
+  that each component would have its own badness.  I took this to be
+  axiomatic, but on [extensive] reflection the referee makes an
+  excellent point, specifically that the badness metrics are all {\em
+    local}.  This is a profound observation, one that eluded me over
+  several years of developing and using the software and thinking
+  about link diagrams.  I think I missed it because the badness
+  functions are largely geared towards preserving the {\em global}
+  topology of the diagram [including preventing Reidemeister moves]
+  and it seemed natural to consider a link diagram from a topological
+  perspective, that is, to consider the badness of each link
+  separately.  But the referee's comment is infuriatingly obvious once
+  it has been pointed out.  Much of the appendix B is irrelevant in
+  the light of this observation; I have shortened it considerably and
+  rephrased to reflect the new thinking.  One suggestion above was to
+  incorporate appendices A and B in to the main body of the text,
+  which I have done, but to accommodate this comment I have
+  restructured the text (of what was appendix B) to reflect this
+  insight.\\ \\}
 
 Some detailed comments on manuscript R2:
 

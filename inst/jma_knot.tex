@@ -699,37 +699,22 @@ subjective decision-making.
 
 Further work might include functionality to deal with links.  Much of
 the required functionality is (in principle) already present in the
-software.  Each component would have its own badness, and in addition
-there would be $n(n-1)/2$ inter-component interaction terms measuring
-features such as closeness between non-intersecting strands of
-different components.  However, the implementation of such
-functionality is not straightforward and several problems stand out.
-Firstly, dealing with inter-component intersection points is
-difficult.  Currently, crossing points are represented as a
-(symmetrical) Boolean matrix with rows and columns corresponding to
-strands, and entry $(i,j)$ being whether strand $i$ intersects with
-strand $j$.  The link generalization would be a symmetric matrix with
-entries that are themselves intersection matrices: an object with four
-indices and entry $(i,j,k,l)$ indicating whether strand $j$ of
-component $i$ intersects strand $l$ of component $k$.  Such objects
-are unwieldy to work with and are typically difficult to manipulate.
-Secondly, the imposition of symmetry is not straightforward in the
-case of links: one might desire that certain components of a link have
-a particular kind of symmetry and others to have a different kind (or
-no!) symmetry.  Further, one unexpectedly difficult problem was
-dealing with a subset of components that individually possess no
-symmetry but collectively possess mirror (or rotational) symmetry.
-Even the simplest links, as in Figure~\ref{thistlethwaite}, can be
-problematic.  Consider Thistlethwaite's L4a1, for example: one would
-expect the two components to be identical except for a 90-degree
-rotation, and implementing this in the context of the package does not
-seem to be at all easy.  In general, new badnesses would be needed.
-Further, in L7a1, the smaller component should be not only as circular
-as possible (?), but also one might desire the overall length to be
-smaller than that of the other component.  It would be reasonable to
-conclude that dealing with links might be possible in principle but,
-due to a number of technical and mathematical reasons, considerably
-harder than the single-component links considered here.
+software.  Although it might be tempting to assign each link component
+its own badness, and to combine these in some way along with some form
+of inter-component interaction term, a perceptive referee observed
+that the badness components are all based purely on {\em local}
+geometry.  As such, many of the software and mathematical principles
+designed for knots will apply similarly to links with little
+modification.  Consider Thistlethwaite's L4a1
+(Figure~\ref{thistlethwaite}), for example: one would expect the two
+components to be identical except for a 90-degree rotation, and
+implementing this in the context of the package is straightforward in
+principle: the symmetry object does not depend on the overall linking
+topology of the diagram.  However, dealing with a subset of components
+that individually or collectively possess mirror (or rotational)
+symmetry, can be problematic.  Consider L7a1, in which only the
+smaller component should possess circular symmetry; such restrictions
+would require substantial work to implement.
 
 \begin{figure}[htbp]
   \begin{center}
@@ -741,21 +726,12 @@ harder than the single-component links considered here.
 \end{figure}
 
 
-
-
-
-
-
-
-
-
 In the broader context of optimisation in art, we observe that
 numerical optimisation techniques can produce aesthetically pleasing
 results, an observation that might find uptake by graphic artists.
 Indeed, one could argue that real art lies in the capturing of
 mathematical formulations of aesthetics.
 
-\clearpage
 \section{Gallery}
 
 There now follows a selection of pleasing knot diagrams taken from
