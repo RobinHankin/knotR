@@ -11,36 +11,15 @@
 
 (Below, the reviewer's comments are in black, and my replies to the
 issues are in \textcolor{blue}{blue}.  I have indicated changes to the
-manuscript where appropriate.
+manuscript where appropriate).
 
 \section*{\textcolor{blue}{Overall response to the review}}
 
 \textcolor{blue}{The comments have resulted in a much stronger
   document.  I have carried out all the detailed suggestions, as
-  presented below.  My take on the comment reading ``much of this
-  material is perfect for an on-line tutorial" requires a more
-  subjective and personal response.  I would characterise the
-  submission, not as a online tutorial, but as a discursive yet
-  mathematical outlining of the conceptual and computational
-  difficulties of automated beautification of knot diagrams (not
-  forgetting to discuss the advantages!).  Automated beautification of
-  knot diagrams sounds easy, and I originally thought it would take me
-  a couple of hours.  I cannot be the first person to try to do this;
-  much of the submission could be viewed as documenting the
-  difficulties of the only known solution to this problem.\\ \\ I do
-  not regard the essence of the submission as being at all dependent
-  on inkscape or R.  Any vectorised graphics editor (VGE) that can
-  work with Bezier curves would be as good as inkscape.  Adobe
-  illustrator, or Google drawings etc etc could be substituted for
-  inkscape.  So in the submission, ``inkscape'' is short for ``any
-  VGE''.  The difficulty is that a manuscript needs a specfic VGE to
-  concretify the discussions.  The same reasoning applies to my choice
-  of R, which was again driven by my familiarity with it; matlab or
-  python would be just as good.  I believe that the resubmission gets
-  this point across.}
+  presented below, and offer a commentary on some of the ideas.}
 
 \section*{Detailed rebuttal}
-
 
 Comments from the Editors and Reviewers:
 
@@ -49,9 +28,22 @@ rebuttal and the corresponding fixes in the manuscript.  But I have a
 remaining concern that much of this material is perfect for an on-line
 tutorial on how to use package [27] to draw optimized knot diagrams,
 but JMA is not the right place to publish such a
-tutorial.\textcolor{blue}{\\I have expanded the discussion of the
-  aesthetics of knot diagrams, but would point out that capturing the
-  goals\\ \\}
+tutorial.\textcolor{blue}{ I would characterise the submission, not as
+  a online tutorial, but as a discursive yet mathematical outlining of
+  the conceptual and computational difficulties of automated
+  beautification of knot diagrams (not forgetting to discuss the
+  advantages!).  I have expanded the discussion of the aesthetics of
+  knot diagrams.  \\ \\ On the online tutorial comparison: I do not
+  regard the essence of the submission as being at all dependent on
+  inkscape or R.  Any vectorised graphics editor (VGE) that can work
+  with Bezier curves would be as good as inkscape.  Adobe illustrator,
+  or Google drawings etc etc could be substituted for inkscape.  So in
+  the submission, ``inkscape'' is short for ``any VGE''.  The
+  difficulty is that a manuscript needs a specific VGE to concretify
+  the discussions.  The same reasoning applies to my choice of R,
+  which was again driven by my familiarity with it; matlab or python
+  would be just as good.  I believe that the resubmission gets this
+  point across.}
 
 The content that is most fitting for a JMA paper is a discussion of
 what makes a knot diagram ``beautiful" and that discussion will
@@ -128,14 +120,13 @@ send a suitable error message?\textcolor{blue}{\\For convenience, I
   reply would have been for me to observe that in the event of a
   mismatch between diagram and symmetry specifications, the symmetry
   specifications take priority and the resulting symmetrised diagram
-  automatically accommodates the imposed symmetry.  In practice what
-  happens is immediately visually apparent: one sees beautiful
+  has symmetric nodes but the connections are not as intended.  In
+  practice, this is immediately visually apparent: one sees beautiful
   symmetric nodes joined by Bezier curves that do not possess the
   intended topology.  The diagram is a disorganised and ugly tangled
-  mess, clearly not reflecting the intended configuration.  In
-  practice, one glance at the diagram simultaneously reveals the
-  problem and its solution (just reconnect the dots in the correct
-  order).\\ \\}
+  mess, clearly not reflecting the intended configuration.  Generally,
+  one glance at the diagram simultaneously reveals the problem and its
+  solution (just reconnect the dots in the correct order).\\ \\}
 
 RE: A hierarchical way of dealing with symmetry: ``This is exactly
 what I have done!  The referee gives an accurate summary of the code's
@@ -166,7 +157,7 @@ badness functions are not really needed or are badly implemented.
 
 RE: Link projections: In a future system, the planning for handling
 links should come in right at the beginning.  It is not at all clear
-why "Each component would have its own badness."
+why ``Each component would have its own badness."
 
 Many of the important badness functions (e.g. separations of nodes or
 of non-crossing curve segments) are based purely on local geometry and
@@ -214,7 +205,7 @@ Page 6, Line 39: ``... the overall bending energy." {\tt ->>} 'minimizing
 overall bending energy.'
 \textcolor{blue}{\\Fixed\\ \\}
 
-Page 6, Line 42: What is "{\tt > b <}" ?  \textcolor{blue}{\\ This is
+Page 6, Line 42: What is ``{\tt > b <}" ?  \textcolor{blue}{\\ This is
   just a detail of standard R syntax.  The first ``{\tt > }" is just
   the R prompt; letter {\tt b} is just a variable; and the symbol
   ``{\tt <-}" usually has a gloss of ``becomes".  Thus {\tt b <- 4} is
@@ -247,25 +238,23 @@ circles) for each Bezier segment. \textcolor{blue}{\\This is easily
 \end{Verbatim}
 
 
-Figure 4 caption: Much of the explanation of "7 3" versus "3 7" is
+Figure 4 caption: Much of the explanation of ``7 3" versus ``3 7" is
 already in the main text.  \textcolor{blue}{\\Fixed\\ \\}
 
 
-Page 8, Line 60: "Why 64 real variables"?  What are they?  How does
-this agree with "R50" on page 6?\textcolor{blue}{\\ The 64 variables are just the parameters required to describe the knot path, it agrees with the (reworded) coment about $\mathbb{R}^{50}$.\\ \\}
-
-
+Page 8, Line 60: ``Why 64 real variables"?  What are they?  How does
+this agree with ``R50" on page 6?\textcolor{blue}{\\ The 64 variables
+  are just the parameters required to describe the knot path, it
+  agrees with the (reworded) coment about $\mathbb{R}^{50}$.\\ \\}
 
 Figure 7: Where does the spiky artifact in the upper right lobe come
 from?  \textcolor{blue}{\\I see nothing in figure 7 that could be so
   described.  I expect this is a rendering issue, if so it will be
   sorted out at proofreading stage.\\ \\}
 
-
 Page 12, Line 52: ``...a rotationally symmetric" should be ``... a knot with
 pure cyclic rotational symmetry, rather than dihedral symmetry"
-  \textcolor{blue}{Done\\ \\}
-
+  \textcolor{blue}{\\Done\\ \\}
 
 Figure 9: Why did the user choose to place three nodes on the outer
 lobes, rather than only two? - Was this easier to express the desired
