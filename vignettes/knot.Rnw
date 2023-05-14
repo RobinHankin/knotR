@@ -22,9 +22,11 @@
 
 %% an abstract and keywords
 \Abstract{
+
+To cite this work in publications, use \cite{hankin2023}.
+
 In this short article I introduce the \pkg{knot} package, which
 creates two dimensional knot diagrams optimized for visual appearance.
-
 The \pkg{knot} package is a systematic R-centric suite of software for
 the creation of production-quality artwork of knot diagrams.
 
