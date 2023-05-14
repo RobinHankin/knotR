@@ -4,9 +4,7 @@
 \alias{overunder<-}
 \alias{mirror}
 \alias{is.sensible}
-\title{
-Functionality for specifying overstrands and understrands
-}
+\title{Functionality for specifying overstrands and understrands}
 \description{
 Functionality for specifying overstrands and understrands
 }
@@ -35,8 +33,6 @@ is.sensible(overunderobj,x)
   Function \code{mirror()} takes a knot and returns the knot with the
   senses of each crossing reversed; it is as though the knot is
   reflected in the plane of the projection.
-  
-
 }
 \author{Robin K. S. Hankin}
 \seealso{\code{\link{knot}}}
