@@ -21,7 +21,7 @@ typing
 
 \code{knotplot(k9_23)}
 
-at the R prompt.  The package includes all prime knots up to an
+at the R prompt.  The package includes all prime knots up to and
 including 9 crossings, and a number of other interesting and attractive
 knots.
 
