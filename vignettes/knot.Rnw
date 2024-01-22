@@ -6,13 +6,13 @@
 \usepackage{wasysym}
 \usepackage{amssymb}
 
-%\title{Knot Theory in \R}
-%\subtitle{The \pkg{knot} package}
+%\title{Knot Theory in R}
+%\subtitle{The \pkg{knotR} package}
 %\author{Robin K. S. Hankin}
 %\maketitle
 
 
-\author{Robin K. S. Hankin\\Auckland University of Technology}
+\author{Robin K. S. Hankin\\The University of Stirling}
 \title{Visually pleasing knot projections in \proglang{R}}
 %\VignetteIndexEntry{A vignette for the knot package}
 %% for pretty printing and a nice hypersummary also set:
@@ -25,14 +25,14 @@
 
 To cite this work in publications, use \cite{hankin2023}.
 
-In this short article I introduce the \pkg{knot} package, which
+In this short article I introduce the \pkg{knotR} package, which
 creates two dimensional knot diagrams optimized for visual appearance.
-The \pkg{knot} package is a systematic R-centric suite of software for
-the creation of production-quality artwork of knot diagrams.
+The \pkg{knotR} package is a systematic \proglang{R}-centric suite of software
+for the creation of production-quality artwork of knot diagrams.
 
 }
 
-\Keywords{Knot theory, \proglang{R}}
+\Keywords{Knot theory, R}
 \Plainkeywords{Knot theory, R}
 
 %% publication information
@@ -50,8 +50,8 @@ the creation of production-quality artwork of knot diagrams.
 %% in the following format:
 \Address{
   Robin K. S. Hankin\\%\orcid{https://orcid.org/0000-0001-5982-0415}\\
-  Auckland University of Technology\\
-  New Zealand
+  The University of Stirling\\
+  Scotland
 }
 %% It is also possible to add a telephone and fax number
 %% before the e-mail in the following format:
