@@ -210,13 +210,12 @@
 
 }
 \references{
-\itemize{
-\item K. A. Bryant, 2016. \emph{Slice implies mutant-ribbon for odd,
-  5-stranded pretzel knots}, \code{arXiv:1511.07009v2}
-\item{S. Eliahou and J. Fromentin 2017. \dQuote{A remarkable 20-crossing
-    tangle}.  Arxiv, \url{https://arxiv.org/abs/1610.05560v2}
-}
-}
+  \itemize{
+    \item K. A. Bryant, 2016. \emph{Slice implies mutant-ribbon for odd,
+      5-stranded pretzel knots}, \code{arXiv:1511.07009v2}
+    \item S. Eliahou and J. Fromentin 2017. \dQuote{A remarkable 20-crossing
+      tangle}.  Arxiv, \url{https://arxiv.org/abs/1610.05560v2}
+  }
 }
 
 \examples{
