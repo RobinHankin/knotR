@@ -4,10 +4,7 @@ citation(auto = meta)
 
 bibentry(bibtype = "misc",
          title = "Visually pleasing knot projections",
-         author = personList(
-          person(given = c("Robin","K","S"),
-		family = "Hankin",
-		email="hankin.robin@gmail.com")),
+         author = person("Robin","K","S"),
          doi = "10.1080/17513472.2023.2185058",
          URL = "https://doi.org/10.1080/17513472.2023.2185058",
          year = "2023",
