@@ -4,24 +4,23 @@ filename <- "4_1.svg"
 a <- reader(filename)
 #knotplot2(a,node=TRUE)
 Mver <- matrix(c(
-    2,4,
-    11,9,
-    1,5,
-    6,14,
-    7,13,
-    12,8
+    5,7,
+    1,11,
+    4,8,
+    9,3,
+    2,10
 ),ncol=2,byrow=TRUE)
 
-sym41 <- symmetry_object(a,Mver=Mver,xver=c(3,10))
+sym41 <- symmetry_object(a,Mver=Mver,xver=c(6,12))
 a <- symmetrize(a,sym41)
 #knotplot2(a)
 #knotplot2(a,text=TRUE,lwd=1,rainbow=TRUE,circ=FALSE)
 ou41 <-
     matrix(c(
-        5,10,
-        8,13,
-        1,6,
-        11,2
+        5,1,
+        12,8,
+        9,4,
+        10,3
 ),ncol=2,byrow=TRUE)
 
 #knotplot(a,ou41)
