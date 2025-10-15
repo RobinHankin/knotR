@@ -12,7 +12,7 @@
 %\maketitle
 
 
-\author{Robin K. S. Hankin\\The University of Stirling}
+\author{Robin K. S. Hankin}
 \title{Visually pleasing knot projections in \proglang{R}}
 %\VignetteIndexEntry{A vignette for the knot package}
 %% for pretty printing and a nice hypersummary also set:
@@ -49,7 +49,7 @@ for the creation of production-quality artwork of knot diagrams.
 %% The address of (at least) one author should be given
 %% in the following format:
 \Address{
-  Robin K. S. Hankin\\%\orcid{https://orcid.org/0000-0001-5982-0415}\\
+  Robin K. S. Hankin\\
   The University of Stirling\\
   Scotland
 }
