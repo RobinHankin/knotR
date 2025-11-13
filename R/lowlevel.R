@@ -11,6 +11,7 @@
 
 ## First the functions to create the various objects.
 
+#' @export
 `inkscape` <- function(x){
   stopifnot(is.matrix(x))
   stopifnot(ncol(x)==2)
@@ -19,6 +20,7 @@
   return(x)
 }
 
+#' @export
 `minobj` <- function(x){
   stopifnot(is.list(x))
   stopifnot(length(x)==2)
@@ -29,12 +31,14 @@
   return(x)
 }
 
+#' @export
 `knotvec` <- function(x){
   stopifnot(is.vector(x))
   class(x) <- "knotvec"
   return(x)
 }
 
+#' @export
 `controlpoints` <- function(x){
   stopifnot(is.list(x))
   stopifnot(all(unlist(lapply(x,nrow))==4))
@@ -43,6 +47,7 @@
   return(x)
 }
 
+#' @export
 `minsymvec` <- function(vec){
   stopifnot(is.vector(vec))
   class(vec) <- "minsymvec"
@@ -52,6 +57,7 @@
 
 ## Now the functions to convert from one type to another:
 
+#' @export
 `make_minobj_from_ink` <- function(a){  # creates a minimal object
                                         # from inkscape object 'a';
                                         # note that 'a' contains
@@ -87,6 +93,7 @@
   return(minobj(out))
 }
 
+#' @export
 `make_ink_from_minobj` <- function(x){
 
 ## inverse function to make_minimal_object(); takes a minobj and
@@ -108,11 +115,13 @@
   return(inkscape(out))
 }
 
+#' @export
 `make_knotvec_from_minobj` <- function(x){
   out <- c(x, recursive=TRUE)
   return(knotvec(out))
 }
 
+#' @export
 `make_minobj_from_vector` <- function(vec){
     n <- length(vec)
     stopifnot(n%%4==0)
@@ -125,6 +134,7 @@
     return(minobj(out))
 }
 
+#' @export
 `make_controlpoints_from_ink` <- function(a){  # 'a' is an inkscape object
  
   start <- seq(from=1,to=nrow(a)-1,by=3)
@@ -139,12 +149,14 @@
   return(controlpoints(out))
 }
 
+#' @export
 `make_inkscape_from_controlpoints` <- function(b){   # 'b' is a controlpoints object
   out <- do.call("rbind",lapply(b,function(x){x[1:3,]}))
   out <- rbind(out,out[1,])
   return(inkscape(out))
 }
 
+#' @export
 `make_minobj_from_knot` <- function(k){
   make_minobj_from_minsymvec(k$minsymvec,k$symobj)
 }
@@ -152,6 +164,7 @@
 
 ## Now the user-friendly functions for coercing and creating:
 
+#' @export
 `as.inkscape` <- function(x){
   if(inherits(x,'inkscape')){
     return(x)
@@ -170,6 +183,7 @@
   }
 }
 
+#' @export
 `as.minobj` <- function(x){
   if(inherits(x,"minobj")){
     return(x)
@@ -186,6 +200,7 @@
   }
 }
 
+#' @export
 `as.controlpoints` <- function(x){
   if(inherits(x,"controlpoints")){
     return(x)
@@ -202,6 +217,7 @@
   }
 }
 
+#' @export
 `as.knotvec` <- function(x){
   if(inherits(x,"knotvec")){
     return(x)
@@ -218,6 +234,7 @@
   }
 }
 
+#' @export
 `as.minsymvec` <- function(x,symobj){
   if(inherits(x,"knot")){
     return(make_minsymvec_from_minobj(as.minobj(x),x$symobj))
@@ -226,6 +243,7 @@
   }
 }
 
+#' @export
 `knot` <- function(x, overunderobj, symobj, Mver=NULL, xver=NULL, Mhor=NULL, xhor=NULL, Mrot=NULL, mcdonalds=FALSE, celtic=FALSE,reefknot=FALSE,center_crossing=FALSE){
 
   if(inherits(x,'knot')){return(knot)}

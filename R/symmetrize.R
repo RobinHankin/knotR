@@ -10,6 +10,7 @@
   }
 }
  
+#' @export
 `force_nodes_mirror_images_LR` <- function(x,symobj){
   stopifnot(inherits(x,"minobj"))
   Mver <- symobj$Mver
@@ -31,6 +32,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_mirror_images_UD` <- function(x,symobj){
   stopifnot(inherits(x,"minobj"))
   Mhor <- symobj$Mhor
@@ -58,6 +60,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_on_V_axis` <- function(x,xver){
   stopifnot(inherits(x,"minobj"))
   for(i in xver){
@@ -67,6 +70,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_on_H_axis` <- function(x,xhor){
   stopifnot(inherits(x,"minobj"))
   for(i in xhor){
@@ -76,6 +80,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_exactly_horizontal` <- function(x,symobj){  # but not necessarily on the vertical axis of symmetry
   stopifnot(inherits(x,"minobj"))
   eh <- symobj$exact_h
@@ -83,6 +88,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_exactly_vertical` <- function(x,symobj){  # but not necessarily on the horizontal axis of symmetry
   stopifnot(inherits(x,"minobj"))
   ev <- symobj$exact_h
@@ -90,6 +96,7 @@
   return(x)
 }
 
+#' @export
 `force_nodes_rotational` <- function(x,symobj){
   stopifnot(inherits(x,"minobj"))
   Mrot <- symobj$Mrot
@@ -119,6 +126,7 @@
   return(x)  
 }
 
+#' @export
 `symmetrize` <- function(x, symobj){
   x <- as.minobj(x)
   if(!is.null(symobj$xver)){x <- force_nodes_on_V_axis(x,symobj$xver)}
@@ -131,6 +139,7 @@
   return(x)
 }
 
+#' @export
 `tag_notneeded` <- function(x, Mver, xver, Mhor, xhor, Mrot, exact_h, exact_v){
   stopifnot(inherits(x,"minobj"))
 
@@ -166,6 +175,7 @@
   
 }
 
+#' @export
 `symmetry_object` <- function(x, Mver=NULL, xver=NULL, Mhor=NULL, xhor=NULL, Mrot=NULL, exact_h=NULL, exact_v=NULL,
                               mcdonalds=FALSE, celtic=FALSE, reefknot=FALSE,center_crossing=FALSE){
 
@@ -194,6 +204,7 @@
       mcdonalds=mcdonalds, celtic=celtic, reefknot=reefknot, center_crossing=center_crossing, indep = indep))
 }
 
+#' @export
 `make_minsymvec_from_minobj` <- function(x,symobj){
 
     ## minsymvec == minimal symmetric vector; use
@@ -206,6 +217,7 @@
     return(minsymvec(out))
 }
 
+#' @export
 `make_minobj_from_minsymvec` <- function(minsymvec,symobj) {
 
   ## minsymvec == minimal symmetric vector; this is a vector of

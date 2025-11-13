@@ -1,3 +1,21 @@
+#' @importFrom graphics par
+#' @importFrom graphics plot
+#' @importFrom graphics points
+#' @importFrom graphics segments
+#' @importFrom graphics text
+
+#' @importFrom stats constrOptim
+#' @importFrom stats integrate
+#' @importFrom stats runif
+#' @importFrom stats uniroot
+#' @importFrom stats nlm
+#' @importFrom stats var
+#' @importFrom stats optim
+
+#' @importFrom utils head
+#' @importFrom utils tail
+
+#' @export
 `reader` <- function(filename){  # reader('7_3.svg')
 
   jj <- readLines(filename)
@@ -11,6 +29,7 @@
   return(inkscape(jj))
 }
 
+#' @export
 `knotplot2` <-
     function(x, rainbow=FALSE, seg=FALSE, text=FALSE, cross=FALSE, ink=FALSE,
              node=FALSE, width=TRUE, all=FALSE, n=100, circ=1000, lwd=8, add=FALSE, ...){ # knotplot(reader("7_3.svg"))
@@ -85,6 +104,7 @@
         }
 }
 
+#' @export
 `getstringpoints` <- function(b,give_strand=FALSE,n=100){
     b <- as.controlpoints(b)
     if(give_strand){
@@ -95,6 +115,7 @@
     do.call("rbind",sapply(seq_along(b),f,simplify=FALSE))
 }
 
+#' @export
 `knotplot_old` <- function(x, ou, gap=20, n=100, lwd=8, add=FALSE, ...){
     if(inherits(x,'knot')){
       ou <- x$overunderobj
@@ -126,6 +147,7 @@
     return(invisible(xy))
 }
 
+#' @export
 `knotplot` <- function(x, ou, gapwidth=1, n=100, lwd=8, add=FALSE, ...){
     if(inherits(x,'knot')){
       ou <- x$overunderobj
@@ -159,6 +181,7 @@
     return(invisible(xy_thin))
 }
 
+#' @export
 `bezier_angle` <- function(P1,P2){  # returns \cos^2\theta, where
                                     # \theta is the angle of
                                     # intersection.
@@ -177,6 +200,7 @@
     sum(v1*v2)^2/((sum(v1^2)*sum(v2^2)))
 }
 
+#' @export
 `crossing_matrix` <- function(b){   # crossing_matrix(make_controlpoints_from_ink(a))
     out <- matrix(0,length(b),length(b))
     for(i in seq_along(b)){
@@ -211,6 +235,7 @@
 #    return(out)
 #}
 
+#' @export
 `crossing_points` <- function(b,give_all=TRUE){  # this is cpb
   SMALL <- 0.01
   b <- as.controlpoints(b)
@@ -255,11 +280,13 @@
   }
 }
 
+#' @export
 `crossing_strands` <- function(b){
     out <- crossing_points(b,give_all=TRUE)
     out[out[,9]>0,1:2]
 }
   
+#' @export
 `total_crossing_angle_badness` <- function(b,cpb){
   if(missing(cpb)){cpb <- crossing_points(b)}
   
@@ -271,11 +298,13 @@
   return(out)
 }
 
+#' @export
 `total_bending_energy` <- function(b,power=2){
   out <- unlist(lapply(b,bezier_bending_energy,power=power))
   return(sum(out))
 }
 
+#' @export
 `total_crossing_potential_energy` <- function(b,cpb){
   if(missing(cpb)){cpb <- crossing_points(b)}
   o <- cpb[cpb[,9]==1,3:4,drop=FALSE]
@@ -289,11 +318,13 @@
   return(sum(1/m))
 }
 
+#' @export
 `total_string_length` <- function(b){
   b <- as.controlpoints(b)
   sum(unlist(lapply(b,bezier_arclength)))
 }
 
+#' @export
 `midpoint_badness` <- function(b,cpb){
   if(missing(cpb)){  cpb <- crossing_points(b)}
 
@@ -301,6 +332,7 @@
   return(sum((jj-1/2)^6))
 }
 
+#' @export
 `node_crossing_badness` <- function(b,cpb){
   b <- as.controlpoints(b)
   if(missing(cpb)){  cpb <- crossing_points(b)}
@@ -317,6 +349,7 @@
   return(sum(1/dist_squared))
 }
 
+#' @export
 `curvature_switching_badness` <- function(b){
     b <- as.controlpoints(b)
     badness <- function(P){
@@ -334,6 +367,7 @@
     return(sum(out))
 }
 
+#' @export
 `bezier_total_curvature` <- function(P, give=FALSE, ...){
     out <-
         integrate(function(x){bezier_curvature(P,tee=x)},lower=0,upper=1, ...)
@@ -344,6 +378,7 @@
     }
 }
 
+#' @export
 `curvature_consecutive_segment_switching_badness` <- function(b, ...){
     b <-as.controlpoints(b)
     n <- length(b)
@@ -360,6 +395,7 @@
     return(sum(out)^2)      ## or perhaps return(sum(out^2))
 }
 
+#' @export
 `always_left_badness` <- function(b){ #penalizes knots that should always bend to the left and have a segment bending to the right.
     out <- NULL
     for(i in b){
@@ -368,12 +404,14 @@
     return(var(out))
 }
 
+#' @export
 `non_crossing_strand_close_approach_badness` <- function(b,cpb){
     if(missing(cpb)){  cpb <- crossing_points(b) }
     o <- cpb[cpb[,10]==1,7]  # distances between pairs of strands that miss one another
     sum(1/o)
 }
 
+#' @export
 `metrics` <- function(b,cpb){
   b <- as.controlpoints(b)
   k <- as.minobj(b)
@@ -392,6 +430,7 @@
       )
 }
 
+#' @export
 `badness` <- function(b, cpb, weights=1, prob=0, give=FALSE){   # objective(make_vector(make_minimal_object(a)))
   b <- as.controlpoints(b)
   if(missing(cpb)){  cpb <- crossing_points(b) }
@@ -422,11 +461,13 @@
   }
 }
 
+#' @export
 `myseg` <- function(P, ...){
   segments(x0=P[1,1],y0=P[1,2],x1=P[2,1],y1=P[2,2],...)
   segments(x0=P[3,1],y0=P[3,2],x1=P[4,1],y1=P[4,2],...)
   points(P,...)
 }
+
 
 `.make_string` <- function(k){
   k <- unclass(as.inkscape(k))
@@ -457,6 +498,7 @@
     }
 }
 
+#' @export
 `write_svg` <- function(k, oldfile, safe=TRUE, regex1 = 'sodipodi:docname=', regex2=' *d *= *" *M.*C.*[zZ] *"'){
 
     if(safe){
@@ -480,6 +522,7 @@
     return(invisible(text))
 }
 
+#' @export
 `knotoptim` <-
   function(
            svg, weights=1,symobj=NULL,
@@ -507,6 +550,7 @@
          symobj=symobj)
   }
 
+#' @export
 `is.sensible` <- function(overunderobj,x){
 
     jj1 <- crossing_points(x,TRUE)
@@ -527,16 +571,19 @@
     }
 }
  
+#' @export
 `overunder` <- function(x){
   x$overunderobj
 }
 
+#' @export
 `overunder<-` <- function(x,value){
   stopifnot(is.sensible(value,x))
   x$overunderobj <- value
   return(x)
 }
 
+#' @export
 `mirror` <- function(x){
   jj <- x$overunderobj
   jj <- jj[,2:1]
@@ -544,10 +591,12 @@
   return(x)
 }
 
+#' @export
 `head.inkscape` <- function(x, ...){
   head(unclass(x),...)		
 }
 
+#' @export
 `tail.inkscape` <- function(x, ...){
   tail(unclass(x),...)		
 }

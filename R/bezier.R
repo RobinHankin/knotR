@@ -1,9 +1,10 @@
-
+#' @export
 `bezier` <- function(P,tee,n=100){  #r=3 hard-coded.
     if(missing(tee)){tee <- seq(from=0,to=1,len=n)}
     crossprod(rbind((1-tee)^3, 3*tee*(1-tee)^2, 3*tee^2*(1-tee), tee^3),P)
 }
 
+#' @export
 `bezier_arclength` <- function(P, t1=0, t2=1, give=FALSE, ...){  # arc length from bez(t1) to bez(t2)
     `f` <- function(tee){sqrt(rowSums(bezier_deriv(P,tee)^2))}
 
@@ -15,6 +16,7 @@
     }
 }
 
+#' @export
 `bezier_find_length` <- function(P, len, from=0, increasing=TRUE, give=FALSE, ...){
 
     if(increasing){
@@ -31,6 +33,7 @@
     }
 }
 
+#' @export
 `bezier_deriv` <- function(P,tee,n=100){  #r=3 hard-coded.
     if(missing(tee)){tee <- seq(from=0,to=1,len=n)}
     crossprod(rbind(-3*(1-tee)^2,
@@ -40,6 +43,7 @@
                    P)
 }
 
+#' @export
 `bezier_deriv2` <- function(P,tee,n=100){  #second derivative
     if(missing(tee)){tee <- seq(from=0,to=1,len=n)}
     crossprod(rbind(
@@ -49,6 +53,7 @@
         6*tee), P)
 }
 
+#' @export
 `bezier_radius` <- function(P,tee,n=100){
     if(missing(tee)){tee <- seq(from=0,to=1,len=n)}
     d1 <- bezier_deriv(P,tee)
@@ -56,6 +61,7 @@
     rowSums(d1^2)^(3/2)/(d1[,1]*d2[,2]-d1[,2]*d2[,1])
 }
 
+#' @export
 `bezier_curvature` <- function(P,tee,n=100){
     if(missing(tee)){tee <- seq(from=0,to=1,len=n)}
     d1 <- bezier_deriv(P,tee)
@@ -63,6 +69,7 @@
     (d1[,1]*d2[,2]-d1[,2]*d2[,1])/rowSums(d1^2)^(3/2)
 }
 
+#' @export
 `bezier_bending_energy` <- function(P, t1=0, t2=1, give=FALSE, power=2, ...){
 
   `f` <- function(tee){
@@ -77,6 +84,7 @@
   }
 }
 
+#' @export
 `bezier_intersect` <- function(P1,P2,type='pos', ...){
     distfun <- function(x){ sum((bezier(P1,x[1])-bezier(P2,x[2]))^2) }
     jj <-
@@ -109,4 +117,3 @@
                   
     return(out)
 }
-

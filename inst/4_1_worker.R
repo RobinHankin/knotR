@@ -28,7 +28,7 @@ ou41 <-
 jj <- knotoptim(filename,
                 symobj = sym41,
                 ou   = ou41,
-                prob=0,
+                prob=0.5,
                 iterlim=1000, print.level=2
 #                control=list(trace=100,maxit=100000), useNLM=FALSE
                 )
